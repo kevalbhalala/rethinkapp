@@ -5,7 +5,6 @@ import {Strings} from '../../constants';
 import styles from './IntroStyle';
 
 const IntroScreen = () => {
-  console.log('Hello');
   return (
     <View style={styles.screen}>
       <View style={styles.titleParent}>

@@ -1,12 +1,15 @@
 import React from 'react';
 import {SafeAreaView} from 'react-native';
-import {Intro} from './modules';
+import {Provider as PaperProvider} from 'react-native-paper';
+import {Login} from './modules';
 import {styles} from './theme';
 
 const App = () => {
   return (
     <SafeAreaView style={styles.screen}>
-      <Intro />
+      <PaperProvider>
+        <Login />
+      </PaperProvider>
     </SafeAreaView>
   );
 };
