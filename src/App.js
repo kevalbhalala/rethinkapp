@@ -1,12 +1,13 @@
 import React from 'react';
-import {Text, View} from 'react-native';
+import {SafeAreaView} from 'react-native';
+import {Intro} from './modules';
 import {styles} from './theme';
 
 const App = () => {
   return (
-    <View style={styles.screen}>
-      <Text>rethink</Text>
-    </View>
+    <SafeAreaView style={styles.screen}>
+      <Intro />
+    </SafeAreaView>
   );
 };
 
