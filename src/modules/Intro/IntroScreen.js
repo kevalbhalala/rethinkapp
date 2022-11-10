@@ -1,10 +1,14 @@
 import React from 'react';
 import {Text, View} from 'react-native';
 import {CustomButton} from '../../components';
-import {Strings} from '../../constants';
+import {navigationStrings, Strings} from '../../constants';
 import styles from './IntroStyle';
 
-const IntroScreen = () => {
+const IntroScreen = ({navigation}) => {
+  const onPressAlreadyAccount = () => {
+    navigation.navigate(navigationStrings.LOGIN);
+  };
+
   return (
     <View style={styles.screen}>
       <View style={styles.titleParent}>
@@ -35,7 +39,7 @@ const IntroScreen = () => {
         <View style={styles.line} />
       </View>
       <CustomButton
-        onBtnPress={() => {}}
+        onBtnPress={onPressAlreadyAccount}
         buttonTitle={Strings.alreadyAccount}
         buttonStyle={styles.alreadyAccountBtn}
         buttonTitleStyle={styles.alreadyAccountText}

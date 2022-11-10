@@ -6,15 +6,18 @@ import {Strings} from '../../constants';
 import {Colors} from '../../theme';
 import styles from './ResetPasswordStyle';
 
-const ResetPasswordScreen = () => {
+const ResetPasswordScreen = ({navigation}) => {
   const resetPassword = Strings.resetPassword?.replace('?', '');
+  const onPressHeaderBack = () => {
+    navigation.goBack();
+  };
   return (
     <View style={styles.screen}>
       <CustomHeader
         headerTitle={resetPassword}
         headerTitleStyle={styles.headerTitle}
         headerStyle={styles.header}
-        onPressBack={() => {}}
+        onPressBack={onPressHeaderBack}
       />
       <View style={styles.container}>
         <View style={styles.card}>

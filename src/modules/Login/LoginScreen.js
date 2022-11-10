@@ -9,19 +9,27 @@ import {
 import {TextInput} from 'react-native-paper';
 import {Icons} from '../../assets';
 import {CustomButton, CustomHeader} from '../../components';
-import {Strings} from '../../constants';
+import {navigationStrings, Strings} from '../../constants';
 import {Colors, isIos} from '../../theme';
 import styles from './LoginStyle';
 
-const LoginScreen = () => {
+const LoginScreen = ({navigation}) => {
   const [passwordVisible, setPasswordVisible] = useState(false);
+
+  const onPressHeaderback = () => {
+    navigation.goBack();
+  };
+
+  const onPressResetPassword = () => {
+    navigation.navigate(navigationStrings.RESETPASSWORD);
+  };
 
   return (
     <KeyboardAvoidingView
       behavior={isIos ? 'padding' : 'height'}
       style={{flex: 1}}>
       <View style={styles.screen}>
-        <CustomHeader onPressBack={() => {}} />
+        <CustomHeader onPressBack={onPressHeaderback} />
         <View style={styles.container}>
           <View style={styles.applogoParent}>
             <Image source={Icons.appLogo} style={styles.appLogo} />
@@ -58,7 +66,7 @@ const LoginScreen = () => {
             buttonStyle={styles.loginBtn}
             buttonTitleStyle={styles.loginText}
           />
-          <TouchableOpacity onPress={() => {}}>
+          <TouchableOpacity onPress={onPressResetPassword}>
             <Text style={styles.resetPassword}>{Strings.resetPassword}</Text>
           </TouchableOpacity>
           <View style={styles.applyNowParent}>
