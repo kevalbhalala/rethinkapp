@@ -12,4 +12,6 @@ export const Strings = {
   password: 'PASSWORD',
   resetPassword: 'Reset password?',
   newToRethink: 'New to Rethink?',
+  emailQuestion: "What's the email you used to sign up?",
+  confirm: 'Confirm',
 };
