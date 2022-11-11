@@ -15,12 +15,12 @@ const MainStack = () => {
           headerShown: false,
         }}>
         <Stack.Screen
-          name={navigationStrings.AUTHSTACK}
-          component={AuthStack}
-        />
-        <Stack.Screen
           name={navigationStrings.BOTTOMTABSNAV}
           component={BottomTabsNav}
+        />
+        <Stack.Screen
+          name={navigationStrings.AUTHSTACK}
+          component={AuthStack}
         />
       </Stack.Navigator>
     </NavigationContainer>
