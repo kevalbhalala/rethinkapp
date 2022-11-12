@@ -49,4 +49,51 @@ export const Strings = {
   quote:
     "Time goes on. So whatever you're going\nto do, do it. Do it now. Don't wait.",
   quoteAuthor: '-Robert De Niro',
+  filter: 'Filter',
+  applyFilters: 'Apply Filters',
+  transactionType: 'Transaction Type',
+  selectAll: 'Select all',
+  unSelectAll: 'Unselect all',
+  dateRange: 'Date Range',
+  from: 'From',
+  to: 'To',
+  transactionCategory: 'Transaction Category',
+  category: 'Category',
+  income: 'Income',
+  spending: 'Spending',
+  searchByName: 'Search by name',
+  activity: 'Activity',
+  accountCashFlow: 'Account Cash Flow',
+  netCashFlow: 'Net Cash Flow',
 };
+
+export const transactionsTypes = [
+  {
+    title: 'Income',
+    types: ['External Deposit', 'Deposit'],
+  },
+  {
+    title: 'Spending',
+    types: [
+      'POS Withdrawal',
+      'Check',
+      'External Withdrawal',
+      'ATM Withdrawal',
+      'Withdrawal',
+      'Express Free',
+    ],
+  },
+];
+
+export const dateRange = [
+  'All time',
+  'Year to date',
+  'Quater to Date',
+  'Month to date',
+  '1 year',
+  '30 days',
+  '7 days',
+  'Custom',
+];
+
+export const activity = ['All activity', 'Income', 'Spending'];

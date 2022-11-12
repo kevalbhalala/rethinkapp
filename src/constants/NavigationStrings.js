@@ -9,4 +9,6 @@ export const navigationStrings = {
   INTRO: 'Intro',
   LOGIN: 'Login',
   RESETPASSWORD: 'Reset Password',
+  TRANSACTIONS: 'Transactions',
+  FINANCIALINSIGHTS: 'Financial Insights',
 };

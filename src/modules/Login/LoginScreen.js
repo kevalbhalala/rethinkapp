@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import {
   Image,
   KeyboardAvoidingView,
@@ -6,14 +6,14 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import {TextInput} from 'react-native-paper';
-import {Icons} from '../../assets';
-import {CustomButton, CustomHeader} from '../../components';
-import {navigationStrings, Strings} from '../../constants';
-import {Colors, isIos} from '../../theme';
+import { TextInput } from 'react-native-paper';
+import { Icons } from '../../assets';
+import { CustomButton, CustomHeader } from '../../components';
+import { navigationStrings, Strings } from '../../constants';
+import { Colors, isIos } from '../../theme';
 import styles from './LoginStyle';
 
-const LoginScreen = ({navigation}) => {
+const LoginScreen = ({ navigation }) => {
   const [passwordVisible, setPasswordVisible] = useState(false);
 
   const onPressHeaderback = () => {
@@ -27,7 +27,7 @@ const LoginScreen = ({navigation}) => {
   return (
     <KeyboardAvoidingView
       behavior={isIos ? 'padding' : 'height'}
-      style={{flex: 1}}>
+      style={{ flex: 1 }}>
       <View style={styles.screen}>
         <CustomHeader onPressBack={onPressHeaderback} />
         <View style={styles.container}>
@@ -61,7 +61,7 @@ const LoginScreen = ({navigation}) => {
             }
           />
           <CustomButton
-            onBtnPress={() => {}}
+            onBtnPress={() => navigation.navigate(navigationStrings.BOTTOMTABSNAV)}
             buttonTitle={Strings.login}
             buttonStyle={styles.loginBtn}
             buttonTitleStyle={styles.loginText}
@@ -71,7 +71,7 @@ const LoginScreen = ({navigation}) => {
           </TouchableOpacity>
           <View style={styles.applyNowParent}>
             <Text style={styles.newToRethink}>{Strings.newToRethink}</Text>
-            <TouchableOpacity onPress={() => {}}>
+            <TouchableOpacity onPress={() => { }}>
               <Text style={styles.applyNow}>
                 {Strings.applyNow?.toUpperCase()}
               </Text>

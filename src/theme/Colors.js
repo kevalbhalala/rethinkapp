@@ -10,4 +10,5 @@ export default {
   grey600: '#757575',
   grey700: '#616161',
   emerald: '#008A00',
+  black50: '#00000080',
 };

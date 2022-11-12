@@ -7,11 +7,15 @@ const CustomButton = ({
   buttonTitleStyle,
   buttonTitle,
   onBtnPress,
+  buttonActiveOpacity,
+  buttonDisable,
 }) => {
   return (
     <TouchableOpacity
+      disabled={buttonDisable ?? false}
       style={[styles.defaultButtonStyle, buttonStyle]}
-      onPress={onBtnPress}>
+      onPress={onBtnPress}
+      activeOpacity={buttonActiveOpacity ?? 0.2}>
       <Text style={[styles.defaultTextStyle, buttonTitleStyle]}>
         {buttonTitle ?? 'Press Here'}
       </Text>

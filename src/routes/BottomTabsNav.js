@@ -1,19 +1,21 @@
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import React from 'react';
 import AntIcon from 'react-native-vector-icons/AntDesign';
 import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome';
-import {navigationStrings} from '../constants';
-import {Account, Activity, Apps, Dashboard, MoveMoney} from '../modules';
-import {Colors} from '../theme';
+import { navigationStrings } from '../constants';
+import { Account, Activity, Apps, Dashboard, MoveMoney } from '../modules';
+import { Colors } from '../theme';
+import ActivityTopTabs from './ActivityTopTabs';
 
 const Tab = createBottomTabNavigator();
 
 const BottomTabsNav = () => {
   return (
     <Tab.Navigator
-      screenOptions={({route}) => ({
+      initialRouteName={navigationStrings.DASHBOARD}
+      screenOptions={({ route }) => ({
         headerShown: false,
-        tabBarIcon: ({color}) => {
+        tabBarIcon: ({ color }) => {
           let iconName;
           if (route.name === navigationStrings.DASHBOARD) {
             iconName = 'dashboard';
@@ -36,7 +38,10 @@ const BottomTabsNav = () => {
         tabBarActiveTintColor: Colors.blue,
       })}>
       <Tab.Screen name={navigationStrings.DASHBOARD} component={Dashboard} />
-      <Tab.Screen name={navigationStrings.ACTIVITY} component={Activity} />
+      <Tab.Screen
+        name={navigationStrings.ACTIVITY}
+        component={ActivityTopTabs}
+      />
       <Tab.Screen name={navigationStrings.MOVEMONEY} component={MoveMoney} />
       <Tab.Screen name={navigationStrings.ACCOUNT} component={Account} />
       <Tab.Screen name={navigationStrings.APPS} component={Apps} />

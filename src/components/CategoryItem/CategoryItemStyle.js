@@ -1,0 +1,36 @@
+import {StyleSheet} from 'react-native';
+import {
+  Colors,
+  horizontalScale,
+  moderateScale,
+  verticalScale,
+} from '../../theme';
+
+const styles = StyleSheet.create({
+  container: {
+    flexDirection: 'row',
+    marginVertical: verticalScale(12),
+    alignItems: 'center',
+  },
+  iconParent: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    overflow: 'hidden',
+    height: moderateScale(30),
+    width: moderateScale(30),
+    borderRadius: moderateScale(20),
+  },
+  logo: {
+    height: '100%',
+    width: '100%',
+  },
+  categoryName: {
+    flex: 1,
+    fontWeight: '800',
+    color: Colors.black,
+    fontSize: moderateScale(16),
+    marginHorizontal: horizontalScale(10),
+  },
+});
+
+export default styles;
