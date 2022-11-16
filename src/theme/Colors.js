@@ -11,4 +11,8 @@ export default {
   grey700: '#616161',
   emerald: '#008A00',
   black50: '#00000080',
+  blue900: '#0D47A1',
+  blue10050: '#BBDEFB80',
+  green900: '#1B5E20',
+  green10050: '#C8E6C980',
 };

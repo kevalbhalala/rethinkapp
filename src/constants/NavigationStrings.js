@@ -11,4 +11,5 @@ export const navigationStrings = {
   RESETPASSWORD: 'Reset Password',
   TRANSACTIONS: 'Transactions',
   FINANCIALINSIGHTS: 'Financial Insights',
+  MAKEPAYMENT: 'Make Payment',
 };

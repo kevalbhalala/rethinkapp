@@ -4,6 +4,7 @@ export * from './Dashboard';
 export * from './FinancialInsights';
 export * from './Intro';
 export * from './Login';
+export * from './MakePayment';
 export * from './MoveMoney';
 export * from './ResetPassword';
 export * from './Transactions';
