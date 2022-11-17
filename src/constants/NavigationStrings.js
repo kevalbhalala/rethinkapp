@@ -12,4 +12,7 @@ export const navigationStrings = {
   TRANSACTIONS: 'Transactions',
   FINANCIALINSIGHTS: 'Financial Insights',
   MAKEPAYMENT: 'Make Payment',
+  ADDPAYEE: 'Add Payee',
+  BANKTRANSFER: 'Bank Transfer',
+  PAPERCHECK: 'Paper Check',
 };

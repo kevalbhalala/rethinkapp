@@ -2,7 +2,7 @@ import React from 'react';
 import {Image, Text, View} from 'react-native';
 import {Icons} from '../../assets';
 import {CustomButton, CustomHeader} from '../../components';
-import {Strings} from '../../constants';
+import {navigationStrings, Strings} from '../../constants';
 import styles from './MakePaymentStyle';
 
 const MakePaymentScreen = ({navigation}) => {
@@ -25,6 +25,7 @@ const MakePaymentScreen = ({navigation}) => {
           buttonTitle={Strings.addPayee}
           buttonStyle={styles.addPayeeButton}
           buttonTitleStyle={styles.addPayee}
+          onBtnPress={() => navigation.navigate(navigationStrings.ADDPAYEE)}
         />
       </View>
     </View>

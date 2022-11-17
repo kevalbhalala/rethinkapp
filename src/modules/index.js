@@ -1,4 +1,5 @@
 export * from './Account';
+export * from './AddPayee';
 export * from './Apps';
 export * from './Dashboard';
 export * from './FinancialInsights';

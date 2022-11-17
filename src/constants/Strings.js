@@ -88,6 +88,25 @@ export const Strings = {
   addPayeesToSendPayments: 'Add your payees to send payments',
   sendMoneyPayeesBank:
     'Send money to your payees via bank transfer or paper check.',
+  choosePayMethod: 'Choose a payment method',
+  bankTransfer: 'Bank Transfer (ACH)',
+  paperCheck: 'Paper Check',
+  legalName: 'Legal Name',
+  nickname: 'Nickname',
+  accountNumber: 'Account Number',
+  routingNumber: 'Routing Number',
+  emailOptional: 'Email (Optional)',
+  notes: 'Notes',
+  checkingAccount: 'Checking Account',
+  onlyVisible: 'Only visible to you',
+  review: 'Review',
+  type: 'Type',
+  willAppearOnPaperCheck: 'This will appear on the paper check',
+  address: 'Address',
+  unitSuite: 'Unit / Suite',
+  city: 'City',
+  zip: 'Zip',
+  state: 'State',
 };
 
 export const transactionsTypes = [
@@ -120,3 +139,6 @@ export const dateRange = [
 ];
 
 export const activity = ['All activity', 'Income', 'Spending'];
+4;
+
+export const type = ['Person', 'Business'];
