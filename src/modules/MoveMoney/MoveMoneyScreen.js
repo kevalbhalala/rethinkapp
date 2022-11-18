@@ -31,6 +31,7 @@ const MoveMoneyScreen = ({navigation}) => {
           tagOneBackground={Colors.green10050}
           tagTwoTextStyle={styles.greyText}
           tagTwoBackground={Colors.grey200}
+          onPressCard={() => navigation.navigate(navigationStrings.FUNDACCOUNT)}
         />
         <MoveMoneyCard
           title={Strings.connectPlatforms}
@@ -42,6 +43,9 @@ const MoveMoneyScreen = ({navigation}) => {
           tagOneBackground={Colors.green10050}
           tagTwoTextStyle={styles.darkBlueText}
           tagTwoBackground={Colors.blue10050}
+          onPressCard={() =>
+            navigation.navigate(navigationStrings.CONNECTEDPAYPLATFORMS)
+          }
         />
         <MoveMoneyCard
           title={Strings.transferVirtualCard}
@@ -53,6 +57,9 @@ const MoveMoneyScreen = ({navigation}) => {
           tagOneBackground={Colors.blue10050}
           tagTwoTextStyle={styles.darkBlueText}
           tagTwoBackground={Colors.blue10050}
+          onPressCard={() =>
+            navigation.navigate(navigationStrings.TRANSFERVIRTUALCARD)
+          }
         />
         <MoveMoneyCard
           title={Strings.pushFundAnotherBank}
@@ -64,6 +71,7 @@ const MoveMoneyScreen = ({navigation}) => {
           tagOneBackground={Colors.grey200}
           tagTwoTextStyle={styles.darkBlueText}
           tagTwoBackground={Colors.blue10050}
+          onPressCard={() => navigation.navigate(navigationStrings.PUSHFUND)}
         />
         <MoveMoneyCard
           title={Strings.depositeCheckFromPhone}
@@ -75,6 +83,9 @@ const MoveMoneyScreen = ({navigation}) => {
           tagOneBackground={Colors.grey200}
           tagTwoTextStyle={styles.darkGreenText}
           tagTwoBackground={Colors.green10050}
+          onPressCard={() =>
+            navigation.navigate(navigationStrings.DEPOSITCHECK)
+          }
         />
       </ScrollView>
     </View>

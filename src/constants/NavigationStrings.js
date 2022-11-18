@@ -15,4 +15,10 @@ export const navigationStrings = {
   ADDPAYEE: 'Add Payee',
   BANKTRANSFER: 'Bank Transfer',
   PAPERCHECK: 'Paper Check',
+  FUNDACCOUNT: 'Fund Account',
+  CONNECTEDPAYPLATFORMS: 'Connected Payment Platforms',
+  TRANSFERVIRTUALCARD: 'Transfer Virtual Card',
+  PUSHFUND: 'Push Fund',
+  DEPOSITCHECK: 'Deposit Check',
+  VERIFYIDENTITY: 'Verify Identity',
 };

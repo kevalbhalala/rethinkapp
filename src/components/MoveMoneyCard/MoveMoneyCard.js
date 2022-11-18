@@ -16,6 +16,7 @@ const MoveMoneyCard = ({
   tagTwoBackground,
   cardStyle,
   onPressCard,
+  rightIcon = true,
 }) => {
   return (
     <TouchableOpacity
@@ -51,7 +52,11 @@ const MoveMoneyCard = ({
         )}
       </View>
       <View style={styles.rightParent}>
-        <Icon name={'chevron-right'} size={moderateScale(20)} />
+        {rightIcon ? (
+          <Icon name={'chevron-right'} size={moderateScale(20)} />
+        ) : (
+          <></>
+        )}
       </View>
     </TouchableOpacity>
   );

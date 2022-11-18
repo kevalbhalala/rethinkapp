@@ -107,6 +107,37 @@ export const Strings = {
   city: 'City',
   zip: 'Zip',
   state: 'State',
+  seamlessDeposits: 'A seamless way to make smaller deposits',
+  connectExternalBankAccount:
+    'Connect an external bank account to make deposits. If you need to make large deposits. we recommend pushing funds from another bank.',
+  addExternalAccount: 'Add External Account',
+  bestOptionEarnMoney:
+    'The best option if you earn money on major platforms and payment providers',
+  usePlatforms:
+    'Use platforms like Square, Stripe, and Shopfiy to directly deposit money into your Rethink account. Make sure that Rethink is your default bank account for any deposits you receive on these platforms.',
+  goToRethinkApps: 'Go to Rethink Apps',
+  goToApp: 'Go to app',
+  venmo: 'Venmo',
+  paypal: 'PayPal',
+  addFundsCard: 'Add funds instantly with your card',
+  copyPasteCard:
+    'Copy and paste your virtual card details into one of the following:',
+  greatOptionLargeDeposit: 'A great option to make a large deposit',
+  initiateTransferExternalBank:
+    'Initiate a transfer from an external bank account (no limits apply).',
+  routingNumber: 'Routing Number',
+  accountNumber: 'Account Number',
+  view: 'View',
+  easyWayLargeDeposits: 'An easy way to make large deposits to your account',
+  depositCheckLimit:
+    'Deposit check through the Rethink mobile app (up to $20,000 a day).',
+  verifyIdentity: 'Verify Identity',
+  addYourId: 'Add your ID and\ncomplete your profile',
+  verifyIdentitySubtitle:
+    "We must go the extra mile to protect your Rethink account from financial crime by making sure it's really you.",
+  verifyYourIdentity: 'Verify Your Identity',
+  takePhotoId: 'Take a photo of your ID',
+  takephotoYourself: 'Take a photo of yourself',
 };
 
 export const transactionsTypes = [
