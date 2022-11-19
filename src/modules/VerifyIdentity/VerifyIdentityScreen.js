@@ -38,7 +38,7 @@ const VerifyIdentityScreen = ({navigation}) => {
           buttonTitle={Strings.verifyIdentity}
           buttonStyle={styles.verifyIdentityButton}
           buttonTitleStyle={styles.verifyIdentity}
-          onBtnPress={() => navigation.navigate(navigationStrings.ADDPAYEE)}
+          onBtnPress={() => navigation.navigate(navigationStrings.SELECTIDADD)}
         />
       </View>
     </View>

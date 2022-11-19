@@ -15,4 +15,5 @@ export default {
   blue10050: '#BBDEFB80',
   green900: '#1B5E20',
   green10050: '#C8E6C980',
+  orange: '#EF6C00',
 };

@@ -11,7 +11,10 @@ import {
   MakePayment,
   PaperCheck,
   PushFund,
+  ScanId,
+  SelectIdAdd,
   TransferVirtualCard,
+  UsDriverLicense,
   VerifyIdentity,
 } from '../modules';
 import AuthStack from './AuthStack';
@@ -68,6 +71,15 @@ const MainStack = () => {
           name={navigationStrings.VERIFYIDENTITY}
           component={VerifyIdentity}
         />
+        <Stack.Screen
+          name={navigationStrings.SELECTIDADD}
+          component={SelectIdAdd}
+        />
+        <Stack.Screen
+          name={navigationStrings.USDRIVERLICENSE}
+          component={UsDriverLicense}
+        />
+        <Stack.Screen name={navigationStrings.SCANID} component={ScanId} />
       </Stack.Navigator>
     </NavigationContainer>
   );

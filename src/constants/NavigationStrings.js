@@ -21,4 +21,7 @@ export const navigationStrings = {
   PUSHFUND: 'Push Fund',
   DEPOSITCHECK: 'Deposit Check',
   VERIFYIDENTITY: 'Verify Identity',
+  SELECTIDADD: 'Select Id Add',
+  USDRIVERLICENSE: 'Us Driver License',
+  SCANID: 'Scan Id',
 };
