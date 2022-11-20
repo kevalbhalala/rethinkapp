@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native';
+import {Fonts} from '../../assets';
 import {
   Colors,
   horizontalScale,
@@ -29,10 +30,11 @@ const styles = StyleSheet.create({
     flex: 0.7,
     color: Colors.black,
     fontSize: moderateScale(18),
-    fontWeight: '500',
+    fontFamily: Fonts.bold,
   },
   blackText: {
     color: Colors.black,
+    fontFamily: Fonts.regular,
   },
   bottomSpace: {
     marginBottom: verticalScale(20),

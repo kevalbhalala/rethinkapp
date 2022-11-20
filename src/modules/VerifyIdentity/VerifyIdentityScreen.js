@@ -30,8 +30,8 @@ const VerifyIdentityScreen = ({navigation}) => {
             color={Colors.blue}
           />
         </View>
-        <Text>{`1. ${Strings.takePhotoId}`}</Text>
-        <Text>{`2. ${Strings.takephotoYourself}`}</Text>
+        <Text style={styles.subInfo}>{`1. ${Strings.takePhotoId}`}</Text>
+        <Text style={styles.subInfo}>{`2. ${Strings.takephotoYourself}`}</Text>
       </View>
       <View style={styles.verifyIdentityParent}>
         <CustomButton

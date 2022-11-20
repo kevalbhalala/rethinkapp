@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native';
+import {Fonts} from '../../assets';
 import {Colors, horizontalScale, verticalScale} from '../../theme';
 
 const styles = StyleSheet.create({
@@ -11,6 +12,7 @@ const styles = StyleSheet.create({
   },
   defaultTextStyle: {
     color: Colors.white,
+    fontFamily: Fonts.regular,
   },
 });
 

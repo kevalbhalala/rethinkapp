@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native';
+import {Fonts} from '../../../assets';
 import {
   Colors,
   horizontalScale,
@@ -27,6 +28,7 @@ const styles = StyleSheet.create({
   },
   subTitle: {
     marginBottom: verticalScale(25),
+    fontFamily: Fonts.regular,
   },
   scrollView: {
     flex: 1,
@@ -35,6 +37,7 @@ const styles = StyleSheet.create({
     color: Colors.black,
     marginLeft: horizontalScale(10),
     fontSize: moderateScale(16),
+    fontFamily: Fonts.regular,
   },
   card: {
     flex: 1,
@@ -104,7 +107,7 @@ const styles = StyleSheet.create({
   modalTitle: {
     color: Colors.black,
     fontSize: moderateScale(24),
-    fontWeight: '700',
+    fontFamily: Fonts.bold,
   },
   divider: {
     backgroundColor: Colors.grey400,
@@ -130,6 +133,12 @@ const styles = StyleSheet.create({
   cityParent: {
     flexDirection: 'row',
     justifyContent: 'space-between',
+  },
+  onlyVisible: {
+    fontFamily: Fonts.regular,
+  },
+  rangeText: {
+    fontFamily: Fonts.regular,
   },
 });
 

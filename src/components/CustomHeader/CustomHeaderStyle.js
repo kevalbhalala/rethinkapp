@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native';
+import {Fonts} from '../../assets';
 import {
   Colors,
   horizontalScale,
@@ -21,6 +22,7 @@ const styles = StyleSheet.create({
     fontSize: moderateScale(20),
     color: Colors.black,
     marginLeft: horizontalScale(12),
+    fontFamily: Fonts.regular,
   },
 });
 

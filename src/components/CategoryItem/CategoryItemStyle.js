@@ -5,6 +5,7 @@ import {
   moderateScale,
   verticalScale,
 } from '../../theme';
+import {Fonts} from '../../assets';
 
 const styles = StyleSheet.create({
   container: {
@@ -26,7 +27,7 @@ const styles = StyleSheet.create({
   },
   categoryName: {
     flex: 1,
-    fontWeight: '800',
+    fontFamily: Fonts.bold,
     color: Colors.black,
     fontSize: moderateScale(16),
     marginHorizontal: horizontalScale(10),

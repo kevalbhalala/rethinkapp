@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native';
+import {Fonts} from '../../assets';
 import {
   Colors,
   horizontalScale,
@@ -14,6 +15,9 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
+  },
+  choosePayMethod: {
+    fontFamily: Fonts.regular,
   },
   card: {
     width: '100%',
@@ -35,7 +39,7 @@ const styles = StyleSheet.create({
   detailText: {
     color: Colors.black,
     fontSize: moderateScale(18),
-    fontWeight: '600',
+    fontFamily: Fonts.bold,
   },
   rightParent: {
     flex: 0.1,

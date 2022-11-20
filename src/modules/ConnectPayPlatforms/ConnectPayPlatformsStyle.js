@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native';
+import {Fonts} from '../../assets';
 import {
   Colors,
   horizontalScale,
@@ -32,10 +33,12 @@ const styles = StyleSheet.create({
     color: Colors.black,
     marginVertical: verticalScale(10),
     fontSize: moderateScale(16),
+    fontFamily: Fonts.regular,
   },
   descriptionSubtitle: {
     fontSize: moderateScale(16),
     marginBottom: verticalScale(18),
+    fontFamily: Fonts.regular,
   },
   goToButtonParent: {
     height: verticalScale(70),

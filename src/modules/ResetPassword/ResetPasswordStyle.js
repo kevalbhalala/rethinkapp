@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native';
+import {Fonts} from '../../assets';
 import {
   Colors,
   horizontalScale,
@@ -31,7 +32,8 @@ const styles = StyleSheet.create({
   },
   emailQuestion: {
     color: Colors.black,
-    fontWeight: '600',
+    fontFamily: Fonts.regular,
+
     fontSize: moderateScale(16),
   },
   textInput: {
@@ -50,7 +52,7 @@ const styles = StyleSheet.create({
   },
   confirmText: {
     fontSize: moderateScale(18),
-    fontWeight: '600',
+    fontFamily: Fonts.regular,
   },
 });
 

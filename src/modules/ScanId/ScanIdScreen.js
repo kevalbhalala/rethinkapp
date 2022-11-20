@@ -44,7 +44,7 @@ const ScanIdScreen = ({navigation}) => {
               <Text style={styles.cardTitle}>{Strings.cancelCapture}</Text>
             </View>
             <View style={styles.cardSubtitleParent}>
-              <Text>{Strings.exitNote}</Text>
+              <Text style={styles.exitNote}>{Strings.exitNote}</Text>
             </View>
             <View style={styles.cardButtonsParent}>
               <TouchableOpacity

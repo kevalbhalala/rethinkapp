@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native';
+import {Fonts} from '../../assets';
 import {
   Colors,
   horizontalScale,
@@ -29,7 +30,7 @@ const styles = StyleSheet.create({
   title: {
     color: Colors.black,
     fontSize: moderateScale(28),
-    fontWeight: '700',
+    fontFamily: Fonts.bold,
     lineHeight: verticalScale(40),
     marginTop: verticalScale(20),
   },
@@ -37,7 +38,7 @@ const styles = StyleSheet.create({
     color: Colors.black,
     fontSize: moderateScale(16),
     marginTop: verticalScale(10),
-    fontWeight: '300',
+    fontFamily: Fonts.light,
     lineHeight: verticalScale(24),
   },
   yourIdentity: {
@@ -46,6 +47,7 @@ const styles = StyleSheet.create({
   },
   verifyYourIdentity: {
     marginRight: horizontalScale(10),
+    fontFamily: Fonts.regular,
   },
   verifyIdentityParent: {
     position: 'absolute',
@@ -63,6 +65,9 @@ const styles = StyleSheet.create({
     height: verticalScale(50),
     borderRadius: moderateScale(50),
     alignSelf: 'center',
+  },
+  subInfo: {
+    fontFamily: Fonts.regular,
   },
 });
 

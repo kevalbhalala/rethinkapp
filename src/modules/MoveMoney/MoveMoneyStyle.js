@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native';
+import {Fonts} from '../../assets';
 import {Colors, horizontalScale, moderateScale} from '../../theme';
 
 const styles = StyleSheet.create({
@@ -15,11 +16,12 @@ const styles = StyleSheet.create({
   balance: {
     color: Colors.black,
     fontSize: moderateScale(40),
-    fontWeight: '800',
+    fontFamily: Fonts.bold,
   },
   availableNow: {
     color: Colors.black,
     fontSize: moderateScale(16),
+    fontFamily: Fonts.regular,
   },
   scrollView: {
     flex: 0.7,
@@ -27,12 +29,15 @@ const styles = StyleSheet.create({
   },
   darkBlueText: {
     color: Colors.blue900,
+    fontFamily: Fonts.regular,
   },
   darkGreenText: {
     color: Colors.green900,
+    fontFamily: Fonts.regular,
   },
   greyText: {
     color: Colors.grey500,
+    fontFamily: Fonts.regular,
   },
 });
 

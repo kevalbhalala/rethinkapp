@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native';
+import {Fonts} from '../../assets';
 import {
   Colors,
   horizontalScale,
@@ -23,7 +24,7 @@ const styles = StyleSheet.create({
   },
   date: {
     color: Colors.black,
-    fontWeight: '500',
+    fontFamily: Fonts.bold,
   },
   chartParent: {
     alignItems: 'center',
@@ -44,6 +45,7 @@ const styles = StyleSheet.create({
   },
   cardTitle: {
     color: Colors.black,
+    fontFamily: Fonts.regular,
   },
   cardDetail: {
     marginHorizontal: horizontalScale(10),
@@ -55,12 +57,15 @@ const styles = StyleSheet.create({
   },
   incomeNumber: {
     color: Colors.emerald,
+    fontFamily: Fonts.regular,
   },
   blackText: {
     color: Colors.black,
+    fontFamily: Fonts.regular,
   },
   netCashNumber: {
     color: Colors.blue,
+    fontFamily: Fonts.regular,
   },
   modalParent: {
     flex: 1,
@@ -79,7 +84,7 @@ const styles = StyleSheet.create({
   modalTitle: {
     color: Colors.black,
     fontSize: moderateScale(24),
-    fontWeight: '700',
+    fontFamily: Fonts.bold,
   },
   divider: {
     backgroundColor: Colors.grey400,

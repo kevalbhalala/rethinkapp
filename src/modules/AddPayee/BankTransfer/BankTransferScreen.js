@@ -102,8 +102,8 @@ const BankTransferScreen = ({navigation}) => {
                 maxLength={250}
               />
               <View style={styles.onlyVisibleParent}>
-                <Text>{Strings.onlyVisible}</Text>
-                <Text>0/250</Text>
+                <Text style={styles.onlyVisible}>{Strings.onlyVisible}</Text>
+                <Text style={styles.rangeText}>0/250</Text>
               </View>
             </ScrollView>
           </KeyboardAvoidingView>

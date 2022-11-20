@@ -16,7 +16,9 @@ const AddPayeeScreen = ({navigation}) => {
         onPressBack={() => navigation.goBack()}
       />
       <View style={styles.container}>
-        <Text>{Strings.choosePayMethod?.toUpperCase()}</Text>
+        <Text style={styles.choosePayMethod}>
+          {Strings.choosePayMethod?.toUpperCase()}
+        </Text>
         <TouchableOpacity
           style={styles.card}
           onPress={() => navigation.navigate(navigationStrings.BANKTRANSFER)}>

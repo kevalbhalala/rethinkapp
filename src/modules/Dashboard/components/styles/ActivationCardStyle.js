@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native';
+import {Fonts} from '../../../../assets';
 import {
   Colors,
   horizontalScale,
@@ -24,7 +25,7 @@ const styles = StyleSheet.create({
   title: {
     color: Colors.black,
     fontSize: moderateScale(18),
-    fontWeight: '700',
+    fontFamily: Fonts.bold,
   },
   progressBarParent: {
     flex: 0.3,
@@ -51,6 +52,7 @@ const styles = StyleSheet.create({
   detail: {
     color: Colors.black,
     textAlign: 'center',
+    fontFamily: Fonts.regular,
   },
 });
 

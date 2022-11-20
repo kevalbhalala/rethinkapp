@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native';
+import {Fonts} from '../../../../assets';
 import {
   Colors,
   horizontalScale,
@@ -25,7 +26,7 @@ const styles = StyleSheet.create({
   headerTitle: {
     color: Colors.black,
     fontSize: moderateScale(20),
-    fontWeight: '700',
+    fontFamily: Fonts.bold,
   },
   divider: {
     backgroundColor: Colors.grey300,

@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native';
+import {Fonts} from '../../assets';
 import {
   Colors,
   horizontalScale,
@@ -56,7 +57,7 @@ const styles = StyleSheet.create({
   suggestionText: {
     color: Colors.white,
     fontSize: moderateScale(16),
-    fontWeight: '600',
+    fontFamily: Fonts.bold,
     zIndex: 1,
   },
   frame: {
@@ -97,7 +98,7 @@ const styles = StyleSheet.create({
   cardTitle: {
     color: Colors.black,
     fontSize: moderateScale(16),
-    fontWeight: '600',
+    fontFamily: Fonts.bold,
   },
   modalButton: {
     backgroundColor: Colors.orange,
@@ -110,7 +111,10 @@ const styles = StyleSheet.create({
   modalButtonText: {
     color: Colors.white,
     fontSize: moderateScale(16),
-    fontWeight: '700',
+    fontFamily: Fonts.bold,
+  },
+  exitNote: {
+    fontFamily: Fonts.regular,
   },
 });
 

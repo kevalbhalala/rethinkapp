@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native';
+import {Fonts} from '../../assets';
 import {
   Colors,
   horizontalScale,
@@ -33,11 +34,12 @@ const styles = StyleSheet.create({
     color: Colors.black,
     marginVertical: verticalScale(10),
     fontSize: moderateScale(18),
-    fontWeight: '600',
+    fontFamily: Fonts.bold,
   },
   descriptionSubtitle: {
     fontSize: moderateScale(16),
     marginBottom: verticalScale(18),
+    fontFamily: Fonts.regular,
   },
   socialCard: {
     flexDirection: 'row',
@@ -59,9 +61,11 @@ const styles = StyleSheet.create({
   appTitle: {
     color: Colors.black,
     fontSize: moderateScale(18),
-    fontWeight: '600',
+    fontFamily: Fonts.bold,
   },
-  goToApp: {},
+  goToApp: {
+    fontFamily: Fonts.regular,
+  },
   rightIcon: {
     flex: 0.2,
     alignItems: 'flex-end',

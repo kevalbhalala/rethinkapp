@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native';
+import {Fonts} from '../../../../assets';
 import {
   Colors,
   horizontalScale,
@@ -32,7 +33,7 @@ const styles = StyleSheet.create({
   cardHeaderText: {
     color: Colors.black,
     fontSize: moderateScale(18),
-    fontWeight: '700',
+    fontFamily: Fonts.bold,
   },
   datePickerParent: {
     flexDirection: 'row',
@@ -48,11 +49,11 @@ const styles = StyleSheet.create({
   trasactionTypeHeaderTitle: {
     color: Colors.black,
     fontSize: moderateScale(14),
-    fontWeight: '600',
+    fontFamily: Fonts.bold,
   },
   selectAll: {
     color: Colors.blue,
-    fontWeight: '600',
+    fontFamily: Fonts.bold,
   },
   typesParent: {
     flexWrap: 'wrap',
@@ -113,7 +114,7 @@ const styles = StyleSheet.create({
   dateRangePickerHeader: {
     color: Colors.black,
     fontSize: moderateScale(22),
-    fontWeight: '700',
+    fontFamily: Fonts.bold,
     marginLeft: horizontalScale(18),
     marginBottom: verticalScale(10),
   },
@@ -158,7 +159,7 @@ const styles = StyleSheet.create({
   categoryDetailTitle: {
     color: Colors.black,
     fontSize: moderateScale(10),
-    fontWeight: '600',
+    fontFamily: Fonts.bold,
   },
 });
 

@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native';
+import {Fonts} from '../../assets';
 import {
   Colors,
   horizontalScale,
@@ -45,10 +46,11 @@ const styles = StyleSheet.create({
   title: {
     color: Colors.black,
     fontSize: moderateScale(18),
-    fontWeight: '600',
+    fontFamily: Fonts.bold,
   },
   subTitle: {
     color: Colors.grey500,
+    fontFamily: Fonts.regular,
   },
   tagParent: {
     height: verticalScale(20),
@@ -58,6 +60,12 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     borderRadius: moderateScale(4),
     marginHorizontal: horizontalScale(4),
+  },
+  tagOne: {
+    fontFamily: Fonts.regular,
+  },
+  tagTwo: {
+    fontFamily: Fonts.regular,
   },
   rightParent: {
     position: 'absolute',

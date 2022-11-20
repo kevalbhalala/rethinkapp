@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native';
+import {Fonts} from '../../assets';
 import {
   Colors,
   horizontalScale,
@@ -38,14 +39,14 @@ const styles = StyleSheet.create({
   },
   loginText: {
     fontSize: moderateScale(18),
-    fontWeight: '600',
+    fontFamily: Fonts.bold,
   },
   resetPassword: {
     color: Colors.blue,
     fontSize: moderateScale(16),
     alignSelf: 'center',
     marginTop: verticalScale(18),
-    fontWeight: '500',
+    fontFamily: Fonts.bold,
   },
   applyNowParent: {
     flex: 0.45,
@@ -56,10 +57,11 @@ const styles = StyleSheet.create({
   newToRethink: {
     color: Colors.black,
     fontSize: moderateScale(14),
+    fontFamily: Fonts.regular,
   },
   applyNow: {
     color: Colors.black,
-    fontWeight: '600',
+    fontFamily: Fonts.bold,
     fontSize: moderateScale(16),
     marginLeft: horizontalScale(4),
   },

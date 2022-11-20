@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native';
+import {Fonts} from '../../assets';
 import {
   Colors,
   horizontalScale,
@@ -18,7 +19,7 @@ const styles = StyleSheet.create({
   makePayment: {
     color: Colors.black,
     fontSize: moderateScale(32),
-    fontWeight: '600',
+    fontFamily: Fonts.bold,
     marginTop: verticalScale(20),
   },
   userLogo: {
@@ -29,7 +30,7 @@ const styles = StyleSheet.create({
   title: {
     color: Colors.black,
     fontSize: moderateScale(28),
-    fontWeight: '700',
+    fontFamily: Fonts.bold,
     lineHeight: verticalScale(40),
     marginTop: verticalScale(20),
   },
@@ -37,7 +38,7 @@ const styles = StyleSheet.create({
     color: Colors.black,
     fontSize: moderateScale(16),
     marginTop: verticalScale(10),
-    fontWeight: '300',
+    fontFamily: Fonts.light,
   },
   addPayeeParent: {
     position: 'absolute',

@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native';
+import {Fonts} from '../../assets';
 import {
   Colors,
   horizontalScale,
@@ -39,7 +40,7 @@ const styles = StyleSheet.create({
   cardTitle: {
     fontSize: moderateScale(18),
     color: Colors.black,
-    fontWeight: '700',
+    fontFamily: Fonts.bold,
   },
   cardSubTitleParent: {
     flex: 0.45,
@@ -47,6 +48,7 @@ const styles = StyleSheet.create({
   cardSubTitle: {
     fontSize: moderateScale(14),
     color: Colors.black,
+    fontFamily: Fonts.regular,
   },
   navigateTextParent: {
     flex: 0.25,
@@ -58,7 +60,7 @@ const styles = StyleSheet.create({
   navigateText: {
     fontSize: moderateScale(14),
     color: Colors.black,
-    fontWeight: '600',
+    fontFamily: Fonts.bold,
   },
 });
 

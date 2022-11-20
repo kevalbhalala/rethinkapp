@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native';
+import {Fonts} from '../../assets';
 import {
   Colors,
   horizontalScale,
@@ -19,7 +20,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: moderateScale(30),
     color: Colors.black,
-    fontWeight: '600',
+    fontFamily: Fonts.bold,
   },
   subTitleParent: {
     flex: 0.15,
@@ -28,6 +29,7 @@ const styles = StyleSheet.create({
   subTitle: {
     fontSize: moderateScale(16),
     color: Colors.black,
+    fontFamily: Fonts.regular,
   },
   applyButtonParent: {
     flex: 0.2,
@@ -41,7 +43,7 @@ const styles = StyleSheet.create({
   },
   applyText: {
     fontSize: moderateScale(18),
-    fontWeight: '600',
+    fontFamily: Fonts.medium,
   },
   completeApplicationBtn: {
     width: '100%',
@@ -50,7 +52,7 @@ const styles = StyleSheet.create({
   },
   completeApplicationText: {
     fontSize: moderateScale(18),
-    fontWeight: '600',
+    fontFamily: Fonts.medium,
   },
   dividerParent: {
     flex: 0.1,
@@ -81,7 +83,7 @@ const styles = StyleSheet.create({
   alreadyAccountText: {
     color: Colors.black,
     fontSize: moderateScale(18),
-    fontWeight: '700',
+    fontFamily: Fonts.medium,
   },
   introNoteParent: {
     flex: 0.32,
@@ -91,6 +93,7 @@ const styles = StyleSheet.create({
     color: Colors.black,
     fontSize: moderateScale(14),
     textAlign: 'center',
+    fontFamily: Fonts.regular,
   },
 });
 

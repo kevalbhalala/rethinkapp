@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native';
+import {Fonts} from '../../../../assets';
 import {
   Colors,
   horizontalScale,
@@ -25,7 +26,7 @@ const styles = StyleSheet.create({
   headerTitle: {
     color: Colors.black,
     fontSize: moderateScale(20),
-    fontWeight: '700',
+    fontFamily: Fonts.bold,
   },
   divider: {
     backgroundColor: Colors.grey300,
@@ -54,18 +55,18 @@ const styles = StyleSheet.create({
   availableBalance: {
     color: Colors.black,
     fontSize: moderateScale(16),
-    fontWeight: '600',
+    fontFamily: Fonts.bold,
     marginRight: horizontalScale(4),
   },
   availableBalanceNumber: {
     color: Colors.emerald,
     fontSize: moderateScale(18),
-    fontWeight: '700',
+    fontFamily: Fonts.bold,
   },
   balanceDetailText: {
     color: Colors.grey700,
     fontSize: moderateScale(14),
-    fontWeight: '600',
+    fontFamily: Fonts.bold,
   },
   overallBalanceParent: {
     height: verticalScale(60),
@@ -76,12 +77,12 @@ const styles = StyleSheet.create({
   overallBalanceText: {
     fontSize: moderateScale(16),
     color: Colors.black,
-    fontWeight: '600',
+    fontFamily: Fonts.bold,
   },
   overallBalanceNumber: {
     fontSize: moderateScale(16),
     color: Colors.emerald,
-    fontWeight: '600',
+    fontFamily: Fonts.bold,
   },
   monthDetailParent: {
     height: verticalScale(120),
@@ -97,6 +98,7 @@ const styles = StyleSheet.create({
   monthName: {
     color: Colors.black,
     fontSize: moderateScale(14),
+    fontFamily: Fonts.regular,
   },
   monthDetailDivider: {
     backgroundColor: Colors.grey400,
@@ -119,16 +121,17 @@ const styles = StyleSheet.create({
   },
   moneyDetailText: {
     color: Colors.black,
+    fontFamily: Fonts.regular,
   },
   moneyInNumber: {
     fontSize: moderateScale(16),
     color: Colors.emerald,
-    fontWeight: '600',
+    fontFamily: Fonts.bold,
   },
   moneyOutNumber: {
     fontSize: moderateScale(16),
     color: Colors.black,
-    fontWeight: '600',
+    fontFamily: Fonts.bold,
   },
 });
 

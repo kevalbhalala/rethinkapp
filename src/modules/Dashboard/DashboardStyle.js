@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native';
+import {Fonts} from '../../assets';
 import {
   Colors,
   horizontalScale,
@@ -29,11 +30,13 @@ const styles = StyleSheet.create({
     color: Colors.white,
     textAlign: 'center',
     fontSize: moderateScale(14),
+    fontFamily: Fonts.regular,
   },
   quoteAuthor: {
     color: Colors.white,
     textAlign: 'center',
     fontSize: moderateScale(10),
+    fontFamily: Fonts.regular,
   },
   balanceCardParent: {
     width: '100%',
