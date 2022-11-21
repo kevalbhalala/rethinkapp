@@ -3,6 +3,7 @@ export default {
   white: '#FFFFFF',
   black: '#000000',
   blue: '#1652F0',
+  blue50: '#1652F080',
   grey200: '#EEEEEE',
   grey300: '#E0E0E0',
   grey400: '#BDBDBD',
@@ -16,4 +17,5 @@ export default {
   green900: '#1B5E20',
   green10050: '#C8E6C980',
   orange: '#EF6C00',
+  red: '#FF0000',
 };

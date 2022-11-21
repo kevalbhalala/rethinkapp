@@ -87,6 +87,15 @@ const MoveMoneyScreen = ({navigation}) => {
             navigation.navigate(navigationStrings.DEPOSITCHECK)
           }
         />
+        <MoveMoneyCard
+          title={Strings.depositCheck}
+          subTitle={Strings.depositBusinessDayOneFour}
+          icon={Icons.money}
+          tagOne={Strings.forLargeDeposits}
+          tagOneTextStyle={styles.greyText}
+          tagOneBackground={Colors.grey200}
+          onPressCard={() => navigation.navigate(navigationStrings.MAKEDEPOSIT)}
+        />
       </ScrollView>
     </View>
   );

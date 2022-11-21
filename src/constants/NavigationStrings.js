@@ -24,4 +24,9 @@ export const navigationStrings = {
   SELECTIDADD: 'Select Id Add',
   USDRIVERLICENSE: 'Us Driver License',
   SCANID: 'Scan Id',
+  MAKEDEPOSIT: 'Make Deposit',
+  DEPOSITCHECKAMT: 'Deposit Check Amount',
+  SIGNENDORSE: 'SignEndorse',
+  CAPTURECHECKNOTE: 'Capture Check Note',
+  DEPOSITCHECKNAME: 'Deposit Check Name',
 };

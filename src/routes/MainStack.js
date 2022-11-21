@@ -5,14 +5,19 @@ import {navigationStrings} from '../constants';
 import {
   AddPayee,
   BankTransfer,
+  CaptureCheckNote,
   ConnectPayPlatforms,
   DepositCheck,
+  DepositCheckAmount,
+  DepositCheckName,
   FundAccount,
+  MakeDeposit,
   MakePayment,
   PaperCheck,
   PushFund,
   ScanId,
   SelectIdAdd,
+  SignEndorse,
   TransferVirtualCard,
   UsDriverLicense,
   VerifyIdentity,
@@ -80,6 +85,26 @@ const MainStack = () => {
           component={UsDriverLicense}
         />
         <Stack.Screen name={navigationStrings.SCANID} component={ScanId} />
+        <Stack.Screen
+          name={navigationStrings.DEPOSITCHECKAMT}
+          component={DepositCheckAmount}
+        />
+        <Stack.Screen
+          name={navigationStrings.SIGNENDORSE}
+          component={SignEndorse}
+        />
+        <Stack.Screen
+          name={navigationStrings.MAKEDEPOSIT}
+          component={MakeDeposit}
+        />
+        <Stack.Screen
+          name={navigationStrings.DEPOSITCHECKNAME}
+          component={DepositCheckName}
+        />
+        <Stack.Screen
+          name={navigationStrings.CAPTURECHECKNOTE}
+          component={CaptureCheckNote}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

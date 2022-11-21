@@ -157,6 +157,29 @@ export const Strings = {
   positiveNote: "Yes, I'M Sure",
   nagativeNote: 'No, Go Back',
   alignDocument: 'Align document to frame',
+  makeDeposit: 'Make Deposit',
+  depositCheck: 'Deposit a check',
+  amount: 'Amount',
+  expectedAvailability: 'Expected Availability',
+  depositCheckAmtNote:
+    'Please note that currently, Rethink does not accept mobile deposits for MoneyGram money orders.',
+  signEndorseNOne:
+    'Sign the back of your check and write\n"For mobile deposit at Rethink"',
+  signEndorseNTwo:
+    'Keep in mind that once you endorse the check, it may only be deposited at Rethink.',
+  signEndorseNThree:
+    'I have signed the back of check and endorse it for mobile deposit at Rethink',
+  signEndorseCheck: 'Sign and endorse check',
+  checkNoteOne:
+    'Center the check\non a dark surface,\nprovide ample\nlight. Align check.',
+  checkNoteTwo: 'We will take the\nphoto for you.',
+  cancelCapture: 'Cancel\nCapture',
+  enterNamePayeeNote:
+    'Please enter the name of the payee that is written on the check.',
+  nameCheck: 'Name on the Check',
+  checkAcceptNote:
+    'For a check to be accepted, the name of the payee on the check must be registered to your account. Rethink only accepts checks for the below name in your account:',
+  addUpdateDba: 'Add/Update DBA',
 };
 
 export const transactionsTypes = [
