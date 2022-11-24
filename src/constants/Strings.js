@@ -180,7 +180,33 @@ export const Strings = {
   checkAcceptNote:
     'For a check to be accepted, the name of the payee on the check must be registered to your account. Rethink only accepts checks for the below name in your account:',
   addUpdateDba: 'Add/Update DBA',
+  settings: 'Settings',
+  accountInformation: 'Account Information',
+  personalInformation: 'Personal Information',
+  businessInformation: 'Business Information',
+  users: 'Users',
+  bankLetter: 'Bank Letter',
+  transferLimits: 'Transfer Limits',
+  changePassword: 'Change Password',
+  biometricAuthentication: 'Biometrics Authentication',
+  appNotifications: 'App Notifications',
+  linkedAccounts: 'Linked Accounts',
+  logout: 'Log Out',
+  version: 'Version',
 };
+
+export const settingsAccountInformation = [
+  'Personal Information',
+  'Business Information',
+  'Users',
+  'Bank Letter',
+  'Transfer Limits',
+];
+export const settings = [
+  'Change Password',
+  'Biometrics Authentication',
+  'App Notifications',
+];
 
 export const transactionsTypes = [
   {
@@ -215,3 +241,10 @@ export const activity = ['All activity', 'Income', 'Spending'];
 4;
 
 export const type = ['Person', 'Business'];
+
+export const personalInformation = [
+  'NAME',
+  'EMAIL',
+  'MOBILE PHONE',
+  'HOME ADDRESS',
+];

@@ -14,6 +14,7 @@ import {
   MakeDeposit,
   MakePayment,
   PaperCheck,
+  PersonalInformation,
   PushFund,
   ScanId,
   SelectIdAdd,
@@ -104,6 +105,10 @@ const MainStack = () => {
         <Stack.Screen
           name={navigationStrings.CAPTURECHECKNOTE}
           component={CaptureCheckNote}
+        />
+        <Stack.Screen
+          name={navigationStrings.PERSONALINFORMATION}
+          component={PersonalInformation}
         />
       </Stack.Navigator>
     </NavigationContainer>

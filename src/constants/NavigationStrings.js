@@ -29,4 +29,6 @@ export const navigationStrings = {
   SIGNENDORSE: 'SignEndorse',
   CAPTURECHECKNOTE: 'Capture Check Note',
   DEPOSITCHECKNAME: 'Deposit Check Name',
+  SETTINGS: 'Settings',
+  PERSONALINFORMATION: 'Personal Information',
 };
