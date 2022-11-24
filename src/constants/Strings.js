@@ -193,6 +193,11 @@ export const Strings = {
   linkedAccounts: 'Linked Accounts',
   logout: 'Log Out',
   version: 'Version',
+  editEmail: 'Edit Email',
+  emailQuestion: "What's your new email?",
+  editEmailNote:
+    "An email will be sent to your new email\naddress to verify it's you.",
+  sendEmail: 'Send Email',
 };
 
 export const settingsAccountInformation = [

@@ -17,10 +17,12 @@ const styles = StyleSheet.create({
     paddingTop: verticalScale(25),
   },
   cardTitle: {
+    fontSize: moderateScale(16),
     fontFamily: Fonts.regular,
     color: Colors.grey500,
   },
   card: {
+    paddingTop: verticalScale(10),
     backgroundColor: Colors.white,
     borderRadius: moderateScale(10),
     overflow: 'hidden',
@@ -28,35 +30,29 @@ const styles = StyleSheet.create({
     marginTop: verticalScale(8),
     marginBottom: verticalScale(25),
   },
-  details: {
-    width: horizontalScale(220),
-    marginRight: horizontalScale(10),
+  textInput: {
+    borderColor: Colors.grey500,
+    borderWidth: 2,
+    borderRadius: moderateScale(10),
+    fontSize: moderateScale(18),
+    paddingLeft: horizontalScale(10),
+    marginTop: verticalScale(40),
+    marginBottom: verticalScale(20),
   },
-  imageParent: {
-    width: horizontalScale(60),
-    justifyContent: 'center',
-    alignItems: 'center',
+  bottomView: {
+    paddingHorizontal: horizontalScale(20),
   },
-  navigateButtons: {
-    flexDirection: 'row',
-    paddingVertical: verticalScale(10),
-    marginVertical: verticalScale(2),
-    alignItems: 'center',
-  },
-  navigateButtonTitle: {
+  editEmailNote: {
+    textAlign: 'center',
     fontFamily: Fonts.regular,
     color: Colors.grey500,
-    fontSize: moderateScale(15),
   },
-  navigateButtonSubtitle: {
-    fontFamily: Fonts.regular,
-    color: Colors.black,
-    fontSize: moderateScale(15),
-  },
-  divider: {
+  sendEmailButton: {
+    backgroundColor: Colors.blue,
     width: '100%',
-    backgroundColor: Colors.grey300,
-    height: verticalScale(2),
+    marginVertical: verticalScale(10),
+    height: verticalScale(45),
+    borderRadius: moderateScale(20),
   },
 });
 

@@ -1,8 +1,8 @@
 import React from 'react';
-import {Text, TouchableOpacity, View} from 'react-native';
+import {Image, Text, TouchableOpacity, View} from 'react-native';
 import FeatherIcon from 'react-native-vector-icons/Feather';
 import {CustomHeader} from '../../components';
-import {personalInformation, Strings} from '../../constants';
+import {navigationStrings, personalInformation, Strings} from '../../constants';
 import {moderateScale} from '../../theme';
 import styles from './PersonalInformationStyle';
 
@@ -18,13 +18,27 @@ const SettingsScreen = ({navigation}) => {
           {personalInformation?.map((values, index) => {
             const isLastValue = index === personalInformation?.length - 1;
             const isFirstValue = index === 0;
+            const onPress = () => {
+              if (values === 'EMAIL') {
+                navigation.navigate(navigationStrings.EDITEMAIL);
+              }
+            };
             return (
               <>
                 <TouchableOpacity
                   disabled={isFirstValue}
                   style={styles.navigateButtons}
+                  onPress={onPress}
                   key={index}>
-                  <Text style={styles.navigateButtonText}>{values}</Text>
+                  <View style={styles.imageParent}>
+                    <FeatherIcon name={'mail'} size={moderateScale(30)} />
+                  </View>
+                  <View style={styles.details}>
+                    <Text style={styles.navigateButtonTitle}>{values}</Text>
+                    <Text style={styles.navigateButtonSubtitle}>
+                      {'details'}
+                    </Text>
+                  </View>
                   {!isFirstValue ? (
                     <FeatherIcon
                       name={'chevron-right'}

@@ -31,4 +31,5 @@ export const navigationStrings = {
   DEPOSITCHECKNAME: 'Deposit Check Name',
   SETTINGS: 'Settings',
   PERSONALINFORMATION: 'Personal Information',
+  EDITEMAIL: 'Edit Email',
 };

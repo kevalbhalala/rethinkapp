@@ -10,6 +10,7 @@ import {
   DepositCheck,
   DepositCheckAmount,
   DepositCheckName,
+  EditEmail,
   FundAccount,
   MakeDeposit,
   MakePayment,
@@ -109,6 +110,10 @@ const MainStack = () => {
         <Stack.Screen
           name={navigationStrings.PERSONALINFORMATION}
           component={PersonalInformation}
+        />
+        <Stack.Screen
+          name={navigationStrings.EDITEMAIL}
+          component={EditEmail}
         />
       </Stack.Navigator>
     </NavigationContainer>

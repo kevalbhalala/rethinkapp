@@ -6,6 +6,7 @@ export * from './Dashboard';
 export * from './DepositCheck';
 export * from './DepositCheckAmount';
 export * from './DepositCheckName';
+export * from './EditEmail';
 export * from './FinancialInsights';
 export * from './FundAccount';
 export * from './Intro';
