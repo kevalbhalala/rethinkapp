@@ -28,6 +28,8 @@ const SettingsScreen = ({navigation}) => {
               const onPress = () => {
                 if (values === Strings.personalInformation) {
                   navigation.navigate(navigationStrings.PERSONALINFORMATION);
+                } else if (values === Strings.businessInformation) {
+                  navigation.navigate(navigationStrings.BUSINESSINFORMATION);
                 }
               };
               const isLastValue =

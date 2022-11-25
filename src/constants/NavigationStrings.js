@@ -32,4 +32,11 @@ export const navigationStrings = {
   SETTINGS: 'Settings',
   PERSONALINFORMATION: 'Personal Information',
   EDITEMAIL: 'Edit Email',
+  EDITMOBILEPHONE: 'Edit Mobile Phone',
+  EDITHOMEADDRESS: 'Edit Home Address',
+  BUSINESSINFORMATION: 'Business Information',
+  DBA: 'DBA',
+  EDITBUSINESSPHONE: 'Edit Business Phone',
+  EDITBUSINESSADDRESS: 'Edit Business Address',
+  EDITMAILINGADDRESS: 'Edit Mailing Address',
 };

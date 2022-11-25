@@ -5,12 +5,17 @@ import {navigationStrings} from '../constants';
 import {
   AddPayee,
   BankTransfer,
+  BusinessInformation,
   CaptureCheckNote,
   ConnectPayPlatforms,
   DepositCheck,
   DepositCheckAmount,
   DepositCheckName,
+  EditBusinessAddress,
   EditEmail,
+  EditHomeAddress,
+  EditMailingAddress,
+  EditMobilePhone,
   FundAccount,
   MakeDeposit,
   MakePayment,
@@ -114,6 +119,26 @@ const MainStack = () => {
         <Stack.Screen
           name={navigationStrings.EDITEMAIL}
           component={EditEmail}
+        />
+        <Stack.Screen
+          name={navigationStrings.EDITMOBILEPHONE}
+          component={EditMobilePhone}
+        />
+        <Stack.Screen
+          name={navigationStrings.EDITHOMEADDRESS}
+          component={EditHomeAddress}
+        />
+        <Stack.Screen
+          name={navigationStrings.BUSINESSINFORMATION}
+          component={BusinessInformation}
+        />
+        <Stack.Screen
+          name={navigationStrings.EDITMAILINGADDRESS}
+          component={EditMailingAddress}
+        />
+        <Stack.Screen
+          name={navigationStrings.EDITBUSINESSADDRESS}
+          component={EditBusinessAddress}
         />
       </Stack.Navigator>
     </NavigationContainer>

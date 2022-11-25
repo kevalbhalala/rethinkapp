@@ -1,31 +1,33 @@
 import React from 'react';
-import {Image, Text, TouchableOpacity, View} from 'react-native';
+import {Text, TouchableOpacity, View} from 'react-native';
 import FeatherIcon from 'react-native-vector-icons/Feather';
 import {CustomHeader} from '../../components';
-import {navigationStrings, personalInformation, Strings} from '../../constants';
+import {navigationStrings, businessInformation, Strings} from '../../constants';
 import {moderateScale} from '../../theme';
-import styles from './PersonalInformationStyle';
+import styles from './BusinessInformationStyle';
 
-const PersonalInformationScreen = ({navigation}) => {
+const BusinessInformationScreen = ({navigation}) => {
   return (
     <View style={styles.screen}>
       <CustomHeader
-        headerTitle={Strings.personalInformation}
+        headerTitle={Strings.businessInformation}
         onPressBack={() => navigation.goBack()}
       />
       <View style={styles.container}>
         <View style={styles.card}>
-          {personalInformation?.map((values, index) => {
-            const isLastValue = index === personalInformation?.length - 1;
+          {businessInformation?.map((values, index) => {
+            const isLastValue = index === businessInformation?.length - 1;
             const isFirstValue = index === 0;
             console.log(values, 'values');
             const onPress = () => {
-              if (values === 'EMAIL') {
-                navigation.navigate(navigationStrings.EDITEMAIL);
-              } else if (values === 'MOBILE PHONE') {
-                navigation.navigate(navigationStrings.EDITMOBILEPHONE);
-              } else if (values === 'HOME ADDRESS') {
-                navigation.navigate(navigationStrings.EDITHOMEADDRESS);
+              if (values === 'DBA') {
+                navigation.navigate(navigationStrings.DBA);
+              } else if (values === 'PHONE') {
+                navigation.navigate(navigationStrings.EDITBUSINESSPHONE);
+              } else if (values === 'BUSINESS ADDRESS') {
+                navigation.navigate(navigationStrings.EDITBUSINESSADDRESS);
+              } else if (values === 'MAILING ADDRESS') {
+                navigation.navigate(navigationStrings.EDITMAILINGADDRESS);
               }
             };
             return (
@@ -63,4 +65,4 @@ const PersonalInformationScreen = ({navigation}) => {
   );
 };
 
-export default PersonalInformationScreen;
+export default BusinessInformationScreen;

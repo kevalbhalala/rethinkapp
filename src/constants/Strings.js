@@ -198,6 +198,21 @@ export const Strings = {
   editEmailNote:
     "An email will be sent to your new email\naddress to verify it's you.",
   sendEmail: 'Send Email',
+  editMobilePhone: 'Edit Mobile Phone',
+  editPhoneQuestion: "What's your new mobile phone number?",
+  mobilePhoneNumber: 'Mobile Phone Number',
+  editMobilePhoneNote:
+    'A SMS will be sent to your mobile phone number to\nverify its you. Message and data rates may apply',
+  submit: 'Submit',
+  editHomeAddress: 'Edit Home Address',
+  homeAddress: 'Home Address',
+  homeAddressQuestion: "What's your new home address?",
+  mailingAddressQuestion: "What's your new mailing business address?",
+  editMailingAddress: 'Edit Mailing Address',
+  mailingAddress: 'Mailing Address',
+  editBusinessAddress: 'Edit Business Address',
+  businessAddress: 'Business Address',
+  businessAddressQuestion: "What's your new physical business address?",
 };
 
 export const settingsAccountInformation = [
@@ -252,4 +267,12 @@ export const personalInformation = [
   'EMAIL',
   'MOBILE PHONE',
   'HOME ADDRESS',
+];
+
+export const businessInformation = [
+  'LEGAL BUSINESS NAME',
+  'DBA',
+  'PHONE',
+  'BUSINESS ADDRESS',
+  'MAILING ADDRESS',
 ];
