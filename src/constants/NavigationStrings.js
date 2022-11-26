@@ -39,4 +39,10 @@ export const navigationStrings = {
   EDITBUSINESSPHONE: 'Edit Business Phone',
   EDITBUSINESSADDRESS: 'Edit Business Address',
   EDITMAILINGADDRESS: 'Edit Mailing Address',
+  USERS: 'Users',
+  ADDUSERREQ: 'Add User Request',
+  BANKLETTER: 'Bank Letter',
+  TRANSFERLIMITS: 'Transfer Limits',
+  CHANGEPASSWORD: 'Change Password',
+  REQLIMITCHANGE: 'Request Limit Change',
 };

@@ -18,7 +18,6 @@ const BusinessInformationScreen = ({navigation}) => {
           {businessInformation?.map((values, index) => {
             const isLastValue = index === businessInformation?.length - 1;
             const isFirstValue = index === 0;
-            console.log(values, 'values');
             const onPress = () => {
               if (values === 'DBA') {
                 navigation.navigate(navigationStrings.DBA);

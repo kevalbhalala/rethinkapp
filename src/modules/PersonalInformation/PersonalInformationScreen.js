@@ -18,7 +18,6 @@ const PersonalInformationScreen = ({navigation}) => {
           {personalInformation?.map((values, index) => {
             const isLastValue = index === personalInformation?.length - 1;
             const isFirstValue = index === 0;
-            console.log(values, 'values');
             const onPress = () => {
               if (values === 'EMAIL') {
                 navigation.navigate(navigationStrings.EDITEMAIL);

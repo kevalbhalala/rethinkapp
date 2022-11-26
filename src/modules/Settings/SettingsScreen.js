@@ -30,6 +30,12 @@ const SettingsScreen = ({navigation}) => {
                   navigation.navigate(navigationStrings.PERSONALINFORMATION);
                 } else if (values === Strings.businessInformation) {
                   navigation.navigate(navigationStrings.BUSINESSINFORMATION);
+                } else if (values === Strings.users) {
+                  navigation.navigate(navigationStrings.USERS);
+                } else if (values === Strings.bankLetter) {
+                  navigation.navigate(navigationStrings.BANKLETTER);
+                } else if (values === Strings.transferLimits) {
+                  navigation.navigate(navigationStrings.TRANSFERLIMITS);
                 }
               };
               const isLastValue =
@@ -59,7 +65,14 @@ const SettingsScreen = ({navigation}) => {
               const isLastValue = index === settings?.length - 1;
               return (
                 <>
-                  <TouchableOpacity style={styles.navigateButtons} key={index}>
+                  <TouchableOpacity
+                    style={styles.navigateButtons}
+                    key={index}
+                    onPress={() => {
+                      if (index === 0) {
+                        navigation.navigate(navigationStrings.CHANGEPASSWORD);
+                      }
+                    }}>
                     <Text style={styles.navigateButtonText}>{values}</Text>
                     {index === 0 ? (
                       <FeatherIcon

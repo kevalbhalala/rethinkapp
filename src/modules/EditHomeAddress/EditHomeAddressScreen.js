@@ -10,12 +10,12 @@ const EditHomeAddressScreen = ({navigation}) => {
   return (
     <View style={styles.screen}>
       <CustomHeader
-        headerTitle={Strings.editMobilePhone}
+        headerTitle={Strings.editHomeAddress}
         onPressBack={() => navigation.goBack()}
       />
       <View style={styles.container}>
         <View style={styles.card}>
-          <Text style={styles.cardTitle}>{Strings.editPhoneQuestion}</Text>
+          <Text style={styles.cardTitle}>{Strings.homeAddressQuestion}</Text>
           <TextInput
             label={Strings.homeAddress?.toUpperCase()}
             mode={'outlined'}

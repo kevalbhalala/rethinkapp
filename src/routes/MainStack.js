@@ -4,14 +4,19 @@ import React from 'react';
 import {navigationStrings} from '../constants';
 import {
   AddPayee,
+  AddUserRequest,
+  BankLetter,
   BankTransfer,
   BusinessInformation,
   CaptureCheckNote,
+  ChangePassword,
   ConnectPayPlatforms,
   DepositCheck,
   DepositCheckAmount,
   DepositCheckName,
   EditBusinessAddress,
+  EditBusinessPhone,
+  EditDba,
   EditEmail,
   EditHomeAddress,
   EditMailingAddress,
@@ -22,11 +27,14 @@ import {
   PaperCheck,
   PersonalInformation,
   PushFund,
+  RequestLimitChange,
   ScanId,
   SelectIdAdd,
   SignEndorse,
+  TransferLimits,
   TransferVirtualCard,
   UsDriverLicense,
+  Users,
   VerifyIdentity,
 } from '../modules';
 import AuthStack from './AuthStack';
@@ -139,6 +147,32 @@ const MainStack = () => {
         <Stack.Screen
           name={navigationStrings.EDITBUSINESSADDRESS}
           component={EditBusinessAddress}
+        />
+        <Stack.Screen
+          name={navigationStrings.EDITBUSINESSPHONE}
+          component={EditBusinessPhone}
+        />
+        <Stack.Screen name={navigationStrings.DBA} component={EditDba} />
+        <Stack.Screen name={navigationStrings.USERS} component={Users} />
+        <Stack.Screen
+          name={navigationStrings.ADDUSERREQ}
+          component={AddUserRequest}
+        />
+        <Stack.Screen
+          name={navigationStrings.BANKLETTER}
+          component={BankLetter}
+        />
+        <Stack.Screen
+          name={navigationStrings.TRANSFERLIMITS}
+          component={TransferLimits}
+        />
+        <Stack.Screen
+          name={navigationStrings.CHANGEPASSWORD}
+          component={ChangePassword}
+        />
+        <Stack.Screen
+          name={navigationStrings.REQLIMITCHANGE}
+          component={RequestLimitChange}
         />
       </Stack.Navigator>
     </NavigationContainer>
