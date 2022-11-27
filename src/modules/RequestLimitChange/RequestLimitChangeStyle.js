@@ -72,6 +72,49 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginVertical: verticalScale(15),
   },
+  temporary: {
+    color: Colors.black,
+    fontSize: moderateScale(16),
+    marginRight: verticalScale(10),
+  },
+  permanent: {
+    color: Colors.black,
+    fontSize: moderateScale(16),
+  },
+  requestLimitNOne: {
+    color: Colors.black,
+    fontFamily: Fonts.medium,
+    fontSize: moderateScale(17),
+    marginVertical: verticalScale(10),
+  },
+  requestLimitNTwo: {
+    color: Colors.black,
+    fontFamily: Fonts.regular,
+    fontSize: moderateScale(14),
+    marginVertical: verticalScale(10),
+  },
+  documentationOptional: {
+    fontFamily: Fonts.medium,
+    color: Colors.black,
+    fontSize: moderateScale(15),
+    marginLeft: horizontalScale(8),
+  },
+  requestLimitDisclaimer: {
+    fontFamily: Fonts.medium,
+    fontSize: moderateScale(13),
+  },
+  buttonStyle: {
+    backgroundColor: Colors.blue,
+    width: '100%',
+    height: verticalScale(40),
+    marginTop: verticalScale(30),
+    borderRadius: moderateScale(20),
+    marginBottom: verticalScale(10),
+  },
+  buttonTitle: {
+    fontFamily: Fonts.medium,
+    fontSize: moderateScale(18),
+  },
 });
 
 export default styles;

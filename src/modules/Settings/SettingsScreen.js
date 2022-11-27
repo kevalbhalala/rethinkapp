@@ -41,7 +41,7 @@ const SettingsScreen = ({navigation}) => {
               const isLastValue =
                 index === settingsAccountInformation?.length - 1;
               return (
-                <>
+                <View key={index}>
                   <TouchableOpacity
                     style={styles.navigateButtons}
                     onPress={onPress}
@@ -53,7 +53,7 @@ const SettingsScreen = ({navigation}) => {
                     />
                   </TouchableOpacity>
                   {!isLastValue ? <View style={styles.divider} /> : <></>}
-                </>
+                </View>
               );
             })}
           </View>
@@ -64,7 +64,7 @@ const SettingsScreen = ({navigation}) => {
             {settings?.map((values, index) => {
               const isLastValue = index === settings?.length - 1;
               return (
-                <>
+                <View key={index}>
                   <TouchableOpacity
                     style={styles.navigateButtons}
                     key={index}
@@ -96,7 +96,7 @@ const SettingsScreen = ({navigation}) => {
                     )}
                   </TouchableOpacity>
                   {!isLastValue ? <View style={styles.divider} /> : <></>}
-                </>
+                </View>
               );
             })}
           </View>

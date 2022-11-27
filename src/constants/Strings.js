@@ -257,6 +257,21 @@ export const Strings = {
   whichLimit: 'Which limit would you like to chnage?',
   currentLimit: 'Current Limit',
   whatLimit: 'What would you like to make your new limit?',
+  changeReqDescription:
+    'Please give us a brief description why you are requesting this change?',
+  briefDescription: 'Brief Description',
+  changeLimitPermanentTemp:
+    'Do you want the change in limit to be permanent or temporary?',
+  temporary: 'Temporary',
+  permanent: 'Permanent',
+  requestLimitNOne:
+    'Please provide any supporting documentation to further illustrate the need for this limit change.',
+  requestLimitNTwo:
+    'Recommended Documentation includes an Invoice, Statement of Work, Check Image of Incoming Funds, etc.',
+  documentationOptional: 'Documentation\n(Optional)',
+  requestLimitDisclaimer:
+    'Disclaimer: All information will be reviewed and Rethink will reach out if additional documentation/details are required',
+  submitRequest: 'Submit Request',
 };
 
 export const settingsAccountInformation = [
