@@ -28,6 +28,7 @@ export * from './PersonalInformation';
 export * from './PushFund';
 export * from './RequestLimitChange';
 export * from './ResetPassword';
+export * from './RethinkCard';
 export * from './ScanId';
 export * from './SelectIdAdd';
 export * from './Settings';

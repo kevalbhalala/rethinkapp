@@ -45,4 +45,5 @@ export const navigationStrings = {
   TRANSFERLIMITS: 'Transfer Limits',
   CHANGEPASSWORD: 'Change Password',
   REQLIMITCHANGE: 'Request Limit Change',
+  RETHINKCARD: 'Rethink Card',
 };

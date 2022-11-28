@@ -28,6 +28,7 @@ import {
   PersonalInformation,
   PushFund,
   RequestLimitChange,
+  RethinkCard,
   ScanId,
   SelectIdAdd,
   SignEndorse,
@@ -173,6 +174,10 @@ const MainStack = () => {
         <Stack.Screen
           name={navigationStrings.REQLIMITCHANGE}
           component={RequestLimitChange}
+        />
+        <Stack.Screen
+          name={navigationStrings.RETHINKCARD}
+          component={RethinkCard}
         />
       </Stack.Navigator>
     </NavigationContainer>

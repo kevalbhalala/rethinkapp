@@ -272,6 +272,13 @@ export const Strings = {
   requestLimitDisclaimer:
     'Disclaimer: All information will be reviewed and Rethink will reach out if additional documentation/details are required',
   submitRequest: 'Submit Request',
+  rethinkCard: 'Rethink Card',
+  statement: 'Statement',
+  setting: 'Settings',
+  support: 'Support',
+  referBusiness: 'Refer a business, get',
+  virtualCard: 'Virtual Card',
+  physicalCard: 'Physical Card',
 };
 
 export const settingsAccountInformation = [
