@@ -46,4 +46,5 @@ export const navigationStrings = {
   CHANGEPASSWORD: 'Change Password',
   REQLIMITCHANGE: 'Request Limit Change',
   RETHINKCARD: 'Rethink Card',
+  RETHINKPHYSICAL: 'Rethink Physical',
 };

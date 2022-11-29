@@ -39,3 +39,4 @@ export * from './TransferVirtualCard';
 export * from './UsDriverLicense';
 export * from './Users';
 export * from './VerifyIdentity';
+export * from './RethinkPhysical';

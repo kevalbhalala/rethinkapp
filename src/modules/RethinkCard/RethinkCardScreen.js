@@ -2,7 +2,7 @@ import React from 'react';
 import {Text, TouchableOpacity, View} from 'react-native';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import {CustomHeader} from '../../components';
-import {Strings} from '../../constants';
+import {navigationStrings, Strings} from '../../constants';
 import {Colors, moderateScale} from '../../theme';
 import styles from './RethinkCardStyle';
 
@@ -31,7 +31,11 @@ const RethinkCardScreen = ({navigation}) => {
           />
         </TouchableOpacity>
         <Text style={styles.cardT}>{Strings.physicalCard?.toUpperCase()}</Text>
-        <TouchableOpacity style={styles.card}>
+        <TouchableOpacity
+          style={styles.card}
+          onPress={() =>
+            navigation.navigate(navigationStrings.RETHINKPHYSICAL)
+          }>
           <View style={styles.innerView}>
             <FontAwesome
               name={'credit-card'}

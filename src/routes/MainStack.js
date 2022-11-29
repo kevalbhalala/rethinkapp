@@ -29,6 +29,7 @@ import {
   PushFund,
   RequestLimitChange,
   RethinkCard,
+  RethinkPhysical,
   ScanId,
   SelectIdAdd,
   SignEndorse,
@@ -178,6 +179,10 @@ const MainStack = () => {
         <Stack.Screen
           name={navigationStrings.RETHINKCARD}
           component={RethinkCard}
+        />
+        <Stack.Screen
+          name={navigationStrings.RETHINKPHYSICAL}
+          component={RethinkPhysical}
         />
       </Stack.Navigator>
     </NavigationContainer>

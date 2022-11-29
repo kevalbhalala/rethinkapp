@@ -279,6 +279,7 @@ export const Strings = {
   referBusiness: 'Refer a business, get',
   virtualCard: 'Virtual Card',
   physicalCard: 'Physical Card',
+  manageDebitCard: 'Manage Debit Card',
 };
 
 export const settingsAccountInformation = [
@@ -341,4 +342,12 @@ export const businessInformation = [
   'PHONE',
   'BUSINESS ADDRESS',
   'MAILING ADDRESS',
+];
+
+export const manageRethinkCard = [
+  'Activate your Rethink Card',
+  'Change PIN',
+  'Travel Notice',
+  'Report lost or stolen',
+  'Order or replace your card',
 ];
