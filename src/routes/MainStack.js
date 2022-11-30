@@ -3,6 +3,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import React from 'react';
 import {navigationStrings} from '../constants';
 import {
+  ActivateCard,
   AddPayee,
   AddUserRequest,
   BankLetter,
@@ -10,6 +11,7 @@ import {
   BusinessInformation,
   CaptureCheckNote,
   ChangePassword,
+  ChangePin,
   ConnectPayPlatforms,
   DepositCheck,
   DepositCheckAmount,
@@ -35,6 +37,7 @@ import {
   SignEndorse,
   TransferLimits,
   TransferVirtualCard,
+  TravelNotice,
   UsDriverLicense,
   Users,
   VerifyIdentity,
@@ -183,6 +186,18 @@ const MainStack = () => {
         <Stack.Screen
           name={navigationStrings.RETHINKPHYSICAL}
           component={RethinkPhysical}
+        />
+        <Stack.Screen
+          name={navigationStrings.ACTIVATECARD}
+          component={ActivateCard}
+        />
+        <Stack.Screen
+          name={navigationStrings.CHANGEPIN}
+          component={ChangePin}
+        />
+        <Stack.Screen
+          name={navigationStrings.TRAVELNOTICE}
+          component={TravelNotice}
         />
       </Stack.Navigator>
     </NavigationContainer>

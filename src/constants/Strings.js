@@ -280,6 +280,19 @@ export const Strings = {
   virtualCard: 'Virtual Card',
   physicalCard: 'Physical Card',
   manageDebitCard: 'Manage Debit Card',
+  activateCard: 'Activate your Rethink card',
+  activateCardNote:
+    "Give us a call and have this info handy when you're ready to activate your card:",
+  makeCall: 'Make Call',
+  changeCardPin: 'Change your Debit Card PIN',
+  changeCardPinNote:
+    'Give us a call and we will help you change your debit card PIN.',
+  useRethinkCardWorld: 'Use your Rethink card around the world',
+  travelNoticeNOne:
+    'Create a travel notice at leasr one day before your trip to keep your debit card working smoothly.',
+  travelNoticeNTwo:
+    'Your card must be used at least once before a travel notice can be placed.',
+  createTravelNotice: 'Create Travel Notice',
 };
 
 export const settingsAccountInformation = [
@@ -350,4 +363,11 @@ export const manageRethinkCard = [
   'Travel Notice',
   'Report lost or stolen',
   'Order or replace your card',
+];
+
+export const activateCardPoints = [
+  'Debit card number',
+  'Last 4 digits of your SSN',
+  'Card CVV',
+  'New PIN',
 ];

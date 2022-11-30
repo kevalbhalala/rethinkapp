@@ -47,4 +47,7 @@ export const navigationStrings = {
   REQLIMITCHANGE: 'Request Limit Change',
   RETHINKCARD: 'Rethink Card',
   RETHINKPHYSICAL: 'Rethink Physical',
+  ACTIVATECARD: 'Activate Card',
+  CHANGEPIN: 'Change Pin',
+  TRAVELNOTICE: 'Travel Notice',
 };
