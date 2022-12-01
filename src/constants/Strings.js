@@ -293,6 +293,19 @@ export const Strings = {
   travelNoticeNTwo:
     'Your card must be used at least once before a travel notice can be placed.',
   createTravelNotice: 'Create Travel Notice',
+  travelNotice: 'Travel Notice',
+  makeTravelNoticeNote:
+    'Add the countries you will be visiting during your trip and tell us how long you will be traveling',
+  country: 'Country',
+  chooseCountry: 'Choose Country',
+  search: 'Search',
+  reportMissingCard: 'Report missing card',
+  reportMissingCardNote:
+    "Give us a call to report your card is missing.\nWe're here for you 24/7",
+  inUnitedStates: 'In the United States',
+  international: 'Interational',
+  orderReplacementCard: 'Order Replacement Card',
+  callUS: 'Call US',
 };
 
 export const settingsAccountInformation = [

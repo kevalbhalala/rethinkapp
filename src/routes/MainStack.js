@@ -26,9 +26,11 @@ import {
   FundAccount,
   MakeDeposit,
   MakePayment,
+  MakeTravelNotice,
   PaperCheck,
   PersonalInformation,
   PushFund,
+  ReportMissingCard,
   RequestLimitChange,
   RethinkCard,
   RethinkPhysical,
@@ -198,6 +200,14 @@ const MainStack = () => {
         <Stack.Screen
           name={navigationStrings.TRAVELNOTICE}
           component={TravelNotice}
+        />
+        <Stack.Screen
+          name={navigationStrings.MAKETRAVELNOTICE}
+          component={MakeTravelNotice}
+        />
+        <Stack.Screen
+          name={navigationStrings.REPORTMISSINGCARD}
+          component={ReportMissingCard}
         />
       </Stack.Navigator>
     </NavigationContainer>

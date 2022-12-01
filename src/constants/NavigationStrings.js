@@ -50,4 +50,6 @@ export const navigationStrings = {
   ACTIVATECARD: 'Activate Card',
   CHANGEPIN: 'Change Pin',
   TRAVELNOTICE: 'Travel Notice',
+  MAKETRAVELNOTICE: 'Make Travel Notice',
+  REPORTMISSINGCARD: 'Report Missing Card',
 };

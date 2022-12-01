@@ -27,6 +27,8 @@ const RethinkPhysicalScreen = ({navigation}) => {
                 navigation.navigate(navigationStrings.CHANGEPIN);
               } else if (value === 'Travel Notice') {
                 navigation.navigate(navigationStrings.TRAVELNOTICE);
+              } else if (value === 'Report lost or stolen') {
+                navigation.navigate(navigationStrings.REPORTMISSINGCARD);
               }
             };
             return (
