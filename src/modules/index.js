@@ -38,6 +38,7 @@ export * from './ScanId';
 export * from './SelectIdAdd';
 export * from './Settings';
 export * from './SignEndorse';
+export * from './Statements';
 export * from './Transactions';
 export * from './TransferLimits';
 export * from './TransferVirtualCard';

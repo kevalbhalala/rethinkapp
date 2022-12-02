@@ -62,7 +62,9 @@ const AccountScreen = ({navigation}) => {
           />
           <Text style={styles.cardTitle}>{Strings.rethinkCard}</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.card}>
+        <TouchableOpacity
+          style={styles.card}
+          onPress={() => navigation.navigate(navigationStrings.STATEMENTS)}>
           <Ionicons
             name={'file-tray-full-sharp'}
             color={Colors.black}

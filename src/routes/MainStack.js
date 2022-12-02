@@ -37,6 +37,7 @@ import {
   ScanId,
   SelectIdAdd,
   SignEndorse,
+  Statements,
   TransferLimits,
   TransferVirtualCard,
   TravelNotice,
@@ -208,6 +209,10 @@ const MainStack = () => {
         <Stack.Screen
           name={navigationStrings.REPORTMISSINGCARD}
           component={ReportMissingCard}
+        />
+        <Stack.Screen
+          name={navigationStrings.STATEMENTS}
+          component={Statements}
         />
       </Stack.Navigator>
     </NavigationContainer>

@@ -306,6 +306,8 @@ export const Strings = {
   international: 'Interational',
   orderReplacementCard: 'Order Replacement Card',
   callUS: 'Call US',
+  statements: 'Statements',
+  statementPeriod: 'Statement Period',
 };
 
 export const settingsAccountInformation = [
