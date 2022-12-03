@@ -105,7 +105,7 @@ const styles = StyleSheet.create({
   },
   selectedModalItem: {
     color: Colors.blue,
-    fontWeight: '600',
+    fontFamily: Fonts.bold,
   },
 });
 

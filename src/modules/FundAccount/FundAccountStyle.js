@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
   },
   addExternalAccount: {
     fontSize: moderateScale(18),
-    fontWeight: '600',
+    fontFamily: Fonts.bold,
   },
 });
 

@@ -91,7 +91,9 @@ const AccountScreen = ({navigation}) => {
           <Text style={styles.cardTitle}>{Strings.support}</Text>
         </TouchableOpacity>
       </View>
-      <TouchableOpacity style={styles.referParent}>
+      <TouchableOpacity
+        style={styles.referParent}
+        onPress={() => navigation.navigate(navigationStrings.REFERRALS)}>
         <Text
           style={styles.referBusiness}>{`${Strings.referBusiness} $40`}</Text>
         <FontAwesome

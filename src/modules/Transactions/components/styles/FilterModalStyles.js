@@ -95,7 +95,7 @@ const styles = StyleSheet.create({
   applyFilter: {
     color: Colors.white,
     fontSize: moderateScale(16),
-    fontWeight: '600',
+    fontFamily: Fonts.bold,
   },
   whiteText: {
     color: Colors.white,

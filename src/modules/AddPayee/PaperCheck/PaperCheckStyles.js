@@ -77,7 +77,7 @@ const styles = StyleSheet.create({
   },
   review: {
     fontSize: moderateScale(18),
-    fontWeight: '600',
+    fontFamily: Fonts.bold,
   },
   reviewButtonParent: {
     height: verticalScale(70),
@@ -128,7 +128,7 @@ const styles = StyleSheet.create({
   },
   selectedModalItem: {
     color: Colors.blue,
-    fontWeight: '600',
+    fontFamily: Fonts.bold,
   },
   cityParent: {
     flexDirection: 'row',

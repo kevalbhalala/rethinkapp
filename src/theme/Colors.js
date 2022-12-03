@@ -18,4 +18,6 @@ export default {
   green10050: '#C8E6C980',
   orange: '#EF6C00',
   red: '#FF0000',
+  darkBlue: '#00008B',
+  money: '#21b283',
 };

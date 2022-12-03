@@ -29,6 +29,7 @@ export * from './MakeTravelNotice';
 export * from './MoveMoney';
 export * from './PersonalInformation';
 export * from './PushFund';
+export * from './Referrals';
 export * from './ReportMissingCard';
 export * from './RequestLimitChange';
 export * from './ResetPassword';

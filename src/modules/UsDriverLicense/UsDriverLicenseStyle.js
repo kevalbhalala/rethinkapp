@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
   },
   continue: {
     fontSize: moderateScale(18),
-    fontWeight: '600',
+    fontFamily: Fonts.bold,
   },
 });
 

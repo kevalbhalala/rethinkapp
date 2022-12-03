@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
   verifyIdentity: {
     color: Colors.black,
     fontSize: moderateScale(18),
-    fontWeight: '600',
+    fontFamily: Fonts.bold,
   },
 });
 

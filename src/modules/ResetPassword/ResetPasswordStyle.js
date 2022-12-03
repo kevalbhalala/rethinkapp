@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.grey200,
   },
   headerTitle: {
-    fontWeight: '600',
+    fontFamily: Fonts.bold,
   },
   container: {
     flex: 1,

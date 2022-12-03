@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
   makePayment: {
     color: Colors.black,
     fontSize: moderateScale(32),
-    fontWeight: '600',
+    fontFamily: Fonts.bold,
     marginTop: verticalScale(20),
   },
   userLogo: {

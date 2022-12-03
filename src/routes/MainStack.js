@@ -30,6 +30,7 @@ import {
   PaperCheck,
   PersonalInformation,
   PushFund,
+  Referrals,
   ReportMissingCard,
   RequestLimitChange,
   RethinkCard,
@@ -213,6 +214,10 @@ const MainStack = () => {
         <Stack.Screen
           name={navigationStrings.STATEMENTS}
           component={Statements}
+        />
+        <Stack.Screen
+          name={navigationStrings.REFERRALS}
+          component={Referrals}
         />
       </Stack.Navigator>
     </NavigationContainer>

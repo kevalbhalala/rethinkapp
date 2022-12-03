@@ -308,6 +308,14 @@ export const Strings = {
   callUS: 'Call US',
   statements: 'Statements',
   statementPeriod: 'Statement Period',
+  referralsDashboard: 'Referrals Dashboard',
+  earned: 'Earned',
+  seeTerms: 'See Terms',
+  noInvite:
+    'No invites yet! Use the widget on this page\nto invite businesses you know and earn cash.',
+  sendInvite: 'Send Invite',
+  firstName: 'First Name',
+  lastName: 'Last Name',
 };
 
 export const settingsAccountInformation = [

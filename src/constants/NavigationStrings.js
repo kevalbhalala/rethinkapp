@@ -53,4 +53,5 @@ export const navigationStrings = {
   MAKETRAVELNOTICE: 'Make Travel Notice',
   REPORTMISSINGCARD: 'Report Missing Card',
   STATEMENTS: 'Statements',
+  REFERRALS: 'Referrals',
 };
