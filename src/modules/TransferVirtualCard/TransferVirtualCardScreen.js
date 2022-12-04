@@ -1,3 +1,4 @@
+import {useRoute} from '@react-navigation/native';
 import React from 'react';
 import {Image, Text, TouchableOpacity, View} from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
@@ -5,12 +6,17 @@ import {Icons} from '../../assets';
 import {CustomHeader} from '../../components';
 import {Strings} from '../../constants/Strings';
 import {Colors, moderateScale} from '../../theme';
-import styles from './TransferVirtualCardStyle';
+import styling from './TransferVirtualCardStyle';
 
 const TransferVirtualCardScreen = ({navigation}) => {
+  const route = useRoute();
+  const theme = route?.params?.theme;
+  const styles = styling(theme);
+
   return (
     <View style={styles.screen}>
       <CustomHeader
+        theme={theme}
         headerTitle={Strings.fundAccount}
         onPressBack={() => navigation.goBack()}
       />
@@ -29,7 +35,7 @@ const TransferVirtualCardScreen = ({navigation}) => {
             <Icon
               name={'chevron-right'}
               size={moderateScale(24)}
-              color={Colors.grey400}
+              color={Colors[theme]?.grey400}
             />
           </View>
         </TouchableOpacity>
@@ -46,7 +52,7 @@ const TransferVirtualCardScreen = ({navigation}) => {
             <Icon
               name={'chevron-right'}
               size={moderateScale(24)}
-              color={Colors.grey400}
+              color={Colors[theme]?.grey400}
             />
           </View>
         </TouchableOpacity>

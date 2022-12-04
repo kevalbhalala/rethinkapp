@@ -1,3 +1,4 @@
+import {useRoute} from '@react-navigation/native';
 import React, {useState} from 'react';
 import {Text, TextInput, View} from 'react-native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -5,14 +6,19 @@ import {CustomButton, CustomHeader} from '../../components';
 import {navigationStrings} from '../../constants';
 import {Strings} from '../../constants/Strings';
 import {Colors, horizontalScale, moderateScale} from '../../theme';
-import styles from './DepositCheckAmountStyle';
+import styling from './DepositCheckAmountStyle';
 
 const DepositCheckAmountScreen = ({navigation}) => {
+  const route = useRoute();
+  const theme = route?.params?.theme;
+  const styles = styling(theme);
+
   const [buttonDisable, setButtonDisable] = useState(true);
 
   return (
     <View style={styles.screen}>
       <CustomHeader
+        theme={theme}
         headerTitle={Strings.depositCheck}
         onPressBack={() => navigation.goBack()}
       />
@@ -32,6 +38,7 @@ const DepositCheckAmountScreen = ({navigation}) => {
             }}
           />
         </View>
+
         <View style={styles.expectedAvailabilityParent}>
           <Text style={styles.expectedAvailability}>
             {Strings.expectedAvailability}
@@ -39,7 +46,7 @@ const DepositCheckAmountScreen = ({navigation}) => {
           <MaterialCommunityIcons
             name={'information-outline'}
             size={moderateScale(26)}
-            color={Colors.blue}
+            color={Colors[theme]?.blue}
           />
         </View>
         <Text style={styles.date}>{'4:00 PM Nov 25, 2022'}</Text>
@@ -49,12 +56,13 @@ const DepositCheckAmountScreen = ({navigation}) => {
           {Strings.depositCheckAmtNote}
         </Text>
         <CustomButton
+          theme={theme}
           buttonDisable={buttonDisable}
           buttonTitle={Strings.continue}
           buttonTitleStyle={styles.continue}
           buttonStyle={[
             styles.continueButtonStyle,
-            buttonDisable && {backgroundColor: Colors.blue50},
+            buttonDisable && {backgroundColor: Colors[theme].blue50},
           ]}
           onBtnPress={() => {
             navigation.navigate(navigationStrings.CAPTURECHECKNOTE);

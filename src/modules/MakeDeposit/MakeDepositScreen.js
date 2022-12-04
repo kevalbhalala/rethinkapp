@@ -1,3 +1,4 @@
+import {useRoute} from '@react-navigation/native';
 import React from 'react';
 import {Text, View} from 'react-native';
 import {Icons} from '../../assets';
@@ -5,23 +6,29 @@ import {CustomButton, CustomHeader, MoveMoneyCard} from '../../components';
 import {navigationStrings} from '../../constants';
 import {Strings} from '../../constants/Strings';
 import {Colors} from '../../theme';
-import styles from './MakeDepositStyle';
+import styling from './MakeDepositStyle';
 
 const MakeDeposit = ({navigation}) => {
+  const route = useRoute();
+  const theme = route?.params?.theme;
+  const styles = styling(theme);
+
   return (
     <View style={styles.screen}>
       <CustomHeader
+        theme={theme}
         headerTitle={Strings.makeDeposit}
         onPressBack={() => navigation.goBack()}
       />
       <View style={styles.card}>
         <MoveMoneyCard
+          theme={theme}
           title={Strings.depositCheck}
           subTitle={Strings.depositBusinessDayOneFour}
           icon={Icons.money}
           tagOne={Strings.forLargeDeposits}
           tagOneTextStyle={styles.greyText}
-          tagOneBackground={Colors.grey200}
+          tagOneBackground={Colors[theme]?.grey200}
           rightIcon={false}
         />
         <View style={styles.divider} />
@@ -34,6 +41,7 @@ const MakeDeposit = ({navigation}) => {
       </View>
       <View style={styles.verifyParent}>
         <CustomButton
+          theme={theme}
           buttonTitle={Strings.depositCheck}
           buttonTitleStyle={styles.verifyIdentity}
           buttonStyle={styles.verifyButtonStyle}

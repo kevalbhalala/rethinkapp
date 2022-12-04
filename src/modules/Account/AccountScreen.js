@@ -1,3 +1,4 @@
+import {useRoute} from '@react-navigation/native';
 import React from 'react';
 import {Text, TouchableOpacity, View} from 'react-native';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
@@ -5,16 +6,20 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import {navigationStrings, Strings} from '../../constants';
 import {Colors, moderateScale} from '../../theme';
-import styles from './AccountStyle';
+import styling from './AccountStyle';
 
 const AccountScreen = ({navigation}) => {
+  const route = useRoute();
+  const theme = route?.params?.theme;
+  const styles = styling(theme);
+
   return (
     <View style={styles.screen}>
       <View style={styles.header}>
         <TouchableOpacity>
           <Ionicons
             name={'share-outline'}
-            color={Colors.black}
+            color={Colors[theme]?.black}
             size={moderateScale(28)}
           />
         </TouchableOpacity>
@@ -34,6 +39,7 @@ const AccountScreen = ({navigation}) => {
               <MaterialCommunityIcons
                 name="content-copy"
                 size={moderateScale(16)}
+                color={Colors[theme]?.grey700}
               />
             </TouchableOpacity>
           </View>
@@ -46,6 +52,7 @@ const AccountScreen = ({navigation}) => {
             <MaterialCommunityIcons
               name="information"
               size={moderateScale(16)}
+              color={Colors[theme]?.grey700}
             />
             <Text style={styles.subTitle}>{Strings.view}</Text>
           </View>
@@ -57,7 +64,7 @@ const AccountScreen = ({navigation}) => {
           onPress={() => navigation.navigate(navigationStrings.RETHINKCARD)}>
           <FontAwesome
             name={'credit-card'}
-            color={Colors.black}
+            color={Colors[theme]?.black}
             size={moderateScale(72)}
           />
           <Text style={styles.cardTitle}>{Strings.rethinkCard}</Text>
@@ -67,7 +74,7 @@ const AccountScreen = ({navigation}) => {
           onPress={() => navigation.navigate(navigationStrings.STATEMENTS)}>
           <Ionicons
             name={'file-tray-full-sharp'}
-            color={Colors.black}
+            color={Colors[theme]?.black}
             size={moderateScale(72)}
           />
           <Text style={styles.cardTitle}>{Strings.statement}</Text>
@@ -77,7 +84,7 @@ const AccountScreen = ({navigation}) => {
         <TouchableOpacity style={styles.card}>
           <Ionicons
             name={'settings-outline'}
-            color={Colors.black}
+            color={Colors[theme]?.black}
             size={moderateScale(72)}
           />
           <Text style={styles.cardTitle}>{Strings.settings}</Text>
@@ -85,7 +92,7 @@ const AccountScreen = ({navigation}) => {
         <TouchableOpacity style={styles.card}>
           <Ionicons
             name={'information-circle-outline'}
-            color={Colors.black}
+            color={Colors[theme]?.black}
             size={moderateScale(72)}
           />
           <Text style={styles.cardTitle}>{Strings.support}</Text>
@@ -98,7 +105,7 @@ const AccountScreen = ({navigation}) => {
           style={styles.referBusiness}>{`${Strings.referBusiness} $40`}</Text>
         <FontAwesome
           name={'angle-right'}
-          color={Colors.grey500}
+          color={Colors[theme]?.grey500}
           size={moderateScale(24)}
         />
       </TouchableOpacity>

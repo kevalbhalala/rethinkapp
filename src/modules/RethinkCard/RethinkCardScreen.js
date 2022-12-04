@@ -1,15 +1,21 @@
+import {useRoute} from '@react-navigation/native';
 import React from 'react';
 import {Text, TouchableOpacity, View} from 'react-native';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import {CustomHeader} from '../../components';
 import {navigationStrings, Strings} from '../../constants';
 import {Colors, moderateScale} from '../../theme';
-import styles from './RethinkCardStyle';
+import styling from './RethinkCardStyle';
 
 const RethinkCardScreen = ({navigation}) => {
+  const route = useRoute();
+  const theme = route?.params?.theme;
+  const styles = styling(theme);
+
   return (
     <View style={styles.screen}>
       <CustomHeader
+        theme={theme}
         headerTitle={Strings.rethinkCard}
         onPressBack={() => navigation.goBack()}
       />
@@ -19,14 +25,14 @@ const RethinkCardScreen = ({navigation}) => {
           <View style={styles.innerView}>
             <FontAwesome
               name={'credit-card'}
-              color={Colors.black}
+              color={Colors[theme]?.black}
               size={moderateScale(24)}
             />
             <Text style={styles.cardTitle}>{Strings.virtualCard}</Text>
           </View>
           <FontAwesome
             name={'angle-right'}
-            color={Colors.grey500}
+            color={Colors[theme]?.grey500}
             size={moderateScale(24)}
           />
         </TouchableOpacity>
@@ -39,14 +45,14 @@ const RethinkCardScreen = ({navigation}) => {
           <View style={styles.innerView}>
             <FontAwesome
               name={'credit-card'}
-              color={Colors.black}
+              color={Colors[theme]?.black}
               size={moderateScale(24)}
             />
             <Text style={styles.cardTitle}>{Strings.rethinkCard}</Text>
           </View>
           <FontAwesome
             name={'angle-right'}
-            color={Colors.grey500}
+            color={Colors[theme]?.grey500}
             size={moderateScale(24)}
           />
         </TouchableOpacity>

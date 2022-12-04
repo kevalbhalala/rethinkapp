@@ -1,4 +1,5 @@
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import {useRoute} from '@react-navigation/native';
 import React from 'react';
 import AntIcon from 'react-native-vector-icons/AntDesign';
 import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome';
@@ -10,6 +11,9 @@ import ActivityTopTabs from './ActivityTopTabs';
 const Tab = createBottomTabNavigator();
 
 const BottomTabsNav = () => {
+  const route = useRoute();
+  const theme = route?.params?.theme;
+
   return (
     <Tab.Navigator
       initialRouteName={navigationStrings.DASHBOARD}
@@ -33,18 +37,34 @@ const BottomTabsNav = () => {
             iconName = 'setting';
             return <AntIcon name={iconName} size={30} color={color} />;
           }
-          // You can return any component that you like here!
         },
-        tabBarActiveTintColor: Colors.blue,
+        tabBarActiveTintColor: Colors[theme].blue,
       })}>
-      <Tab.Screen name={navigationStrings.DASHBOARD} component={Dashboard} />
+      <Tab.Screen
+        name={navigationStrings.DASHBOARD}
+        component={Dashboard}
+        initialParams={{theme: theme}}
+      />
       <Tab.Screen
         name={navigationStrings.ACTIVITY}
         component={ActivityTopTabs}
+        initialParams={{theme: theme}}
       />
-      <Tab.Screen name={navigationStrings.MOVEMONEY} component={MoveMoney} />
-      <Tab.Screen name={navigationStrings.ACCOUNT} component={Account} />
-      <Tab.Screen name={navigationStrings.SETTINGS} component={Settings} />
+      <Tab.Screen
+        name={navigationStrings.MOVEMONEY}
+        component={MoveMoney}
+        initialParams={{theme: theme}}
+      />
+      <Tab.Screen
+        name={navigationStrings.ACCOUNT}
+        component={Account}
+        initialParams={{theme: theme}}
+      />
+      <Tab.Screen
+        name={navigationStrings.SETTINGS}
+        component={Settings}
+        initialParams={{theme: theme}}
+      />
     </Tab.Navigator>
   );
 };

@@ -4,10 +4,15 @@ import {TextInput} from 'react-native-paper';
 import {CustomButton, CustomHeader} from '../../components';
 import {Strings} from '../../constants';
 import {Colors, moderateScale, verticalScale} from '../../theme';
-import styles from './ChangePasswordStyle';
+import styling from './ChangePasswordStyle';
 import Entypo from 'react-native-vector-icons/Entypo';
+import {useRoute} from '@react-navigation/native';
 
 const ChangePasswordScreen = ({navigation}) => {
+  const route = useRoute();
+  const theme = route?.params?.theme;
+  const styles = styling(theme);
+
   const [passwordVisible, setPasswordVisible] = useState(false);
   const [newPasswordVisible, setNewPasswordVisible] = useState(false);
   const [confirmPasswordVisible, setConfirmPasswordVisible] = useState(false);
@@ -15,6 +20,7 @@ const ChangePasswordScreen = ({navigation}) => {
   return (
     <View style={styles.screen}>
       <CustomHeader
+        theme={theme}
         headerTitle={Strings.addUserReq}
         onPressBack={() => navigation.goBack()}
       />
@@ -25,7 +31,7 @@ const ChangePasswordScreen = ({navigation}) => {
             mode={'outlined'}
             label={Strings.password}
             style={styles.textInput}
-            activeOutlineColor={Colors.black}
+            activeOutlineColor={Colors[theme]?.black}
             right={
               passwordVisible ? (
                 <TextInput.Icon
@@ -46,7 +52,7 @@ const ChangePasswordScreen = ({navigation}) => {
             mode={'outlined'}
             label={Strings.newPassword?.toUpperCase()}
             style={styles.textInput}
-            activeOutlineColor={Colors.black}
+            activeOutlineColor={Colors[theme]?.black}
             right={
               newPasswordVisible ? (
                 <TextInput.Icon
@@ -66,7 +72,7 @@ const ChangePasswordScreen = ({navigation}) => {
             <Entypo
               name={'check'}
               size={moderateScale(22)}
-              color={Colors.grey500}
+              color={Colors[theme]?.grey500}
             />
             <Text style={styles.passwordInstruction}>{Strings.mustLetter}</Text>
           </View>
@@ -74,7 +80,7 @@ const ChangePasswordScreen = ({navigation}) => {
             <Entypo
               name={'check'}
               size={moderateScale(22)}
-              color={Colors.grey500}
+              color={Colors[theme]?.grey500}
             />
             <Text style={styles.passwordInstruction}>{Strings.mustNumber}</Text>
           </View>
@@ -82,7 +88,7 @@ const ChangePasswordScreen = ({navigation}) => {
             <Entypo
               name={'check'}
               size={moderateScale(22)}
-              color={Colors.grey500}
+              color={Colors[theme]?.grey500}
             />
             <Text style={styles.passwordInstruction}>
               {Strings.mustSpecial}
@@ -93,7 +99,7 @@ const ChangePasswordScreen = ({navigation}) => {
             <Entypo
               name={'check'}
               size={moderateScale(22)}
-              color={Colors.grey500}
+              color={Colors[theme]?.grey500}
             />
             <Text style={styles.passwordInstruction}>
               {Strings.mustBeCharaters}
@@ -104,7 +110,7 @@ const ChangePasswordScreen = ({navigation}) => {
             mode={'outlined'}
             label={Strings.confirmNewPass?.toUpperCase()}
             style={[styles.textInput, {marginTop: verticalScale(12)}]}
-            activeOutlineColor={Colors.black}
+            activeOutlineColor={Colors[theme]?.black}
             right={
               confirmPasswordVisible ? (
                 <TextInput.Icon
@@ -127,6 +133,7 @@ const ChangePasswordScreen = ({navigation}) => {
       </View>
       <View style={styles.bottomView}>
         <CustomButton
+          theme={theme}
           buttonTitle={Strings.continue}
           buttonStyle={styles.continueButton}
         />

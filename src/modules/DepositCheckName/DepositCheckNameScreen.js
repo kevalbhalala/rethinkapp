@@ -1,15 +1,21 @@
+import {useRoute} from '@react-navigation/native';
 import React, {useState} from 'react';
 import {Image, Text, TextInput, View} from 'react-native';
 import {CustomButton, CustomHeader} from '../../components';
 import {navigationStrings, Strings} from '../../constants';
-import styles from './DepositCheckNameStyle';
+import styling from './DepositCheckNameStyle';
 
 const DepositCheckNameScreen = ({navigation}) => {
+  const route = useRoute();
+  const theme = route?.params?.theme;
+  const styles = styling(theme);
+
   const [isDisable, setIsDisable] = useState(true);
 
   return (
     <View style={styles.screen}>
       <CustomHeader
+        theme={theme}
         headerTitle={Strings.depositCheck}
         onPressBack={() => navigation.goBack()}
       />
@@ -38,6 +44,7 @@ const DepositCheckNameScreen = ({navigation}) => {
         </View>
       </View>
       <CustomButton
+        theme={theme}
         buttonDisable={isDisable}
         buttonTitle={Strings.continue}
         buttonTitleStyle={styles.continue}

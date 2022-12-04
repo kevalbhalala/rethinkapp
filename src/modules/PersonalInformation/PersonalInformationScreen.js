@@ -1,15 +1,21 @@
+import {useRoute} from '@react-navigation/native';
 import React from 'react';
 import {Image, Text, TouchableOpacity, View} from 'react-native';
 import FeatherIcon from 'react-native-vector-icons/Feather';
 import {CustomHeader} from '../../components';
 import {navigationStrings, personalInformation, Strings} from '../../constants';
 import {moderateScale} from '../../theme';
-import styles from './PersonalInformationStyle';
+import styling from './PersonalInformationStyle';
 
 const PersonalInformationScreen = ({navigation}) => {
+  const route = useRoute();
+  const theme = route?.params?.theme;
+  const styles = styling(theme);
+
   return (
     <View style={styles.screen}>
       <CustomHeader
+        theme={theme}
         headerTitle={Strings.personalInformation}
         onPressBack={() => navigation.goBack()}
       />

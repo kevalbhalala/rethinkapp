@@ -1,3 +1,4 @@
+import {useRoute} from '@react-navigation/native';
 import React, {useState} from 'react';
 import {
   KeyboardAvoidingView,
@@ -15,15 +16,20 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import {CustomButton, CustomHeader, ModalButton} from '../../../components';
 import {Strings, type} from '../../../constants';
 import {Colors, moderateScale} from '../../../theme';
-import styles from './BankTransferStyle';
+import styling from './BankTransferStyle';
 
 const BankTransferScreen = ({navigation}) => {
+  const route = useRoute();
+  const theme = route?.params?.theme;
+  const styles = styling(theme);
+
   const [isSwitchOn, setIsSwitchOn] = useState(false);
   const [isVisibleType, setIsVisibleType] = useState(false);
   const [selectedType, setSelectedType] = useState(false);
   return (
     <View style={styles.screen}>
       <CustomHeader
+        theme={theme}
         headerTitle={Strings.addPayee}
         onPressBack={() => navigation.goBack()}
       />
@@ -32,7 +38,7 @@ const BankTransferScreen = ({navigation}) => {
           <FontAwesomeIcon
             name={'bank'}
             size={moderateScale(22)}
-            color={Colors.blue}
+            color={Colors[theme]?.blue}
           />
           <Text style={styles.title}>{Strings.bankTransfer}</Text>
         </View>
@@ -48,16 +54,17 @@ const BankTransferScreen = ({navigation}) => {
                 mode={'outlined'}
                 label={Strings.legalName?.toUpperCase()}
                 style={styles.textInput}
-                activeOutlineColor={Colors.black}
+                activeOutlineColor={Colors[theme]?.black}
               />
               <TextInput
                 mode={'outlined'}
                 label={Strings.nickname?.toUpperCase()}
                 style={styles.textInput}
-                activeOutlineColor={Colors.black}
+                activeOutlineColor={Colors[theme]?.black}
               />
               <Text style={styles.onlyVisible}>{Strings.onlyVisible}</Text>
               <ModalButton
+                theme={theme}
                 buttonValue={selectedType ? selectedType : 'TYPE'}
                 width={'100%'}
                 onPressButton={() => setIsVisibleType(true)}
@@ -66,13 +73,13 @@ const BankTransferScreen = ({navigation}) => {
                 mode={'outlined'}
                 label={Strings.accountNumber?.toUpperCase()}
                 style={styles.textInput}
-                activeOutlineColor={Colors.black}
+                activeOutlineColor={Colors[theme]?.black}
               />
               <TextInput
                 mode={'outlined'}
                 label={Strings.routingNumber?.toUpperCase()}
                 style={styles.textInput}
-                activeOutlineColor={Colors.black}
+                activeOutlineColor={Colors[theme]?.black}
               />
               <View style={styles.checkingAccountParent}>
                 <Text style={styles.checkingAccount}>
@@ -81,14 +88,14 @@ const BankTransferScreen = ({navigation}) => {
                 <Switch
                   value={isSwitchOn}
                   onValueChange={() => setIsSwitchOn(!isSwitchOn)}
-                  color={Colors.blue}
+                  color={Colors[theme]?.blue}
                 />
               </View>
               <TextInput
                 mode={'outlined'}
                 label={Strings.emailOptional?.toUpperCase()}
                 style={styles.textInput}
-                activeOutlineColor={Colors.black}
+                activeOutlineColor={Colors[theme]?.black}
               />
               <TextInput
                 multiline
@@ -98,7 +105,7 @@ const BankTransferScreen = ({navigation}) => {
                 defaultValue={' '}
                 style={[styles.textInput, styles.textInputMulti]}
                 textAlignVertical={'top'}
-                activeOutlineColor={Colors.black}
+                activeOutlineColor={Colors[theme]?.black}
                 maxLength={250}
               />
               <View style={styles.onlyVisibleParent}>
@@ -111,6 +118,7 @@ const BankTransferScreen = ({navigation}) => {
       </View>
       <View style={styles.reviewButtonParent}>
         <CustomButton
+          theme={theme}
           buttonTitle={Strings.review}
           buttonTitleStyle={styles.review}
           buttonStyle={styles.reviewButtonStyle}
@@ -145,7 +153,7 @@ const BankTransferScreen = ({navigation}) => {
                         <Icon
                           name="checkmark"
                           size={moderateScale(24)}
-                          color={Colors.blue}
+                          color={Colors[theme]?.blue}
                         />
                       ) : (
                         <></>

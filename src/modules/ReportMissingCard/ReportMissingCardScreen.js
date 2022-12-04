@@ -1,19 +1,24 @@
+import {useRoute} from '@react-navigation/native';
 import React from 'react';
 import {Text, TouchableOpacity, View} from 'react-native';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import {CustomButton, CustomHeader} from '../../components';
 import {Strings} from '../../constants';
 import {Colors, moderateScale} from '../../theme';
-import styles from './ReportMissingCardStyle';
+import styling from './ReportMissingCardStyle';
 
 const ReportMissingCardScreen = ({navigation}) => {
+  const route = useRoute();
+  const theme = route?.params?.theme;
+  const styles = styling(theme);
+
   return (
     <View style={styles.screen}>
-      <CustomHeader onPressBack={() => navigation.goBack()} />
+      <CustomHeader theme={theme} onPressBack={() => navigation.goBack()} />
       <View style={styles.container}>
         <FontAwesome
           name={'credit-card'}
-          color={Colors.black}
+          color={Colors[theme]?.black}
           size={moderateScale(72)}
         />
         <Text style={styles.reportMissingCard}>
@@ -27,7 +32,7 @@ const ReportMissingCardScreen = ({navigation}) => {
             <TouchableOpacity style={styles.cardItemLeftIcon}>
               <FontAwesome
                 name={'phone'}
-                color={Colors.blue}
+                color={Colors[theme]?.blue}
                 size={moderateScale(24)}
               />
             </TouchableOpacity>
@@ -38,7 +43,7 @@ const ReportMissingCardScreen = ({navigation}) => {
             <TouchableOpacity style={styles.cardItemLeftIcon}>
               <FontAwesome
                 name={'phone'}
-                color={Colors.blue}
+                color={Colors[theme]?.blue}
                 size={moderateScale(24)}
               />
             </TouchableOpacity>
@@ -46,6 +51,7 @@ const ReportMissingCardScreen = ({navigation}) => {
         </View>
         <View style={styles.buttonParent}>
           <CustomButton
+            theme={theme}
             buttonTitle={Strings.orderReplacementCard}
             buttonStyle={styles.buttonStyle}
             onBtnPress={() => {}}

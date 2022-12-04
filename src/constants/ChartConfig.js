@@ -1,12 +1,14 @@
 import {Colors} from '../theme';
 
-export const lineChartConfig = {
-  backgroundColor: Colors.white,
-  backgroundGradientFrom: Colors.white,
-  backgroundGradientTo: Colors.white,
-  color: () => Colors.black,
-  propsForDots: {
-    strokeWidth: 2,
-    stroke: Colors.blue,
-  },
+export const lineChartConfig = theme => {
+  return {
+    backgroundColor: Colors[theme].white,
+    backgroundGradientFrom: Colors[theme].white,
+    backgroundGradientTo: Colors[theme].white,
+    color: () => Colors[theme].black,
+    propsForDots: {
+      strokeWidth: 2,
+      stroke: Colors[theme].blue,
+    },
+  };
 };

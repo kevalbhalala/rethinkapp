@@ -1,3 +1,4 @@
+import {useRoute} from '@react-navigation/native';
 import React from 'react';
 import {Text, TouchableOpacity, View} from 'react-native';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
@@ -5,12 +6,17 @@ import {CustomHeader} from '../../components';
 import {navigationStrings} from '../../constants';
 import {manageRethinkCard, Strings} from '../../constants/Strings';
 import {Colors, moderateScale} from '../../theme';
-import styles from './RethinkPhysicalStyle';
+import styling from './RethinkPhysicalStyle';
 
 const RethinkPhysicalScreen = ({navigation}) => {
+  const route = useRoute();
+  const theme = route?.params?.theme;
+  const styles = styling(theme);
+
   return (
     <View style={styles.screen}>
       <CustomHeader
+        theme={theme}
         headerTitle={Strings.rethinkCard}
         onPressBack={() => navigation.goBack()}
       />
@@ -37,7 +43,7 @@ const RethinkPhysicalScreen = ({navigation}) => {
                   <Text style={styles.cardItemName}>{value}</Text>
                   <FontAwesome
                     name={'angle-right'}
-                    color={Colors.grey500}
+                    color={Colors[theme]?.grey500}
                     size={moderateScale(24)}
                   />
                 </TouchableOpacity>

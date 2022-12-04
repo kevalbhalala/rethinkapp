@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
 import {Colors, horizontalScale, moderateScale} from '../../theme';
-import styles from './DashboardCardStyle';
+import styling from './DashboardCardStyle';
 
 const DashboardCard = ({
   title,
@@ -23,7 +23,10 @@ const DashboardCard = ({
   cardStyle,
   logoStyle,
   onPressNavigationButton,
+  theme,
 }) => {
+  const styles = styling(theme);
+
   return (
     <View style={[styles.card, cardStyle, backgroundImage && {paddingLeft: 0}]}>
       <ImageBackground
@@ -49,7 +52,11 @@ const DashboardCard = ({
               <Icon
                 name={'chevron-right'}
                 size={moderateScale(18)}
-                color={navigationLogoColor ? navigationLogoColor : Colors.black}
+                color={
+                  navigationLogoColor
+                    ? navigationLogoColor
+                    : Colors[theme].black
+                }
               />
             </TouchableOpacity>
           </View>

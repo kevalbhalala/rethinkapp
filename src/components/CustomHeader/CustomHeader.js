@@ -1,7 +1,7 @@
 import React from 'react';
 import {Image, Text, TouchableOpacity, View} from 'react-native';
 import {Icons} from '../../assets';
-import styles from './CustomHeaderStyle';
+import styling from './CustomHeaderStyle';
 
 const CustomHeader = ({
   backButton = true,
@@ -10,7 +10,10 @@ const CustomHeader = ({
   backBtnStyle,
   headerStyle,
   onPressBack,
+  theme,
 }) => {
+  const styles = styling(theme);
+
   return (
     <View style={[styles.defaultHeaderStyle, headerStyle]}>
       {backButton ? (

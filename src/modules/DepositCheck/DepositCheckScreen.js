@@ -1,3 +1,4 @@
+import {useRoute} from '@react-navigation/native';
 import React from 'react';
 import {Text, View} from 'react-native';
 import {Icons} from '../../assets';
@@ -5,26 +6,32 @@ import {CustomButton, CustomHeader, MoveMoneyCard} from '../../components';
 import {navigationStrings} from '../../constants';
 import {Strings} from '../../constants/Strings';
 import {Colors} from '../../theme';
-import styles from './DepositCheckStyle';
+import styling from './DepositCheckStyle';
 
 const DepositCheckScreen = ({navigation}) => {
+  const route = useRoute();
+  const theme = route?.params?.theme;
+  const styles = styling(theme);
+
   return (
     <View style={styles.screen}>
       <CustomHeader
+        theme={theme}
         headerTitle={Strings.fundAccount}
         onPressBack={() => navigation.goBack()}
       />
       <View style={styles.card}>
         <MoveMoneyCard
+          theme={theme}
           title={Strings.depositeCheckFromPhone}
           subTitle={Strings.depositBusinessDayOneFour}
           icon={Icons.money}
           tagOne={Strings.forLargeDeposits}
           tagTwo={Strings.free}
           tagOneTextStyle={styles.greyText}
-          tagOneBackground={Colors.grey200}
+          tagOneBackground={Colors[theme]?.grey200}
           tagTwoTextStyle={styles.darkGreenText}
-          tagTwoBackground={Colors.green10050}
+          tagTwoBackground={Colors[theme]?.green10050}
           rightIcon={false}
         />
         <View style={styles.divider} />
@@ -37,6 +44,7 @@ const DepositCheckScreen = ({navigation}) => {
       </View>
       <View style={styles.verifyParent}>
         <CustomButton
+          theme={theme}
           buttonTitle={Strings.verifyIdentity}
           buttonTitleStyle={styles.verifyIdentity}
           buttonStyle={styles.verifyButtonStyle}

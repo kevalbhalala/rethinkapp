@@ -1,17 +1,24 @@
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
+import {useRoute} from '@react-navigation/native';
 import React from 'react';
 import {Text} from 'react-native';
 import {CustomHeader} from '../components';
 import {navigationStrings} from '../constants';
 import {FinancialInsights, Transactions} from '../modules';
-import {Colors, styles} from '../theme';
+import {Colors, styling} from '../theme';
 
 const Tab = createMaterialTopTabNavigator();
 
 const ActivityTopTabs = () => {
+  const route = useRoute();
+  const theme = route?.params?.theme;
+
+  const styles = styling(theme);
+
   return (
     <>
       <CustomHeader
+        theme={theme}
         backButton={false}
         headerTitle={navigationStrings.ACTIVITY}
         headerStyle={styles.activityHeaderStyle}
@@ -33,15 +40,17 @@ const ActivityTopTabs = () => {
               );
             }
           },
-          tabBarStyle: {backgroundColor: Colors.grey300},
+          tabBarStyle: {backgroundColor: Colors[theme].grey300},
         })}>
         <Tab.Screen
           name={navigationStrings.TRANSACTIONS}
           component={Transactions}
+          initialParams={{theme: theme}}
         />
         <Tab.Screen
           name={navigationStrings.FINANCIALINSIGHTS}
           component={FinancialInsights}
+          initialParams={{theme: theme}}
         />
       </Tab.Navigator>
     </>

@@ -1,10 +1,12 @@
 import React from 'react';
 import {Text, View} from 'react-native';
 import {Strings} from '../../../constants/Strings';
-import styles from './styles/ActivationCardStyle';
+import styling from './styles/ActivationCardStyle';
 
 //Note: pass the progress value in 0 to 1 range (eg. 10% = 0.1)
-const ActivationCard = ({progress = 0}) => {
+const ActivationCard = ({progress = 0, theme}) => {
+  const styles = styling(theme);
+
   return (
     <View style={styles.card}>
       <View style={styles.titleParent}>

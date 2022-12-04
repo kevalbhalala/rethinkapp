@@ -1,3 +1,4 @@
+import {useRoute} from '@react-navigation/native';
 import React, {useState} from 'react';
 import {Image, Text, TouchableOpacity, View} from 'react-native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -5,14 +6,19 @@ import {CustomButton, CustomHeader} from '../../components';
 import {navigationStrings} from '../../constants';
 import {Strings} from '../../constants/Strings';
 import {Colors, moderateScale} from '../../theme';
-import styles from './SignEndorseStyle';
+import styling from './SignEndorseStyle';
 
 const SignEndorseScreen = ({navigation}) => {
+  const route = useRoute();
+  const theme = route?.params?.theme;
+  const styles = styling(theme);
+
   const [buttonDisable, setButtonDisable] = useState(true);
 
   return (
     <View style={styles.screen}>
       <CustomHeader
+        theme={theme}
         headerTitle={Strings.depositCheck}
         onPressBack={() => navigation.goBack()}
       />
@@ -34,7 +40,7 @@ const SignEndorseScreen = ({navigation}) => {
                   : 'check-circle-outline'
               }
               size={moderateScale(24)}
-              color={Colors.blue}
+              color={Colors[theme]?.blue}
             />
           </TouchableOpacity>
           <Text style={styles.signEndorseNThree}>
@@ -42,12 +48,13 @@ const SignEndorseScreen = ({navigation}) => {
           </Text>
         </View>
         <CustomButton
+          theme={theme}
           buttonDisable={buttonDisable}
           buttonTitle={Strings.continue}
           buttonTitleStyle={styles.continue}
           buttonStyle={[
             styles.continueButtonStyle,
-            buttonDisable && {backgroundColor: Colors.blue50},
+            buttonDisable && {backgroundColor: Colors[theme].blue50},
           ]}
           onBtnPress={() => {
             navigation.navigate(navigationStrings.DEPOSITCHECKNAME);

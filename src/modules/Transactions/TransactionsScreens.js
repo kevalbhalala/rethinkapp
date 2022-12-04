@@ -1,12 +1,17 @@
+import {useRoute} from '@react-navigation/native';
 import React, {useState} from 'react';
 import {TextInput, TouchableOpacity, View} from 'react-native';
 import FeatherIcon from 'react-native-vector-icons/Feather';
 import FontistoIcon from 'react-native-vector-icons/Fontisto';
 import {moderateScale} from '../../theme';
 import {FilterModal} from './components';
-import styles from './TransactionsStyle';
+import styling from './TransactionsStyle';
 
 const TransactionsScreens = () => {
+  const route = useRoute();
+  const theme = route?.params?.theme;
+  const styles = styling(theme);
+
   const [modalVisible, setModalVisible] = useState(false);
   return (
     <View style={styles.screen}>
@@ -31,6 +36,7 @@ const TransactionsScreens = () => {
       <FilterModal
         visible={modalVisible}
         onPressBack={() => setModalVisible(false)}
+        theme={theme}
       />
     </View>
   );

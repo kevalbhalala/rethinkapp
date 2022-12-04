@@ -4,9 +4,11 @@ import Icon from 'react-native-vector-icons/Feather';
 import {ContentLoader} from '../../../components';
 import {Strings} from '../../../constants/Strings';
 import {Colors, moderateScale, verticalScale} from '../../../theme';
-import styles from './styles/TransactionCardStyle';
+import styling from './styles/TransactionCardStyle';
 
-const TransactionCard = ({title, noTrasaction, transactionData}) => {
+const TransactionCard = ({title, noTrasaction, transactionData, theme}) => {
+  const styles = styling(theme);
+
   return (
     <View style={[styles.card, noTrasaction && {height: verticalScale(265)}]}>
       <View style={styles.cardHeader}>
@@ -17,7 +19,7 @@ const TransactionCard = ({title, noTrasaction, transactionData}) => {
           <Icon
             name={'chevron-right'}
             size={moderateScale(36)}
-            color={Colors.black}
+            color={Colors[theme]?.black}
           />
         </TouchableOpacity>
       </View>

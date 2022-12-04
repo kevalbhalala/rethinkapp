@@ -1,3 +1,4 @@
+import {useRoute} from '@react-navigation/native';
 import React, {useState} from 'react';
 import {Image, Text, TextInput, TouchableOpacity, View} from 'react-native';
 import FeatherIcon from 'react-native-vector-icons/Feather';
@@ -7,22 +8,27 @@ import {Icons} from '../../assets';
 import {CustomButton, CustomHeader} from '../../components';
 import {Strings} from '../../constants';
 import {Colors, moderateScale, verticalScale} from '../../theme';
-import styles from './ReferralsStyle';
+import styling from './ReferralsStyle';
 
 const ReferralsScreens = ({navigation}) => {
+  const route = useRoute();
+  const theme = route?.params?.theme;
+  const styles = styling(theme);
+
   const [isDisable, setIsdisable] = useState(false);
 
   return (
     <View style={styles.screen}>
       <View style={styles.headerParent}>
         <CustomHeader
+          theme={theme}
           headerTitle={Strings.referralsDashboard}
           onPressBack={() => navigation.goBack()}
         />
         <TouchableOpacity>
           <Ionicons
             name={'share-outline'}
-            color={Colors.black}
+            color={Colors[theme]?.black}
             size={moderateScale(24)}
           />
         </TouchableOpacity>
@@ -40,7 +46,7 @@ const ReferralsScreens = ({navigation}) => {
               <FeatherIcon
                 name={'chevron-right'}
                 size={moderateScale(20)}
-                color={Colors.blue}
+                color={Colors[theme]?.blue}
               />
             </TouchableOpacity>
           </View>
@@ -69,6 +75,7 @@ const ReferralsScreens = ({navigation}) => {
           <TextInput style={styles.textInput} />
           <View style={styles.sendInviteParent}>
             <CustomButton
+              theme={theme}
               buttonTitle={Strings.sendInvite}
               buttonTitleStyle={styles.sendInvite}
               buttonStyle={[
@@ -81,7 +88,7 @@ const ReferralsScreens = ({navigation}) => {
               <FontistoIcon
                 name="search"
                 size={moderateScale(20)}
-                color={Colors.white}
+                color={Colors[theme]?.white}
               />
             </TouchableOpacity>
           </View>

@@ -1,12 +1,17 @@
+import {useRoute} from '@react-navigation/native';
 import React, {useState} from 'react';
 import {Modal, SafeAreaView, Text, TouchableOpacity, View} from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import {CustomHeader} from '../../components';
 import {Strings} from '../../constants';
 import {Colors, moderateScale} from '../../theme';
-import styles from './ScanIdStyles';
+import styling from './ScanIdStyles';
 
 const ScanIdScreen = ({navigation}) => {
+  const route = useRoute();
+  const theme = route?.params?.theme;
+  const styles = styling(theme);
+
   const [isFlashOn, setIsFlashOn] = useState(false);
   const [exitModal, setExitModal] = useState(false);
 
@@ -14,6 +19,7 @@ const ScanIdScreen = ({navigation}) => {
     <View style={styles.screen}>
       <View style={styles.headerParent}>
         <CustomHeader
+          theme={theme}
           headerTitle={Strings.scanId}
           headerTitleStyle={styles.headerTitle}
           backBtnStyle={styles.backBtnStyle}
@@ -25,7 +31,7 @@ const ScanIdScreen = ({navigation}) => {
           }}>
           <Ionicons
             name={isFlashOn ? 'flash-off-outline' : 'md-flash-outline'}
-            color={Colors.white}
+            color={Colors[theme]?.white}
             size={moderateScale(26)}
           />
         </TouchableOpacity>

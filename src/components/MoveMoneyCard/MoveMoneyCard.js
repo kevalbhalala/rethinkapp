@@ -2,7 +2,7 @@ import React from 'react';
 import {Image, Text, TouchableOpacity, View} from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
 import {moderateScale, verticalScale} from '../../theme';
-import styles from './MoveMoneyCardStyle';
+import styling from './MoveMoneyCardStyle';
 
 const MoveMoneyCard = ({
   title,
@@ -17,7 +17,10 @@ const MoveMoneyCard = ({
   cardStyle,
   onPressCard,
   rightIcon = true,
+  theme,
 }) => {
+  const styles = styling(theme);
+
   return (
     <TouchableOpacity
       style={[

@@ -1,15 +1,21 @@
+import {useRoute} from '@react-navigation/native';
 import React from 'react';
 import {Text, View} from 'react-native';
 import {TextInput} from 'react-native-paper';
 import {CustomButton, CustomHeader} from '../../components';
 import {Strings} from '../../constants';
 import {Colors, verticalScale} from '../../theme';
-import styles from './AddUserRequestStyle';
+import styling from './AddUserRequestStyle';
 
 const AddUserRequestScreen = ({navigation}) => {
+  const route = useRoute();
+  const theme = route?.params?.theme;
+  const styles = styling(theme);
+
   return (
     <View style={styles.screen}>
       <CustomHeader
+        theme={theme}
         headerTitle={Strings.addUserReq}
         onPressBack={() => navigation.goBack()}
       />
@@ -20,13 +26,13 @@ const AddUserRequestScreen = ({navigation}) => {
             label={Strings.name?.toUpperCase()}
             mode={'outlined'}
             style={styles.textInput}
-            activeOutlineColor={Colors.grey500}
+            activeOutlineColor={Colors[theme]?.grey500}
           />
           <TextInput
             label={Strings.email?.toUpperCase()}
             mode={'outlined'}
             style={[styles.textInput, {marginBottom: verticalScale(10)}]}
-            activeOutlineColor={Colors.grey500}
+            activeOutlineColor={Colors[theme]?.grey500}
           />
           <Text style={styles.useToCommunicate}>
             {Strings.useToCommunicate}
@@ -35,12 +41,13 @@ const AddUserRequestScreen = ({navigation}) => {
             label={Strings.relationBusiness?.toUpperCase()}
             mode={'outlined'}
             style={styles.textInput}
-            activeOutlineColor={Colors.grey500}
+            activeOutlineColor={Colors[theme]?.grey500}
           />
         </View>
       </View>
       <View style={styles.bottomView}>
         <CustomButton
+          theme={theme}
           buttonTitle={Strings.continue}
           buttonStyle={styles.continueButton}
         />

@@ -1,3 +1,4 @@
+import {useRoute} from '@react-navigation/native';
 import React from 'react';
 import {Text, TouchableOpacity, View} from 'react-native';
 import FeatherIcon from 'react-native-vector-icons/Feather';
@@ -6,12 +7,17 @@ import Fontisto from 'react-native-vector-icons/Fontisto';
 import {CustomHeader} from '../../components';
 import {navigationStrings, Strings} from '../../constants';
 import {Colors, moderateScale} from '../../theme';
-import styles from './AddPayeeStyle';
+import styling from './AddPayeeStyle';
 
 const AddPayeeScreen = ({navigation}) => {
+  const route = useRoute();
+  const theme = route?.params?.theme;
+  const styles = styling(theme);
+
   return (
     <View style={styles.screen}>
       <CustomHeader
+        theme={theme}
         headerTitle={Strings.addPayee}
         onPressBack={() => navigation.goBack()}
       />
@@ -26,7 +32,7 @@ const AddPayeeScreen = ({navigation}) => {
             <FontAwesomeIcon
               name={'bank'}
               size={moderateScale(26)}
-              color={Colors.blue}
+              color={Colors[theme]?.blue}
             />
           </View>
           <View style={styles.detailParent}>
@@ -43,7 +49,7 @@ const AddPayeeScreen = ({navigation}) => {
             <Fontisto
               name={'email'}
               size={moderateScale(26)}
-              color={Colors.blue}
+              color={Colors[theme]?.blue}
             />
           </View>
           <View style={styles.detailParent}>

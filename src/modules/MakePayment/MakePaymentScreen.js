@@ -1,14 +1,20 @@
+import {useRoute} from '@react-navigation/native';
 import React from 'react';
 import {Image, Text, View} from 'react-native';
 import {Icons} from '../../assets';
 import {CustomButton, CustomHeader} from '../../components';
 import {navigationStrings, Strings} from '../../constants';
-import styles from './MakePaymentStyle';
+import styling from './MakePaymentStyle';
 
 const MakePaymentScreen = ({navigation}) => {
+  const route = useRoute();
+  const theme = route?.params?.theme;
+  const styles = styling(theme);
+
   return (
     <View style={styles.screen}>
       <CustomHeader
+        theme={theme}
         headerTitle={Strings.makePayment}
         onPressBack={() => {
           navigation.goBack();
@@ -22,6 +28,7 @@ const MakePaymentScreen = ({navigation}) => {
       </View>
       <View style={styles.addPayeeParent}>
         <CustomButton
+          theme={theme}
           buttonTitle={Strings.addPayee}
           buttonStyle={styles.addPayeeButton}
           buttonTitleStyle={styles.addPayee}

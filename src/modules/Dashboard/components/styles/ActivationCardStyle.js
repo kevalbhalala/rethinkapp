@@ -7,53 +7,54 @@ import {
   verticalScale,
 } from '../../../../theme';
 
-const styles = StyleSheet.create({
-  card: {
-    width: '100%',
-    height: verticalScale(150),
-    backgroundColor: Colors.white,
-    marginVertical: verticalScale(10),
-    borderRadius: moderateScale(10),
-    overflow: 'hidden',
-    paddingHorizontal: horizontalScale(8),
-  },
-  titleParent: {
-    flex: 0.3,
-    justifyContent: 'flex-end',
-    alignItems: 'center',
-  },
-  title: {
-    color: Colors.black,
-    fontSize: moderateScale(18),
-    fontFamily: Fonts.bold,
-  },
-  progressBarParent: {
-    flex: 0.3,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  progressBar: {
-    height: verticalScale(25),
-    width: '100%',
-    backgroundColor: Colors.grey400,
-    borderRadius: moderateScale(6),
-    flexDirection: 'row',
-    overflow: 'hidden',
-  },
-  innerProgressBar: {
-    backgroundColor: Colors.blue,
-  },
-  detailParent: {
-    flex: 0.4,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-  },
-  detail: {
-    color: Colors.black,
-    textAlign: 'center',
-    fontFamily: Fonts.regular,
-  },
-});
+const styling = theme =>
+  StyleSheet.create({
+    card: {
+      width: '100%',
+      height: verticalScale(150),
+      backgroundColor: Colors[theme].white,
+      marginVertical: verticalScale(10),
+      borderRadius: moderateScale(10),
+      overflow: 'hidden',
+      paddingHorizontal: horizontalScale(8),
+    },
+    titleParent: {
+      flex: 0.3,
+      justifyContent: 'flex-end',
+      alignItems: 'center',
+    },
+    title: {
+      color: Colors[theme].black,
+      fontSize: moderateScale(18),
+      fontFamily: Fonts.bold,
+    },
+    progressBarParent: {
+      flex: 0.3,
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
+    progressBar: {
+      height: verticalScale(25),
+      width: '100%',
+      backgroundColor: Colors[theme].grey400,
+      borderRadius: moderateScale(6),
+      flexDirection: 'row',
+      overflow: 'hidden',
+    },
+    innerProgressBar: {
+      backgroundColor: Colors[theme].blue,
+    },
+    detailParent: {
+      flex: 0.4,
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+    },
+    detail: {
+      color: Colors[theme].black,
+      textAlign: 'center',
+      fontFamily: Fonts.regular,
+    },
+  });
 
-export default styles;
+export default styling;

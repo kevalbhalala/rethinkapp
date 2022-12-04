@@ -26,9 +26,10 @@ import {
   moderateScale,
   verticalScale,
 } from '../../../theme';
-import styles from './styles/FilterModalStyles';
+import styling from './styles/FilterModalStyles';
 
-const FilterModal = ({onPressBack, visible}) => {
+const FilterModal = ({onPressBack, visible, theme}) => {
+  const styles = styling(theme);
   const {
     open,
     toDate,
@@ -82,7 +83,11 @@ const FilterModal = ({onPressBack, visible}) => {
   return (
     <Modal visible={visible ?? false} style={{flex: 1}}>
       <SafeAreaView style={styles.screen}>
-        <CustomHeader headerTitle={Strings.filter} onPressBack={onPressBack} />
+        <CustomHeader
+          theme={theme}
+          headerTitle={Strings.filter}
+          onPressBack={onPressBack}
+        />
         <ScrollView style={styles.scrollView}>
           <View style={styles.container}>
             <View style={styles.card}>
@@ -90,6 +95,7 @@ const FilterModal = ({onPressBack, visible}) => {
                 <Text style={styles.cardHeaderText}>{Strings.dateRange}</Text>
               </View>
               <ModalButton
+                theme={theme}
                 buttonLable={Strings.dateRange?.toUpperCase()}
                 buttonValue={selectedDateRange}
                 width={horizontalScale(320)}
@@ -99,6 +105,7 @@ const FilterModal = ({onPressBack, visible}) => {
               />
               <View style={styles.datePickerParent}>
                 <ModalButton
+                  theme={theme}
                   buttonLable={Strings.from?.toUpperCase()}
                   buttonValue={moment(fromDate)
                     ?.format('MMM DD,YYYY')
@@ -111,6 +118,7 @@ const FilterModal = ({onPressBack, visible}) => {
                   }}
                 />
                 <ModalButton
+                  theme={theme}
                   buttonLable={Strings.to?.toUpperCase()}
                   buttonValue={moment(toDate)
                     ?.format('MMM DD,YYYY')
@@ -158,6 +166,7 @@ const FilterModal = ({onPressBack, visible}) => {
                         const isSelcted = selectedTypes?.includes(element);
                         return (
                           <CustomButton
+                            theme={theme}
                             buttonTitle={element}
                             buttonTitleStyle={[
                               styles.typeButtonText,
@@ -185,6 +194,7 @@ const FilterModal = ({onPressBack, visible}) => {
                 </Text>
               </View>
               <ModalButton
+                theme={theme}
                 buttonValue={Strings.category?.toUpperCase()}
                 width={horizontalScale(320)}
                 marginTop={verticalScale(10)}
@@ -196,6 +206,7 @@ const FilterModal = ({onPressBack, visible}) => {
         </ScrollView>
         <View style={styles.applyFilterParent}>
           <CustomButton
+            theme={theme}
             buttonTitle={Strings.applyFilters}
             buttonTitleStyle={styles.applyFilter}
             buttonStyle={styles.applyFilterButton}
@@ -247,7 +258,7 @@ const FilterModal = ({onPressBack, visible}) => {
                         <Icon
                           name="checkmark"
                           size={moderateScale(28)}
-                          color={Colors.blue}
+                          color={Colors[theme]?.blue}
                         />
                       ) : (
                         <></>
@@ -297,6 +308,7 @@ const FilterModal = ({onPressBack, visible}) => {
                     {Strings.income?.toUpperCase()}
                   </Text>
                   <CategoryItem
+                    theme={theme}
                     categoryName={'Contact'}
                     iconSource={{
                       uri: 'https://www.clipartmax.com/png/middle/480-4800097_contact-us-contact-us-round-icon.png',
@@ -309,6 +321,7 @@ const FilterModal = ({onPressBack, visible}) => {
                     {Strings.spending?.toUpperCase()}
                   </Text>
                   <CategoryItem
+                    theme={theme}
                     categoryName={'Contact'}
                     iconSource={{
                       uri: 'https://www.clipartmax.com/png/middle/480-4800097_contact-us-contact-us-round-icon.png',

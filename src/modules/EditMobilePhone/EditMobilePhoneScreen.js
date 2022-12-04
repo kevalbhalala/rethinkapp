@@ -1,15 +1,21 @@
+import {useRoute} from '@react-navigation/native';
 import React from 'react';
 import {Text, View} from 'react-native';
 import {TextInput} from 'react-native-paper';
 import {CustomButton, CustomHeader} from '../../components';
 import {Strings} from '../../constants';
 import {Colors} from '../../theme';
-import styles from './EditMobilePhoneStyle';
+import styling from './EditMobilePhoneStyle';
 
 const EditMobilePhoneScreen = ({navigation}) => {
+  const route = useRoute();
+  const theme = route?.params?.theme;
+  const styles = styling(theme);
+
   return (
     <View style={styles.screen}>
       <CustomHeader
+        theme={theme}
         headerTitle={Strings.editMobilePhone}
         onPressBack={() => navigation.goBack()}
       />
@@ -20,13 +26,14 @@ const EditMobilePhoneScreen = ({navigation}) => {
             label={Strings.editMobilePhone?.toUpperCase()}
             mode={'outlined'}
             style={styles.textInput}
-            activeOutlineColor={Colors.grey500}
+            activeOutlineColor={Colors[theme]?.grey500}
           />
         </View>
       </View>
       <View style={styles.bottomView}>
         <Text style={styles.editEmailNote}>{Strings.editMobilePhoneNote}</Text>
         <CustomButton
+          theme={theme}
           buttonTitle={Strings.submit}
           buttonStyle={styles.submitButton}
         />

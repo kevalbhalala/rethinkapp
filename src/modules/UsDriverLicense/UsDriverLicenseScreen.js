@@ -1,3 +1,4 @@
+import {useRoute} from '@react-navigation/native';
 import React from 'react';
 import {Text, TouchableOpacity, View} from 'react-native';
 import AntDesign from 'react-native-vector-icons/AntDesign';
@@ -5,12 +6,17 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import {CustomButton, CustomHeader} from '../../components';
 import {navigationStrings, Strings} from '../../constants';
 import {Colors, moderateScale} from '../../theme';
-import styles from './UsDriverLicenseStyle';
+import styling from './UsDriverLicenseStyle';
 
 const UsDriverLicenseScreen = ({navigation}) => {
+  const route = useRoute();
+  const theme = route?.params?.theme;
+  const styles = styling(theme);
+
   return (
     <View style={styles.screen}>
       <CustomHeader
+        theme={theme}
         headerTitle={Strings.takePhotoId}
         onPressBack={() => navigation.goBack()}
       />
@@ -35,13 +41,13 @@ const UsDriverLicenseScreen = ({navigation}) => {
           <FontAwesome
             name="drivers-license-o"
             size={moderateScale(28)}
-            color={Colors.black}
+            color={Colors[theme]?.black}
           />
           <Text style={styles.cardTitle}>{Strings.frontLicense}</Text>
           <AntDesign
             name={'pluscircleo'}
             size={moderateScale(26)}
-            color={Colors.blue}
+            color={Colors[theme]?.blue}
           />
         </TouchableOpacity>
         <TouchableOpacity
@@ -52,18 +58,19 @@ const UsDriverLicenseScreen = ({navigation}) => {
           <FontAwesome
             name="drivers-license-o"
             size={moderateScale(28)}
-            color={Colors.black}
+            color={Colors[theme]?.black}
           />
           <Text style={styles.cardTitle}>{Strings.backLicense}</Text>
           <AntDesign
             name={'pluscircleo'}
             size={moderateScale(26)}
-            color={Colors.blue}
+            color={Colors[theme]?.blue}
           />
         </TouchableOpacity>
       </View>
       <View style={styles.continueParent}>
         <CustomButton
+          theme={theme}
           buttonTitle={Strings.continue}
           buttonTitleStyle={styles.continue}
           buttonStyle={styles.continueButton}

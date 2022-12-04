@@ -3,7 +3,7 @@ import {TouchableOpacity, View} from 'react-native';
 import {TextInput} from 'react-native-paper';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {Colors, moderateScale} from '../../theme';
-import styles from './ModalButtonStyle';
+import styling from './ModalButtonStyle';
 
 const ModalButton = ({
   buttonLable,
@@ -15,7 +15,10 @@ const ModalButton = ({
   marginBottom,
   marginRight,
   marginLeft,
+  theme,
 }) => {
+  const styles = styling(theme);
+
   return (
     <TouchableOpacity
       onPress={onPressButton}
@@ -31,7 +34,7 @@ const ModalButton = ({
         <Icon
           name={'chevron-down'}
           size={moderateScale(26)}
-          color={Colors.grey400}
+          color={Colors[theme]?.grey400}
         />
       </View>
     </TouchableOpacity>

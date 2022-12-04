@@ -1,6 +1,6 @@
 import React from 'react';
 import {Text, TouchableOpacity} from 'react-native';
-import styles from './CustomButtonStyle';
+import styling from './CustomButtonStyle';
 
 const CustomButton = ({
   buttonStyle,
@@ -9,7 +9,10 @@ const CustomButton = ({
   onBtnPress,
   buttonActiveOpacity,
   buttonDisable,
+  theme,
 }) => {
+  const styles = styling(theme);
+
   return (
     <TouchableOpacity
       disabled={buttonDisable ?? false}

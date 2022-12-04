@@ -1,10 +1,15 @@
+import {useRoute} from '@react-navigation/native';
 import React from 'react';
 import {Text, View} from 'react-native';
 import {CustomButton} from '../../components';
 import {navigationStrings, Strings} from '../../constants';
-import styles from './IntroStyle';
+import styling from './IntroStyle';
 
 const IntroScreen = ({navigation}) => {
+  const route = useRoute();
+  const theme = route?.params?.theme;
+  const styles = styling(theme);
+
   const onPressAlreadyAccount = () => {
     navigation.navigate(navigationStrings.LOGIN);
   };
@@ -19,12 +24,14 @@ const IntroScreen = ({navigation}) => {
       </View>
       <View style={styles.applyButtonParent}>
         <CustomButton
+          theme={theme}
           onBtnPress={() => {}}
           buttonTitle={Strings.applyNow}
           buttonStyle={styles.applyBtn}
           buttonTitleStyle={styles.applyText}
         />
         <CustomButton
+          theme={theme}
           onBtnPress={() => {}}
           buttonTitle={Strings.completeApplication}
           buttonStyle={styles.completeApplicationBtn}
@@ -39,6 +46,7 @@ const IntroScreen = ({navigation}) => {
         <View style={styles.line} />
       </View>
       <CustomButton
+        theme={theme}
         onBtnPress={onPressAlreadyAccount}
         buttonTitle={Strings.alreadyAccount}
         buttonStyle={styles.alreadyAccountBtn}

@@ -9,13 +9,18 @@ import {
   moderateScale,
   verticalScale,
 } from '../../theme';
-import styles from './FinancialInsightsStyles';
+import styling from './FinancialInsightsStyles';
 import Icon from 'react-native-vector-icons/Ionicons';
 import FeatherIcon from 'react-native-vector-icons/Feather';
 import moment from 'moment';
 import {LineChart} from 'react-native-chart-kit';
+import {useRoute} from '@react-navigation/native';
 
 const FinancialInsightsScreen = () => {
+  const route = useRoute();
+  const theme = route?.params?.theme;
+  const styles = styling(theme);
+
   const chartData = {
     labels: ['w1', 'w2', 'w3', 'w4', 'w5', 'w6'],
     datasets: [
@@ -41,12 +46,14 @@ const FinancialInsightsScreen = () => {
     <View style={styles.screen}>
       <View style={styles.modalButttonParent}>
         <ModalButton
+          theme={theme}
           buttonLable={Strings.activity?.toUpperCase()}
           buttonValue={selectedActivity}
           width={horizontalScale(165)}
           onPressButton={() => setVisibleActivity(true)}
         />
         <ModalButton
+          theme={theme}
           buttonLable={Strings.dateRange?.toUpperCase()}
           buttonValue={selectedDateRange}
           width={horizontalScale(165)}
@@ -69,7 +76,7 @@ const FinancialInsightsScreen = () => {
             data={chartData}
             width={horizontalScale(300)}
             height={verticalScale(180)}
-            chartConfig={lineChartConfig}
+            chartConfig={lineChartConfig(theme)}
             withInnerLines={false}
             withVerticalLines={false}
             withShadow={false}
@@ -123,7 +130,7 @@ const FinancialInsightsScreen = () => {
                         <Icon
                           name="checkmark"
                           size={moderateScale(24)}
-                          color={Colors.blue}
+                          color={Colors[theme]?.blue}
                         />
                       ) : (
                         <></>
@@ -167,7 +174,7 @@ const FinancialInsightsScreen = () => {
                           <Icon
                             name="checkmark"
                             size={moderateScale(24)}
-                            color={Colors.blue}
+                            color={Colors[theme]?.blue}
                           />
                         ) : (
                           <></>

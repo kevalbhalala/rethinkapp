@@ -1,4 +1,5 @@
-export default {
+const light = {
+  screenBackground: '#EEEEEE',
   transparent: 'transparent',
   white: '#FFFFFF',
   black: '#000000',
@@ -21,3 +22,30 @@ export default {
   darkBlue: '#00008B',
   money: '#21b283',
 };
+
+const dark = {
+  screenBackground: '#101010',
+  transparent: 'transparent',
+  white: '#000000',
+  black: '#FFFFFF',
+  blue: '#1652F0',
+  blue50: '#1652F080',
+  grey200: '#EEEEEE',
+  grey300: '#E0E0E0',
+  grey400: '#BDBDBD',
+  grey500: '#9E9E9E',
+  grey600: '#757575',
+  grey700: '#616161',
+  emerald: '#008A00',
+  black50: '#FFFFFF80',
+  blue900: '#0D47A1',
+  blue10050: '#BBDEFB80',
+  green900: '#1B5E20',
+  green10050: '#C8E6C980',
+  orange: '#EF6C00',
+  red: '#FF0000',
+  darkBlue: '#00008B',
+  money: '#21b283',
+};
+
+export default {light, dark};

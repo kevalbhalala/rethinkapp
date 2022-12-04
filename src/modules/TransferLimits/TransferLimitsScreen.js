@@ -1,15 +1,21 @@
+import {useRoute} from '@react-navigation/native';
 import React from 'react';
 import {Image, ScrollView, Text, View} from 'react-native';
 import {Icons} from '../../assets';
 import {CustomButton, CustomHeader} from '../../components';
 import {navigationStrings, Strings} from '../../constants';
 import {verticalScale} from '../../theme';
-import styles from './TransferLimitsStyle';
+import styling from './TransferLimitsStyle';
 
 const TransferLimitsScreen = ({navigation}) => {
+  const route = useRoute();
+  const theme = route?.params?.theme;
+  const styles = styling(theme);
+
   return (
     <View style={styles.screen}>
       <CustomHeader
+        theme={theme}
         headerTitle={Strings.transferLimits}
         onPressBack={() => navigation.goBack()}
       />
@@ -70,6 +76,7 @@ const TransferLimitsScreen = ({navigation}) => {
           </View>
           <View style={styles.divider} />
           <CustomButton
+            theme={theme}
             buttonTitle={Strings.requestLimitChange}
             buttonStyle={styles.buttonStyle}
             buttonTitleStyle={styles.buttonTitle}
@@ -137,6 +144,7 @@ const TransferLimitsScreen = ({navigation}) => {
           </View>
           <View style={styles.divider} />
           <CustomButton
+            theme={theme}
             buttonTitle={Strings.requestLimitChange}
             buttonStyle={styles.buttonStyle}
             buttonTitleStyle={styles.buttonTitle}
@@ -188,6 +196,7 @@ const TransferLimitsScreen = ({navigation}) => {
           </View>
           <View style={styles.divider} />
           <CustomButton
+            theme={theme}
             buttonTitle={Strings.requestLimitChange}
             buttonStyle={styles.buttonStyle}
             buttonTitleStyle={styles.buttonTitle}

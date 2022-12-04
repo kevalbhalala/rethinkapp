@@ -7,7 +7,7 @@ import {Icons} from '../../assets';
 import {CustomButton, CustomHeader} from '../../components';
 import {Strings} from '../../constants';
 import {Colors, horizontalScale, moderateScale} from '../../theme';
-import styles from './RequestLimitChangeStyle';
+import styling from './RequestLimitChangeStyle';
 
 const RequestLimitChangeScreen = ({navigation}) => {
   const [limitChange, setLimitChange] = useState();
@@ -15,6 +15,8 @@ const RequestLimitChangeScreen = ({navigation}) => {
 
   const route = useRoute();
   const from = route?.params?.from;
+  const theme = route?.params?.theme;
+  const styles = styling(theme);
 
   const TitleCard = () => {
     if (from === 'bankTransferOnly') {
@@ -61,6 +63,7 @@ const RequestLimitChangeScreen = ({navigation}) => {
   return (
     <View style={styles.screen}>
       <CustomHeader
+        theme={theme}
         headerTitle={Strings.requestLimitChange}
         onPressBack={() => navigation.goBack()}
       />
@@ -82,7 +85,7 @@ const RequestLimitChangeScreen = ({navigation}) => {
                     : 'checkbox-blank-circle-outline'
                 }
                 size={moderateScale(24)}
-                color={Colors.blue}
+                color={Colors[theme]?.blue}
               />
             </TouchableOpacity>
           </View>
@@ -100,7 +103,7 @@ const RequestLimitChangeScreen = ({navigation}) => {
                     : 'checkbox-blank-circle-outline'
                 }
                 size={moderateScale(24)}
-                color={Colors.blue}
+                color={Colors[theme]?.blue}
               />
             </TouchableOpacity>
           </View>
@@ -118,7 +121,7 @@ const RequestLimitChangeScreen = ({navigation}) => {
                     : 'checkbox-blank-circle-outline'
                 }
                 size={moderateScale(24)}
-                color={Colors.blue}
+                color={Colors[theme]?.blue}
               />
             </TouchableOpacity>
           </View>
@@ -129,7 +132,7 @@ const RequestLimitChangeScreen = ({navigation}) => {
             label={Strings.amount?.toUpperCase()}
             mode={'outlined'}
             style={styles.textInput}
-            activeOutlineColor={Colors.grey500}
+            activeOutlineColor={Colors[theme]?.grey500}
           />
         </View>
         <View style={styles.card}>
@@ -138,7 +141,7 @@ const RequestLimitChangeScreen = ({navigation}) => {
             label={Strings.briefDescription?.toUpperCase()}
             mode={'outlined'}
             style={styles.textInput}
-            activeOutlineColor={Colors.grey500}
+            activeOutlineColor={Colors[theme]?.grey500}
           />
         </View>
         <View style={styles.card}>
@@ -151,7 +154,7 @@ const RequestLimitChangeScreen = ({navigation}) => {
               <MaterialCommunityIcons
                 name={'information-outline'}
                 size={moderateScale(26)}
-                color={Colors.blue}
+                color={Colors[theme]?.blue}
               />
             </View>
             <TouchableOpacity onPress={() => setLimitType(Strings.temporary)}>
@@ -162,7 +165,7 @@ const RequestLimitChangeScreen = ({navigation}) => {
                     : 'checkbox-blank-circle-outline'
                 }
                 size={moderateScale(24)}
-                color={Colors.blue}
+                color={Colors[theme]?.blue}
               />
             </TouchableOpacity>
           </View>
@@ -179,7 +182,7 @@ const RequestLimitChangeScreen = ({navigation}) => {
                     : 'checkbox-blank-circle-outline'
                 }
                 size={moderateScale(24)}
-                color={Colors.blue}
+                color={Colors[theme]?.blue}
               />
             </TouchableOpacity>
           </View>
@@ -191,7 +194,7 @@ const RequestLimitChangeScreen = ({navigation}) => {
             <View style={{flexDirection: 'row'}}>
               <MaterialCommunityIcons
                 name={'file-document-outline'}
-                color={Colors.black}
+                color={Colors[theme]?.black}
                 size={moderateScale(32)}
               />
               <Text style={styles.documentationOptional}>
@@ -207,21 +210,21 @@ const RequestLimitChangeScreen = ({navigation}) => {
               <TouchableOpacity>
                 <MaterialCommunityIcons
                   name={'google-drive'}
-                  color={Colors.black}
+                  color={Colors[theme]?.black}
                   size={moderateScale(32)}
                 />
               </TouchableOpacity>
               <TouchableOpacity>
                 <MaterialCommunityIcons
                   name={'dropbox'}
-                  color={Colors.black}
+                  color={Colors[theme]?.black}
                   size={moderateScale(32)}
                 />
               </TouchableOpacity>
               <TouchableOpacity>
                 <MaterialCommunityIcons
                   name={'plus-circle-outline'}
-                  color={Colors.black}
+                  color={Colors[theme]?.black}
                   size={moderateScale(32)}
                 />
               </TouchableOpacity>
@@ -232,6 +235,7 @@ const RequestLimitChangeScreen = ({navigation}) => {
           {Strings.requestLimitDisclaimer}
         </Text>
         <CustomButton
+          theme={theme}
           buttonTitle={Strings.submitRequest}
           buttonTitleStyle={styles.buttonTitle}
           buttonStyle={styles.buttonStyle}

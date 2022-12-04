@@ -1,3 +1,4 @@
+import {useRoute} from '@react-navigation/native';
 import React, {useState} from 'react';
 import {ScrollView, Text, TouchableOpacity, View} from 'react-native';
 import {Switch} from 'react-native-paper';
@@ -10,14 +11,22 @@ import {
   Strings,
 } from '../../constants';
 import {Colors, moderateScale} from '../../theme';
-import styles from './SettingsStyle';
+import styling from './SettingsStyle';
 
 const SettingsScreen = ({navigation}) => {
+  const route = useRoute();
+  const theme = route?.params?.theme;
+  const styles = styling(theme);
+
   const [bioSwitch, setBioSwitch] = useState(false);
   const [notificationSwitch, setNotificationSwitch] = useState(false);
   return (
     <View style={styles.screen}>
-      <CustomHeader headerTitle={Strings.settings} backButton={false} />
+      <CustomHeader
+        theme={theme}
+        headerTitle={Strings.settings}
+        backButton={false}
+      />
       <View style={styles.container}>
         <ScrollView>
           <Text style={styles.cardTitle}>
@@ -91,7 +100,7 @@ const SettingsScreen = ({navigation}) => {
                             ? setBioSwitch(!bioSwitch)
                             : setNotificationSwitch(!notificationSwitch)
                         }
-                        color={Colors.blue}
+                        color={Colors[theme]?.blue}
                       />
                     )}
                   </TouchableOpacity>
@@ -112,6 +121,7 @@ const SettingsScreen = ({navigation}) => {
             </TouchableOpacity>
           </View>
           <CustomButton
+            theme={theme}
             buttonTitle={Strings.logout}
             buttonTitleStyle={styles.logout}
             buttonStyle={styles.logoutButton}

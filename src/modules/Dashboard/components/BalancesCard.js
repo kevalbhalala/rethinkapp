@@ -3,7 +3,7 @@ import {Text, TouchableOpacity, View} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {Strings} from '../../../constants/Strings';
 import {Colors, moderateScale, verticalScale} from '../../../theme';
-import styles from './styles/BalancesCardStyle';
+import styling from './styles/BalancesCardStyle';
 
 const BalancesCard = ({
   currencySymbol = '$',
@@ -15,7 +15,10 @@ const BalancesCard = ({
   monthName,
   moneyIn,
   moneyOut,
+  theme,
 }) => {
+  const styles = styling(theme);
+
   const [isCardOpen, setIsCardOpen] = useState(false);
   return (
     <View style={[styles.card, !isCardOpen && {height: verticalScale(150)}]}>
@@ -25,7 +28,7 @@ const BalancesCard = ({
           <Icon
             name={isCardOpen ? 'chevron-up' : 'chevron-down'}
             size={moderateScale(36)}
-            color={Colors.black}
+            color={Colors[theme]?.black}
           />
         </TouchableOpacity>
       </View>
@@ -40,7 +43,7 @@ const BalancesCard = ({
               <Icon
                 name="md-information-circle-outline"
                 size={moderateScale(25)}
-                color={Colors.blue}
+                color={Colors[theme]?.blue}
               />
             </TouchableOpacity>
           </View>

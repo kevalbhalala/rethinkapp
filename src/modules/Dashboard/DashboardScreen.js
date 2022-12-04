@@ -1,3 +1,4 @@
+import {useRoute} from '@react-navigation/native';
 import React from 'react';
 import {ImageBackground, ScrollView, Text, View} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
@@ -6,7 +7,7 @@ import {DashboardCard} from '../../components';
 import {Strings} from '../../constants';
 import {Colors} from '../../theme';
 import {ActivationCard, BalancesCard, TransactionCard} from './components';
-import styles from './DashboardStyle';
+import styling from './DashboardStyle';
 
 /**
  * NOTES :
@@ -48,6 +49,10 @@ import styles from './DashboardStyle';
  */
 
 const DashboardScreen = () => {
+  const route = useRoute();
+  const theme = route?.params?.theme;
+  const styles = styling(theme);
+
   return (
     <View style={styles.screen}>
       <ScrollView style={{flex: 1}}>
@@ -58,7 +63,10 @@ const DashboardScreen = () => {
             <LinearGradient
               start={{x: 0, y: 0.2}}
               end={{x: 0, y: 1}}
-              colors={[Colors.transparent, Colors.grey200]}
+              colors={[
+                Colors[theme].transparent,
+                Colors[theme].screenBackground,
+              ]}
               style={styles.gradient}
             />
           </ImageBackground>
@@ -67,47 +75,53 @@ const DashboardScreen = () => {
             <Text style={styles.quoteAuthor}>{Strings.quoteAuthor}</Text>
           </View>
           <View style={styles.balanceCardParent}>
-            <BalancesCard />
+            <BalancesCard theme={theme} />
           </View>
         </View>
         <View style={styles.cardParent}>
-          <ActivationCard />
+          <ActivationCard theme={theme} />
           <DashboardCard
+            theme={theme}
             title={Strings.fundAccount}
             subTitle={Strings.addMoneyRethink}
             navigationText={Strings.wayFund}
             logo={Icons.bank}
           />
-          <TransactionCard noTrasaction={true} />
+          <TransactionCard theme={theme} noTrasaction={true} />
           <DashboardCard
+            theme={theme}
             cardStyle={styles.exploreCard}
             subTitle={Strings.exploreRethink}
             subTitleStyle={styles.whiteText}
             navigationText={Strings.seeMore}
             navigateTextStyle={styles.whiteText}
-            navigationLogoColor={Colors.white}
+            navigationLogoColor={Colors[theme]?.white}
           />
           <DashboardCard
+            theme={theme}
             title={Strings.invoices}
             subTitle={Strings.sendTrackInvoice}
             navigationText={Strings.createInvoice}
             logo={Icons.invoices}
           />
           <DashboardCard
+            theme={theme}
             title={Strings.reserves}
             subTitle={Strings.setAsideMoney}
             navigationText={Strings.createReserve}
             logo={Icons.reserves}
           />
           <DashboardCard
+            theme={theme}
             title={Strings.referBusiness}
             subTitle={Strings.referNote}
             navigationText={Strings.getStarted}
             logo={Icons.referBusiness}
-            navigationLogoColor={Colors.blue}
+            navigationLogoColor={Colors[theme]?.blue}
             navigateTextStyle={styles.getStartedText}
           />
           <DashboardCard
+            theme={theme}
             cardStyle={styles.rethinkBoostCard}
             title={Strings.rethinkBoost}
             titleStyle={styles.whiteText}
@@ -115,7 +129,7 @@ const DashboardScreen = () => {
             subTitleStyle={styles.whiteText}
             navigationText={Strings.seeMore}
             navigateTextStyle={styles.whiteText}
-            navigationLogoColor={Colors.white}
+            navigationLogoColor={Colors[theme]?.white}
           />
         </View>
       </ScrollView>

@@ -4,27 +4,34 @@ import {Icons} from '../../assets';
 import {CustomButton, CustomHeader, MoveMoneyCard} from '../../components';
 import {Strings} from '../../constants/Strings';
 import {Colors, moderateScale} from '../../theme';
-import styles from './PushFundStyle';
+import styling from './PushFundStyle';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import {useRoute} from '@react-navigation/native';
 
 const PushFundScreen = ({navigation}) => {
+  const route = useRoute();
+  const theme = route?.params?.theme;
+  const styles = styling(theme);
+
   return (
     <View style={styles.screen}>
       <CustomHeader
+        theme={theme}
         headerTitle={Strings.fundAccount}
         onPressBack={() => navigation.goBack()}
       />
       <View style={styles.card}>
         <MoveMoneyCard
+          theme={theme}
           title={Strings.pushFundAnotherBank}
           subTitle={Strings.depositBusinessDayOneTwo}
           icon={Icons.money}
           tagOne={Strings.forLargeDeposits}
           tagTwo={Strings.fast}
           tagOneTextStyle={styles.greyText}
-          tagOneBackground={Colors.grey200}
+          tagOneBackground={Colors[theme]?.grey200}
           tagTwoTextStyle={styles.darkBlueText}
-          tagTwoBackground={Colors.blue10050}
+          tagTwoBackground={Colors[theme]?.blue10050}
           rightIcon={false}
         />
         <View style={styles.divider} />

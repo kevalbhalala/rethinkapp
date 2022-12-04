@@ -1,3 +1,4 @@
+import {useRoute} from '@react-navigation/native';
 import React from 'react';
 import {Text, TouchableOpacity, View} from 'react-native';
 import Feather from 'react-native-vector-icons/Feather';
@@ -6,12 +7,17 @@ import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import {CustomHeader} from '../../components';
 import {navigationStrings, Strings} from '../../constants';
 import {Colors, moderateScale} from '../../theme';
-import styles from './SelectIdAddStyle';
+import styling from './SelectIdAddStyle';
 
 const SelectIdAddScreen = ({navigation}) => {
+  const route = useRoute();
+  const theme = route?.params?.theme;
+  const styles = styling(theme);
+
   return (
     <View style={styles.screen}>
       <CustomHeader
+        theme={theme}
         headerTitle={Strings.selectIdAdd}
         onPressBack={() => navigation.goBack()}
       />
@@ -35,7 +41,7 @@ const SelectIdAddScreen = ({navigation}) => {
           <FontAwesome
             name="drivers-license-o"
             size={moderateScale(28)}
-            color={Colors.black}
+            color={Colors[theme]?.black}
           />
           <Text style={styles.cardTitle}>{Strings.usDriverLicense}</Text>
           <Feather name={'chevron-right'} size={moderateScale(20)} />
@@ -44,7 +50,7 @@ const SelectIdAddScreen = ({navigation}) => {
           <FontAwesome5
             name="passport"
             size={moderateScale(28)}
-            color={Colors.black}
+            color={Colors[theme]?.black}
           />
           <Text style={styles.cardTitle}>{Strings.passport}</Text>
           <Feather name={'chevron-right'} size={moderateScale(20)} />

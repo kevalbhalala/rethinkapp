@@ -1,11 +1,16 @@
+import {useRoute} from '@react-navigation/native';
 import React from 'react';
 import {Text, TouchableOpacity, View} from 'react-native';
 import Foundation from 'react-native-vector-icons/Foundation';
 import {navigationStrings, Strings} from '../../constants';
 import {Colors, moderateScale} from '../../theme';
-import styles from './CaptureCheckNoteStyle';
+import styling from './CaptureCheckNoteStyle';
 
 const CaptureCheckNoteScreen = ({navigation}) => {
+  const route = useRoute();
+  const theme = route?.params?.theme;
+  const styles = styling(theme);
+
   return (
     <View style={styles.screen}>
       <View style={styles.container}>
@@ -13,7 +18,7 @@ const CaptureCheckNoteScreen = ({navigation}) => {
           <Foundation
             name={'arrow-right'}
             size={moderateScale(40)}
-            color={Colors.red}
+            color={Colors[theme]?.red}
           />
           <Text style={styles.captureNote}>{Strings.checkNoteOne}</Text>
         </View>
@@ -21,7 +26,7 @@ const CaptureCheckNoteScreen = ({navigation}) => {
           <Foundation
             name={'arrow-right'}
             size={moderateScale(40)}
-            color={Colors.red}
+            color={Colors[theme]?.red}
           />
           <Text style={styles.captureNote}>{Strings.checkNoteTwo}</Text>
         </View>

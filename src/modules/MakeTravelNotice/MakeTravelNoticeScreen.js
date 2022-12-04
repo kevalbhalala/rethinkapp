@@ -1,3 +1,4 @@
+import {useRoute} from '@react-navigation/native';
 import moment from 'moment';
 import React, {useState} from 'react';
 import {
@@ -14,9 +15,13 @@ import FontistoIcon from 'react-native-vector-icons/Fontisto';
 import {CustomButton, CustomHeader} from '../../components';
 import {Strings} from '../../constants';
 import {moderateScale, verticalScale} from '../../theme';
-import styles from './MakeTravelNoticeStyle';
+import styling from './MakeTravelNoticeStyle';
 
 const MakeTravelNoticeScreen = ({navigation}) => {
+  const route = useRoute();
+  const theme = route?.params?.theme;
+  const styles = styling(theme);
+
   const [fromDate, setFromDate] = useState('');
   const [toDate, setToDate] = useState('');
   const [isFromDate, setIsFromDate] = useState(false);
@@ -26,6 +31,7 @@ const MakeTravelNoticeScreen = ({navigation}) => {
   return (
     <View style={styles.screen}>
       <CustomHeader
+        theme={theme}
         headerTitle={Strings.travelNotice}
         onPressBack={() => navigation.goBack()}
       />
@@ -70,6 +76,7 @@ const MakeTravelNoticeScreen = ({navigation}) => {
           </View>
         </View>
         <CustomButton
+          theme={theme}
           buttonTitle={Strings.submit}
           buttonStyle={styles.buttonStyle}
         />

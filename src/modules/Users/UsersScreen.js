@@ -1,16 +1,22 @@
+import {useRoute} from '@react-navigation/native';
 import React from 'react';
 import {Text, TouchableOpacity, View} from 'react-native';
 import Feather from 'react-native-vector-icons/Feather';
 import {CustomHeader} from '../../components';
 import {navigationStrings, Strings} from '../../constants';
 import {Colors, moderateScale} from '../../theme';
-import styles from './UsersStyle';
+import styling from './UsersStyle';
 
 const UsersScreen = ({navigation}) => {
+  const route = useRoute();
+  const theme = route?.params?.theme;
+  const styles = styling(theme);
+
   return (
     <View style={styles.screen}>
       <View style={styles.headerParent}>
         <CustomHeader
+          theme={theme}
           headerTitle={Strings.users}
           onPressBack={() => navigation.goBack()}
         />
@@ -19,7 +25,7 @@ const UsersScreen = ({navigation}) => {
           <Feather
             name="user-plus"
             size={moderateScale(24)}
-            color={Colors.blue}
+            color={Colors[theme]?.blue}
           />
         </TouchableOpacity>
       </View>

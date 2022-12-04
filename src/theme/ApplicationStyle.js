@@ -1,17 +1,18 @@
 import {StyleSheet} from 'react-native';
 import Colors from './Colors';
 
-const styles = StyleSheet.create({
-  screen: {
-    flex: 1,
-    backgroundColor: 'white',
-  },
-  activityHeaderStyle: {
-    backgroundColor: Colors.grey300,
-  },
-  activityTabLable: {
-    color: Colors.black,
-  },
-});
+const styling = theme =>
+  StyleSheet.create({
+    screen: {
+      flex: 1,
+      backgroundColor: Colors[theme].white,
+    },
+    activityHeaderStyle: {
+      backgroundColor: Colors[theme].grey300,
+    },
+    activityTabLable: {
+      color: Colors[theme].black,
+    },
+  });
 
-export default styles;
+export default styling;
