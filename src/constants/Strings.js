@@ -316,6 +316,19 @@ export const Strings = {
   sendInvite: 'Send Invite',
   firstName: 'First Name',
   lastName: 'Last Name',
+  freezCard: 'Freeze Card',
+  cardDetails: 'Card Details',
+  addFundCard: 'Add funds instantly with card',
+  noVirtualCardTransaction: 'You do not have any Virtual\ncard transaction now',
+  active: 'Active',
+  debit: 'debit',
+  validThru: 'Valid Thru',
+  cvv: 'cvv',
+  cardholderName: 'Cardholder Name',
+  billingAddress: 'Billing Address',
+  virtualCardDetails: 'Virtual Card Details',
+  confirmPasswordNote:
+    'Please confirm your password to view Virtual Card detail',
 };
 
 export const settingsAccountInformation = [

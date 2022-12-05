@@ -10,6 +10,7 @@ const icons = {
   paypal: require('./paypal.png'),
   venmo: require('./venmo.png'),
   takePhoto: require('./takePhoto.png'),
+  masterCard: require('./masterCard.png'),
 };
 
 export default icons;

@@ -54,4 +54,7 @@ export const navigationStrings = {
   REPORTMISSINGCARD: 'Report Missing Card',
   STATEMENTS: 'Statements',
   REFERRALS: 'Referrals',
+  VIRTAULCARD: 'Virtaul Card',
+  VIRTAULCARDDETAIL: 'Virtaul Card Detail',
+  CONFIRMPASSWORD: 'Confirm Password',
 };

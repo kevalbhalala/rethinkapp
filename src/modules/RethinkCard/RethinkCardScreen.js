@@ -21,7 +21,9 @@ const RethinkCardScreen = ({navigation}) => {
       />
       <View style={styles.container}>
         <Text style={styles.cardT}>{Strings.virtualCard?.toUpperCase()}</Text>
-        <TouchableOpacity style={styles.card}>
+        <TouchableOpacity
+          style={styles.card}
+          onPress={() => navigation.navigate(navigationStrings?.VIRTAULCARD)}>
           <View style={styles.innerView}>
             <FontAwesome
               name={'credit-card'}

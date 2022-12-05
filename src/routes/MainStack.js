@@ -1,6 +1,6 @@
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import React, {useCallback, useEffect, useState} from 'react';
+import React from 'react';
 import {useColorScheme} from 'react-native';
 import {navigationStrings} from '../constants';
 import {
@@ -13,6 +13,7 @@ import {
   CaptureCheckNote,
   ChangePassword,
   ChangePin,
+  ConfirmPassword,
   ConnectPayPlatforms,
   DepositCheck,
   DepositCheckAmount,
@@ -46,6 +47,8 @@ import {
   UsDriverLicense,
   Users,
   VerifyIdentity,
+  VirtualCard,
+  VirtualCardDetail,
 } from '../modules';
 import AuthStack from './AuthStack';
 import BottomTabsNav from './BottomTabsNav';
@@ -279,6 +282,21 @@ const MainStack = () => {
         <Stack.Screen
           name={navigationStrings.REFERRALS}
           component={Referrals}
+          initialParams={{theme: apptheme}}
+        />
+        <Stack.Screen
+          name={navigationStrings.VIRTAULCARD}
+          component={VirtualCard}
+          initialParams={{theme: apptheme}}
+        />
+        <Stack.Screen
+          name={navigationStrings.VIRTAULCARDDETAIL}
+          component={VirtualCardDetail}
+          initialParams={{theme: apptheme}}
+        />
+        <Stack.Screen
+          name={navigationStrings.CONFIRMPASSWORD}
+          component={ConfirmPassword}
           initialParams={{theme: apptheme}}
         />
       </Stack.Navigator>
