@@ -88,7 +88,10 @@ const styling = theme =>
     monthDetailParent: {
       height: verticalScale(120),
       marginBottom: verticalScale(15),
-      backgroundColor: Colors[theme].grey300,
+      backgroundColor:
+        theme === 'light'
+          ? Colors[theme].grey300
+          : Colors[theme]?.screenBackground,
       borderRadius: moderateScale(10),
     },
     monthTextParent: {

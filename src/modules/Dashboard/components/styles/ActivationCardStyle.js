@@ -36,7 +36,10 @@ const styling = theme =>
     progressBar: {
       height: verticalScale(25),
       width: '100%',
-      backgroundColor: Colors[theme].grey400,
+      backgroundColor:
+        theme === 'light'
+          ? Colors[theme].grey400
+          : Colors[theme]?.screenBackground,
       borderRadius: moderateScale(6),
       flexDirection: 'row',
       overflow: 'hidden',

@@ -62,12 +62,18 @@ const styling = theme =>
       marginHorizontal: horizontalScale(20),
     },
     paperTextInput: {
-      backgroundColor: Colors[theme].grey200,
+      backgroundColor:
+        theme === 'dark'
+          ? Colors[theme]?.screenBackground
+          : Colors[theme].grey200,
     },
     searchBarParent: {
       flexDirection: 'row',
       height: verticalScale(45),
-      backgroundColor: Colors[theme].grey200,
+      backgroundColor:
+        theme === 'dark'
+          ? Colors[theme]?.screenBackground
+          : Colors[theme].grey200,
       borderRadius: moderateScale(10),
       marginHorizontal: horizontalScale(10),
     },

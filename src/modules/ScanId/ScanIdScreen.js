@@ -31,7 +31,7 @@ const ScanIdScreen = ({navigation}) => {
           }}>
           <Ionicons
             name={isFlashOn ? 'flash-off-outline' : 'md-flash-outline'}
-            color={Colors[theme]?.white}
+            color={Colors[theme]?.black}
             size={moderateScale(26)}
           />
         </TouchableOpacity>

@@ -8,7 +8,8 @@ const styling = theme =>
       backgroundColor: Colors[theme].white,
     },
     activityHeaderStyle: {
-      backgroundColor: Colors[theme].grey300,
+      backgroundColor:
+        theme === 'light' ? Colors[theme].grey300 : Colors[theme].white,
     },
     activityTabLable: {
       color: Colors[theme].black,

@@ -43,13 +43,13 @@ const BankTransferScreen = ({navigation}) => {
           <Text style={styles.title}>{Strings.bankTransfer}</Text>
         </View>
         <View style={styles.card}>
-          <KeyboardAvoidingView
-            behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-            style={{flex: 1}}
-            enabled>
-            <ScrollView
-              style={styles.scrollView}
-              showsVerticalScrollIndicator={false}>
+          <ScrollView
+            style={styles.scrollView}
+            showsVerticalScrollIndicator={false}>
+            <KeyboardAvoidingView
+              behavior={Platform.OS === 'ios' ? 'padding' : undefined}
+              style={{flex: 1}}
+              enabled>
               <TextInput
                 mode={'outlined'}
                 label={Strings.legalName?.toUpperCase()}
@@ -112,8 +112,8 @@ const BankTransferScreen = ({navigation}) => {
                 <Text style={styles.onlyVisible}>{Strings.onlyVisible}</Text>
                 <Text style={styles.rangeText}>0/250</Text>
               </View>
-            </ScrollView>
-          </KeyboardAvoidingView>
+            </KeyboardAvoidingView>
+          </ScrollView>
         </View>
       </View>
       <View style={styles.reviewButtonParent}>

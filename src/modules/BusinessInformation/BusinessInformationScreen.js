@@ -6,6 +6,7 @@ import {CustomHeader} from '../../components';
 import {navigationStrings, businessInformation, Strings} from '../../constants';
 import {moderateScale} from '../../theme';
 import styling from './BusinessInformationStyle';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 const BusinessInformationScreen = ({navigation}) => {
   const route = useRoute();
@@ -24,6 +25,19 @@ const BusinessInformationScreen = ({navigation}) => {
           {businessInformation?.map((values, index) => {
             const isLastValue = index === businessInformation?.length - 1;
             const isFirstValue = index === 0;
+            const getIcon = () => {
+              if (values === 'LEGAL BUSINESS NAME') {
+                return 'user';
+              } else if (values === 'DBA') {
+                return 'briefcase';
+              } else if (values === 'PHONE') {
+                return 'smartphone';
+              } else if (values === 'BUSINESS ADDRESS') {
+                return 'office-building-marker-outline';
+              } else if (values === 'MAILING ADDRESS') {
+                return 'mailbox';
+              }
+            };
             const onPress = () => {
               if (values === 'DBA') {
                 navigation.navigate(navigationStrings.DBA);
@@ -36,14 +50,21 @@ const BusinessInformationScreen = ({navigation}) => {
               }
             };
             return (
-              <>
+              <View key={index}>
                 <TouchableOpacity
                   disabled={isFirstValue}
                   style={styles.navigateButtons}
-                  onPress={onPress}
-                  key={index}>
+                  onPress={onPress}>
                   <View style={styles.imageParent}>
-                    <FeatherIcon name={'mail'} size={moderateScale(30)} />
+                    {values === 'BUSINESS ADDRESS' ||
+                    values === 'MAILING ADDRESS' ? (
+                      <MaterialCommunityIcons
+                        name={getIcon()}
+                        size={moderateScale(30)}
+                      />
+                    ) : (
+                      <FeatherIcon name={getIcon()} size={moderateScale(30)} />
+                    )}
                   </View>
                   <View style={styles.details}>
                     <Text style={styles.navigateButtonTitle}>{values}</Text>
@@ -61,7 +82,7 @@ const BusinessInformationScreen = ({navigation}) => {
                   )}
                 </TouchableOpacity>
                 {!isLastValue ? <View style={styles.divider} /> : <></>}
-              </>
+              </View>
             );
           })}
         </View>

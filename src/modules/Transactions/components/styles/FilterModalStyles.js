@@ -11,7 +11,7 @@ const styling = theme =>
   StyleSheet.create({
     screen: {
       flex: 1,
-      backgroundColor: Colors[theme].grey300,
+      backgroundColor: Colors[theme].screenBackground,
     },
     scrollView: {
       flex: 1,
@@ -146,7 +146,10 @@ const styling = theme =>
       flexDirection: 'row',
       height: verticalScale(45),
       marginRight: horizontalScale(50),
-      backgroundColor: Colors[theme].grey300,
+      backgroundColor:
+        theme === 'dark'
+          ? Colors[theme]?.screenBackground
+          : Colors[theme].grey300,
     },
     searchRightIcon: {
       flex: 0.15,

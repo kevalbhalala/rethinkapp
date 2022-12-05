@@ -35,12 +35,14 @@ const DepositCheckScreen = ({navigation}) => {
           rightIcon={false}
         />
         <View style={styles.divider} />
-        <Text style={styles.descriptionTitle}>
-          {Strings.easyWayLargeDeposits}
-        </Text>
-        <Text style={styles.descriptionSubtitle}>
-          {Strings.depositCheckLimit}
-        </Text>
+        <View style={styles.descriptionParent}>
+          <Text style={styles.descriptionTitle}>
+            {Strings.easyWayLargeDeposits}
+          </Text>
+          <Text style={styles.descriptionSubtitle}>
+            {Strings.depositCheckLimit}
+          </Text>
+        </View>
       </View>
       <View style={styles.verifyParent}>
         <CustomButton

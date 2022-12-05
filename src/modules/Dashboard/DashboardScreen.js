@@ -86,6 +86,7 @@ const DashboardScreen = () => {
             subTitle={Strings.addMoneyRethink}
             navigationText={Strings.wayFund}
             logo={Icons.bank}
+            logoStyle={styles.logoStyle}
           />
           <TransactionCard theme={theme} noTrasaction={true} />
           <DashboardCard
@@ -103,6 +104,7 @@ const DashboardScreen = () => {
             subTitle={Strings.sendTrackInvoice}
             navigationText={Strings.createInvoice}
             logo={Icons.invoices}
+            logoStyle={styles.logoStyle}
           />
           <DashboardCard
             theme={theme}
@@ -110,6 +112,7 @@ const DashboardScreen = () => {
             subTitle={Strings.setAsideMoney}
             navigationText={Strings.createReserve}
             logo={Icons.reserves}
+            logoStyle={styles.logoStyle}
           />
           <DashboardCard
             theme={theme}
@@ -117,6 +120,7 @@ const DashboardScreen = () => {
             subTitle={Strings.referNote}
             navigationText={Strings.getStarted}
             logo={Icons.referBusiness}
+            logoStyle={styles.logoStyle}
             navigationLogoColor={Colors[theme]?.blue}
             navigateTextStyle={styles.getStartedText}
           />

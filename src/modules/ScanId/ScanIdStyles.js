@@ -11,7 +11,7 @@ const styling = theme =>
   StyleSheet.create({
     screen: {
       flex: 1,
-      backgroundColor: Colors[theme].black,
+      backgroundColor: Colors[theme].white,
     },
     headerParent: {
       flexDirection: 'row',
@@ -21,10 +21,10 @@ const styling = theme =>
       marginTop: verticalScale(6),
     },
     headerTitle: {
-      color: Colors[theme].white,
+      color: Colors[theme].black,
     },
     backBtnStyle: {
-      tintColor: theme === 'dark' ? Colors[theme].black : Colors[theme].white,
+      tintColor: Colors[theme].black,
     },
     container: {
       flex: 1,

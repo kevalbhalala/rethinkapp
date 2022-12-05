@@ -23,7 +23,8 @@ const styling = theme =>
       width: '100%',
       justifyContent: 'center',
       alignItems: 'center',
-      backgroundColor: Colors[theme].grey300,
+      backgroundColor:
+        theme === 'dark' ? Colors[theme]?.white : Colors[theme].grey300,
       paddingVertical: verticalScale(15),
       borderRadius: moderateScale(10),
     },
@@ -87,7 +88,7 @@ const styling = theme =>
       width: '100%',
       position: 'absolute',
       zIndex: 1,
-      backgroundColor: Colors[theme].grey200,
+      backgroundColor: Colors[theme].screenBackground,
       bottom: 0,
       alignItems: 'center',
       justifyContent: 'center',

@@ -75,7 +75,7 @@ const FinancialInsightsScreen = () => {
           <LineChart
             data={chartData}
             width={horizontalScale(300)}
-            height={verticalScale(180)}
+            height={verticalScale(200)}
             chartConfig={lineChartConfig(theme)}
             withInnerLines={false}
             withVerticalLines={false}

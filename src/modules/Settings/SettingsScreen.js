@@ -28,7 +28,7 @@ const SettingsScreen = ({navigation}) => {
         backButton={false}
       />
       <View style={styles.container}>
-        <ScrollView>
+        <ScrollView showsVerticalScrollIndicator={false}>
           <Text style={styles.cardTitle}>
             {Strings.accountInformation?.toUpperCase()}
           </Text>

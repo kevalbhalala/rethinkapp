@@ -1,10 +1,10 @@
 import {StyleSheet} from 'react-native';
-import {horizontalScale, verticalScale} from '../../theme';
+import {Colors, horizontalScale, verticalScale} from '../../theme';
 
 const styling = theme =>
   StyleSheet.create({
     buttonBackground: {
-      backgroundColor: 'white',
+      backgroundColor: Colors[theme]?.white,
     },
     dropdownParent: {
       position: 'absolute',

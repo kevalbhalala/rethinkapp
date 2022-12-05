@@ -40,7 +40,10 @@ const ActivityTopTabs = () => {
               );
             }
           },
-          tabBarStyle: {backgroundColor: Colors[theme].grey300},
+          tabBarStyle: {
+            backgroundColor:
+              theme === 'light' ? Colors[theme]?.grey300 : Colors[theme]?.white,
+          },
         })}>
         <Tab.Screen
           name={navigationStrings.TRANSACTIONS}

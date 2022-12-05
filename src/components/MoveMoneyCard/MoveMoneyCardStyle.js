@@ -54,7 +54,7 @@ const styling = theme =>
       fontFamily: Fonts.regular,
     },
     tagParent: {
-      height: verticalScale(20),
+      height: verticalScale(24),
       backgroundColor: Colors[theme].black50,
       paddingHorizontal: horizontalScale(8),
       alignItems: 'center',

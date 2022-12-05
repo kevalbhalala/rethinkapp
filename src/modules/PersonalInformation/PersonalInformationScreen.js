@@ -24,6 +24,17 @@ const PersonalInformationScreen = ({navigation}) => {
           {personalInformation?.map((values, index) => {
             const isLastValue = index === personalInformation?.length - 1;
             const isFirstValue = index === 0;
+            const getIcon = () => {
+              if (values === 'NAME') {
+                return 'user';
+              } else if (values === 'EMAIL') {
+                return 'mail';
+              } else if (values === 'MOBILE PHONE') {
+                return 'smartphone';
+              } else if (values === 'HOME ADDRESS') {
+                return 'home';
+              }
+            };
             const onPress = () => {
               if (values === 'EMAIL') {
                 navigation.navigate(navigationStrings.EDITEMAIL);
@@ -34,14 +45,14 @@ const PersonalInformationScreen = ({navigation}) => {
               }
             };
             return (
-              <>
+              <View key={index}>
                 <TouchableOpacity
                   disabled={isFirstValue}
                   style={styles.navigateButtons}
                   onPress={onPress}
                   key={index}>
                   <View style={styles.imageParent}>
-                    <FeatherIcon name={'mail'} size={moderateScale(30)} />
+                    <FeatherIcon name={getIcon()} size={moderateScale(40)} />
                   </View>
                   <View style={styles.details}>
                     <Text style={styles.navigateButtonTitle}>{values}</Text>
@@ -59,7 +70,7 @@ const PersonalInformationScreen = ({navigation}) => {
                   )}
                 </TouchableOpacity>
                 {!isLastValue ? <View style={styles.divider} /> : <></>}
-              </>
+              </View>
             );
           })}
         </View>

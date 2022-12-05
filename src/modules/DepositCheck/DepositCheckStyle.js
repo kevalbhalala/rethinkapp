@@ -15,14 +15,13 @@ const styling = theme =>
     },
     card: {
       backgroundColor: Colors[theme].white,
-      paddingHorizontal: horizontalScale(18),
       borderRadius: moderateScale(18),
       marginTop: verticalScale(20),
       marginHorizontal: horizontalScale(15),
     },
     divider: {
       backgroundColor: Colors[theme].grey300,
-      width: '100%',
+      marginHorizontal: horizontalScale(18),
       height: verticalScale(2),
     },
     darkGreenText: {
@@ -30,6 +29,9 @@ const styling = theme =>
     },
     darkBlueText: {
       color: Colors[theme].blue900,
+    },
+    descriptionParent: {
+      marginHorizontal: horizontalScale(10),
     },
     descriptionTitle: {
       color: Colors[theme].black,

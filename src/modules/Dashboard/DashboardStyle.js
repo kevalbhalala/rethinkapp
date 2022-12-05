@@ -65,6 +65,9 @@ const styling = theme =>
     whiteText: {
       color: Colors[theme].white,
     },
+    logoStyle: {
+      tintColor: Colors[theme]?.black,
+    },
   });
 
 export default styling;

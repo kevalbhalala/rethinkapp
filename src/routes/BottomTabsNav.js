@@ -39,6 +39,9 @@ const BottomTabsNav = () => {
           }
         },
         tabBarActiveTintColor: Colors[theme].blue,
+        tabBarStyle: {
+          backgroundColor: Colors[theme].white,
+        },
       })}>
       <Tab.Screen
         name={navigationStrings.DASHBOARD}
