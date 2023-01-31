@@ -1,17 +1,19 @@
-import {useRoute} from '@react-navigation/native';
-import React from 'react';
-import {Text, View} from 'react-native';
-import {TextInput} from 'react-native-paper';
-import {CustomButton, CustomHeader} from '../../components';
-import {Strings} from '../../constants';
-import {Colors} from '../../theme';
+import { useRoute } from '@react-navigation/native';
+import React, { useState } from 'react';
+import { Text, View } from 'react-native';
+import { TextInput } from 'react-native-paper';
+import { useSelector } from 'react-redux';
+import { CustomButton, CustomHeader } from '../../components';
+import { Strings } from '../../constants';
+import { Colors } from '../../theme';
 import styling from './EditMobilePhoneStyle';
 
-const EditMobilePhoneScreen = ({navigation}) => {
+const EditMobilePhoneScreen = ({ navigation }) => {
   const route = useRoute();
   const theme = route?.params?.theme;
   const styles = styling(theme);
-
+  const userDetails = useSelector(state => state?.user?.login)
+  const [phone, setPhone] = useState(userDetails?.phone_number || '')
   return (
     <View style={styles.screen}>
       <CustomHeader
@@ -27,6 +29,7 @@ const EditMobilePhoneScreen = ({navigation}) => {
             mode={'outlined'}
             style={styles.textInput}
             activeOutlineColor={Colors[theme]?.grey500}
+            value={phone} onChangeText={(text) => setPhone(text)}
           />
         </View>
       </View>

@@ -1,14 +1,14 @@
-import {useRoute} from '@react-navigation/native';
+import { useRoute } from '@react-navigation/native';
 import React from 'react';
-import {Text, View} from 'react-native';
-import {Icons} from '../../assets';
-import {CustomButton, CustomHeader, MoveMoneyCard} from '../../components';
-import {navigationStrings} from '../../constants';
-import {Strings} from '../../constants/Strings';
-import {Colors} from '../../theme';
+import { Text, View } from 'react-native';
+import { Icons } from '../../assets';
+import { CustomButton, CustomHeader, MoveMoneyCard } from '../../components';
+import { navigationStrings } from '../../constants';
+import { Strings } from '../../constants/Strings';
+import { Colors } from '../../theme';
 import styling from './DepositCheckStyle';
 
-const DepositCheckScreen = ({navigation}) => {
+const DepositCheckScreen = ({ navigation }) => {
   const route = useRoute();
   const theme = route?.params?.theme;
   const styles = styling(theme);

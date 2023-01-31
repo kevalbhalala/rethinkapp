@@ -1,8 +1,8 @@
-import {NavigationContainer} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
-import {useColorScheme} from 'react-native';
-import {navigationStrings} from '../constants';
+import { useColorScheme } from 'react-native';
+import { navigationStrings } from '../constants';
 import {
   ActivateCard,
   AddPayee,
@@ -40,6 +40,7 @@ import {
   ScanId,
   SelectIdAdd,
   SignEndorse,
+  SplashScreen,
   Statements,
   TransferLimits,
   TransferVirtualCard,
@@ -65,239 +66,244 @@ const MainStack = () => {
           headerShown: false,
         }}>
         <Stack.Screen
+          name={navigationStrings.SPLASHSCREEN}
+          component={SplashScreen}
+          initialParams={{ theme: apptheme }}
+        />
+        <Stack.Screen
           name={navigationStrings.AUTHSTACK}
           component={AuthStack}
-          initialParams={{theme: apptheme}}
+          initialParams={{ theme: apptheme }}
         />
         <Stack.Screen
           name={navigationStrings.BOTTOMTABSNAV}
           component={BottomTabsNav}
-          initialParams={{theme: apptheme}}
+          initialParams={{ theme: apptheme }}
         />
         <Stack.Screen
           name={navigationStrings.ADDPAYEE}
           component={AddPayee}
-          initialParams={{theme: apptheme}}
+          initialParams={{ theme: apptheme }}
         />
         <Stack.Screen
           name={navigationStrings.MAKEPAYMENT}
           component={MakePayment}
-          initialParams={{theme: apptheme}}
+          initialParams={{ theme: apptheme }}
         />
         <Stack.Screen
           name={navigationStrings.BANKTRANSFER}
           component={BankTransfer}
-          initialParams={{theme: apptheme}}
+          initialParams={{ theme: apptheme }}
         />
         <Stack.Screen
           name={navigationStrings.PAPERCHECK}
           component={PaperCheck}
-          initialParams={{theme: apptheme}}
+          initialParams={{ theme: apptheme }}
         />
         <Stack.Screen
           name={navigationStrings.FUNDACCOUNT}
           component={FundAccount}
-          initialParams={{theme: apptheme}}
+          initialParams={{ theme: apptheme }}
         />
         <Stack.Screen
           name={navigationStrings.CONNECTEDPAYPLATFORMS}
           component={ConnectPayPlatforms}
-          initialParams={{theme: apptheme}}
+          initialParams={{ theme: apptheme }}
         />
         <Stack.Screen
           name={navigationStrings.TRANSFERVIRTUALCARD}
           component={TransferVirtualCard}
-          initialParams={{theme: apptheme}}
+          initialParams={{ theme: apptheme }}
         />
         <Stack.Screen
           name={navigationStrings.PUSHFUND}
           component={PushFund}
-          initialParams={{theme: apptheme}}
+          initialParams={{ theme: apptheme }}
         />
         <Stack.Screen
           name={navigationStrings.DEPOSITCHECK}
           component={DepositCheck}
-          initialParams={{theme: apptheme}}
+          initialParams={{ theme: apptheme }}
         />
         <Stack.Screen
           name={navigationStrings.VERIFYIDENTITY}
           component={VerifyIdentity}
-          initialParams={{theme: apptheme}}
+          initialParams={{ theme: apptheme }}
         />
         <Stack.Screen
           name={navigationStrings.SELECTIDADD}
           component={SelectIdAdd}
-          initialParams={{theme: apptheme}}
+          initialParams={{ theme: apptheme }}
         />
         <Stack.Screen
           name={navigationStrings.USDRIVERLICENSE}
           component={UsDriverLicense}
-          initialParams={{theme: apptheme}}
+          initialParams={{ theme: apptheme }}
         />
         <Stack.Screen
           name={navigationStrings.SCANID}
           component={ScanId}
-          initialParams={{theme: apptheme}}
+          initialParams={{ theme: apptheme }}
         />
         <Stack.Screen
           name={navigationStrings.DEPOSITCHECKAMT}
           component={DepositCheckAmount}
-          initialParams={{theme: apptheme}}
+          initialParams={{ theme: apptheme }}
         />
         <Stack.Screen
           name={navigationStrings.SIGNENDORSE}
           component={SignEndorse}
-          initialParams={{theme: apptheme}}
+          initialParams={{ theme: apptheme }}
         />
         <Stack.Screen
           name={navigationStrings.MAKEDEPOSIT}
           component={MakeDeposit}
-          initialParams={{theme: apptheme}}
+          initialParams={{ theme: apptheme }}
         />
         <Stack.Screen
           name={navigationStrings.DEPOSITCHECKNAME}
           component={DepositCheckName}
-          initialParams={{theme: apptheme}}
+          initialParams={{ theme: apptheme }}
         />
         <Stack.Screen
           name={navigationStrings.CAPTURECHECKNOTE}
           component={CaptureCheckNote}
-          initialParams={{theme: apptheme}}
+          initialParams={{ theme: apptheme }}
         />
         <Stack.Screen
           name={navigationStrings.PERSONALINFORMATION}
           component={PersonalInformation}
-          initialParams={{theme: apptheme}}
+          initialParams={{ theme: apptheme }}
         />
         <Stack.Screen
           name={navigationStrings.EDITEMAIL}
           component={EditEmail}
-          initialParams={{theme: apptheme}}
+          initialParams={{ theme: apptheme }}
         />
         <Stack.Screen
           name={navigationStrings.EDITMOBILEPHONE}
           component={EditMobilePhone}
-          initialParams={{theme: apptheme}}
+          initialParams={{ theme: apptheme }}
         />
         <Stack.Screen
           name={navigationStrings.EDITHOMEADDRESS}
           component={EditHomeAddress}
-          initialParams={{theme: apptheme}}
+          initialParams={{ theme: apptheme }}
         />
         <Stack.Screen
           name={navigationStrings.BUSINESSINFORMATION}
           component={BusinessInformation}
-          initialParams={{theme: apptheme}}
+          initialParams={{ theme: apptheme }}
         />
         <Stack.Screen
           name={navigationStrings.EDITMAILINGADDRESS}
           component={EditMailingAddress}
-          initialParams={{theme: apptheme}}
+          initialParams={{ theme: apptheme }}
         />
         <Stack.Screen
           name={navigationStrings.EDITBUSINESSADDRESS}
           component={EditBusinessAddress}
-          initialParams={{theme: apptheme}}
+          initialParams={{ theme: apptheme }}
         />
         <Stack.Screen
           name={navigationStrings.EDITBUSINESSPHONE}
           component={EditBusinessPhone}
-          initialParams={{theme: apptheme}}
+          initialParams={{ theme: apptheme }}
         />
         <Stack.Screen
           name={navigationStrings.DBA}
           component={EditDba}
-          initialParams={{theme: apptheme}}
+          initialParams={{ theme: apptheme }}
         />
         <Stack.Screen
           name={navigationStrings.USERS}
           component={Users}
-          initialParams={{theme: apptheme}}
+          initialParams={{ theme: apptheme }}
         />
         <Stack.Screen
           name={navigationStrings.ADDUSERREQ}
           component={AddUserRequest}
-          initialParams={{theme: apptheme}}
+          initialParams={{ theme: apptheme }}
         />
         <Stack.Screen
           name={navigationStrings.BANKLETTER}
           component={BankLetter}
-          initialParams={{theme: apptheme}}
+          initialParams={{ theme: apptheme }}
         />
         <Stack.Screen
           name={navigationStrings.TRANSFERLIMITS}
           component={TransferLimits}
-          initialParams={{theme: apptheme}}
+          initialParams={{ theme: apptheme }}
         />
         <Stack.Screen
           name={navigationStrings.CHANGEPASSWORD}
           component={ChangePassword}
-          initialParams={{theme: apptheme}}
+          initialParams={{ theme: apptheme }}
         />
         <Stack.Screen
           name={navigationStrings.REQLIMITCHANGE}
           component={RequestLimitChange}
-          initialParams={{theme: apptheme}}
+          initialParams={{ theme: apptheme }}
         />
         <Stack.Screen
           name={navigationStrings.RETHINKCARD}
           component={RethinkCard}
-          initialParams={{theme: apptheme}}
+          initialParams={{ theme: apptheme }}
         />
         <Stack.Screen
           name={navigationStrings.RETHINKPHYSICAL}
           component={RethinkPhysical}
-          initialParams={{theme: apptheme}}
+          initialParams={{ theme: apptheme }}
         />
         <Stack.Screen
           name={navigationStrings.ACTIVATECARD}
           component={ActivateCard}
-          initialParams={{theme: apptheme}}
+          initialParams={{ theme: apptheme }}
         />
         <Stack.Screen
           name={navigationStrings.CHANGEPIN}
           component={ChangePin}
-          initialParams={{theme: apptheme}}
+          initialParams={{ theme: apptheme }}
         />
         <Stack.Screen
           name={navigationStrings.TRAVELNOTICE}
           component={TravelNotice}
-          initialParams={{theme: apptheme}}
+          initialParams={{ theme: apptheme }}
         />
         <Stack.Screen
           name={navigationStrings.MAKETRAVELNOTICE}
           component={MakeTravelNotice}
-          initialParams={{theme: apptheme}}
+          initialParams={{ theme: apptheme }}
         />
         <Stack.Screen
           name={navigationStrings.REPORTMISSINGCARD}
           component={ReportMissingCard}
-          initialParams={{theme: apptheme}}
+          initialParams={{ theme: apptheme }}
         />
         <Stack.Screen
           name={navigationStrings.STATEMENTS}
           component={Statements}
-          initialParams={{theme: apptheme}}
+          initialParams={{ theme: apptheme }}
         />
         <Stack.Screen
           name={navigationStrings.REFERRALS}
           component={Referrals}
-          initialParams={{theme: apptheme}}
+          initialParams={{ theme: apptheme }}
         />
         <Stack.Screen
           name={navigationStrings.VIRTAULCARD}
           component={VirtualCard}
-          initialParams={{theme: apptheme}}
+          initialParams={{ theme: apptheme }}
         />
         <Stack.Screen
           name={navigationStrings.VIRTAULCARDDETAIL}
           component={VirtualCardDetail}
-          initialParams={{theme: apptheme}}
+          initialParams={{ theme: apptheme }}
         />
         <Stack.Screen
           name={navigationStrings.CONFIRMPASSWORD}
           component={ConfirmPassword}
-          initialParams={{theme: apptheme}}
+          initialParams={{ theme: apptheme }}
         />
       </Stack.Navigator>
     </NavigationContainer>

@@ -1,25 +1,35 @@
-import {useRoute} from '@react-navigation/native';
-import React, {useState} from 'react';
-import {ScrollView, Text, TouchableOpacity, View} from 'react-native';
-import {Switch} from 'react-native-paper';
+import { useRoute } from '@react-navigation/native';
+import React, { useEffect, useState } from 'react';
+import { ScrollView, Text, TouchableOpacity, View } from 'react-native';
+import { Switch } from 'react-native-paper';
 import FeatherIcon from 'react-native-vector-icons/Feather';
-import {CustomButton, CustomHeader} from '../../components';
+import { useDispatch } from 'react-redux';
+import { CustomButton, CustomHeader } from '../../components';
 import {
   navigationStrings,
   settings,
   settingsAccountInformation,
   Strings,
 } from '../../constants';
-import {Colors, moderateScale} from '../../theme';
+import { showLoader } from '../../redux/actions/user';
+import { Colors, moderateScale } from '../../theme';
 import styling from './SettingsStyle';
 
-const SettingsScreen = ({navigation}) => {
+const SettingsScreen = ({ navigation }) => {
   const route = useRoute();
   const theme = route?.params?.theme;
   const styles = styling(theme);
-
+  const dispatch = useDispatch()
   const [bioSwitch, setBioSwitch] = useState(false);
   const [notificationSwitch, setNotificationSwitch] = useState(false);
+  useEffect(() => {
+    (async () => {
+      await dispatch(showLoader(true))
+      setTimeout(async () => {
+        await dispatch(showLoader(false))
+      }, 1000);
+    })()
+  }, [])
   return (
     <View style={styles.screen}>
       <CustomHeader

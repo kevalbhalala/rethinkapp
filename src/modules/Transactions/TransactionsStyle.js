@@ -1,4 +1,4 @@
-import {StyleSheet} from 'react-native';
+import { StyleSheet } from 'react-native';
 import {
   Colors,
   horizontalScale,
@@ -43,6 +43,9 @@ const styling = theme =>
       alignItems: 'center',
       justifyContent: 'center',
     },
+    testStyle: {
+
+    }
   });
 
 export default styling;

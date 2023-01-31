@@ -1,18 +1,22 @@
-import {useRoute} from '@react-navigation/native';
-import React from 'react';
-import {Text, TouchableOpacity, View} from 'react-native';
+import { useRoute } from '@react-navigation/native';
+import React, { useState } from 'react';
+import { Text, TouchableOpacity, View } from 'react-native';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import {navigationStrings, Strings} from '../../constants';
-import {Colors, moderateScale} from '../../theme';
+import { useSelector } from 'react-redux';
+import { navigationStrings, Strings } from '../../constants';
+import { Colors, moderateScale, verticalScale } from '../../theme';
 import styling from './AccountStyle';
 
-const AccountScreen = ({navigation}) => {
+const AccountScreen = ({ navigation }) => {
   const route = useRoute();
   const theme = route?.params?.theme;
   const styles = styling(theme);
+  const accountInfo = useSelector(state => state?.user?.accountInfo)
 
+  const [isView, setIsView] = useState(false)
+  console.log('------account', accountInfo)
   return (
     <View style={styles.screen}>
       <View style={styles.header}>
@@ -35,7 +39,7 @@ const AccountScreen = ({navigation}) => {
           </Text>
           <View style={styles.subTitleParent}>
             <Text style={styles.subTitle}>211370150</Text>
-            <TouchableOpacity onPress={() => {}}>
+            <TouchableOpacity onPress={() => { }}>
               <MaterialCommunityIcons
                 name="content-copy"
                 size={moderateScale(16)}
@@ -48,14 +52,19 @@ const AccountScreen = ({navigation}) => {
           <Text style={styles.accountNumber}>
             {Strings.accountNumber?.toUpperCase()}
           </Text>
-          <View style={styles.subTitleParent}>
+          {!isView ? <View style={styles.subTitleParent}>
             <MaterialCommunityIcons
               name="information"
               size={moderateScale(16)}
               color={Colors[theme]?.grey700}
             />
-            <Text style={styles.subTitle}>{Strings.view}</Text>
-          </View>
+            <TouchableOpacity onPress={() => setIsView(!isView)}>
+              <Text style={[styles.subTitle, { textDecorationLine: 'underline' }]}>{Strings.view}</Text>
+            </TouchableOpacity>
+          </View> :
+            <TouchableOpacity onPress={() => setIsView(!isView)}>
+              <Text style={[styles.subTitle, { marginTop: verticalScale(4), }]}>{accountInfo?.account_number}</Text>
+            </TouchableOpacity>}
         </View>
       </View>
       <View style={styles.cardParent}>

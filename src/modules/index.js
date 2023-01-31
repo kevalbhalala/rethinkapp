@@ -50,3 +50,4 @@ export * from './Users';
 export * from './VerifyIdentity';
 export * from './VirtualCard';
 export * from './VirtualCardDetail';
+export * from './SplashScreen';

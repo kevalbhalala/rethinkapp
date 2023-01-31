@@ -1,17 +1,18 @@
-import {useRoute} from '@react-navigation/native';
-import React from 'react';
-import {Text, View} from 'react-native';
-import {TextInput} from 'react-native-paper';
-import {CustomButton, CustomHeader} from '../../components';
-import {Strings} from '../../constants';
-import {Colors} from '../../theme';
+import { useRoute } from '@react-navigation/native';
+import React, { useState } from 'react';
+import { Text, View } from 'react-native';
+import { TextInput } from 'react-native-paper';
+import { CustomButton, CustomHeader } from '../../components';
+import { Strings } from '../../constants';
+import { Colors } from '../../theme';
 import styling from './ResetPasswordStyle';
 
-const ResetPasswordScreen = ({navigation}) => {
+const ResetPasswordScreen = ({ navigation }) => {
   const route = useRoute();
   const theme = route?.params?.theme;
   const styles = styling(theme);
-
+  const [email, setEmail] = useState('')
+  const [emailError, setEmailError] = useState('')
   const resetPassword = Strings.resetPassword?.replace('?', '');
   const onPressHeaderBack = () => {
     navigation.goBack();
@@ -33,12 +34,17 @@ const ResetPasswordScreen = ({navigation}) => {
             label={Strings.email}
             style={styles.textInput}
             activeOutlineColor={Colors[theme]?.black}
+            value={email}
+            onChangeText={(text) => {
+              setEmailError('')
+              setEmail(text)
+            }}
           />
         </View>
         <View style={styles.ConfirmParent}>
           <CustomButton
             theme={theme}
-            onBtnPress={() => {}}
+            onBtnPress={() => { }}
             buttonTitle={Strings.confirm}
             buttonStyle={styles.confirmBtn}
             buttonTitleStyle={styles.confirmText}

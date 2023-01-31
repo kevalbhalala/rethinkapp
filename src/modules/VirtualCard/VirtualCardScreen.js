@@ -1,13 +1,16 @@
-import {useRoute} from '@react-navigation/native';
-import React from 'react';
-import {Image, Text, TouchableOpacity, View} from 'react-native';
+import { useRoute } from '@react-navigation/native';
+import React, { useEffect } from 'react';
+import { Image, Text, TouchableOpacity, View } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import Feather from 'react-native-vector-icons/Feather';
 import Fontisto from 'react-native-vector-icons/Fontisto';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import {Icons} from '../../assets';
-import {CustomHeader} from '../../components';
-import {navigationStrings, Strings} from '../../constants';
+import { useDispatch, useSelector } from 'react-redux';
+import { Icons } from '../../assets';
+import { CustomHeader } from '../../components';
+import { navigationStrings, Strings } from '../../constants';
+import { getCard } from '../../redux/actions/card';
+import { showLoader } from '../../redux/actions/user';
 import {
   Colors,
   horizontalScale,
@@ -16,11 +19,20 @@ import {
 } from '../../theme';
 import styling from './VirtualCardStyle';
 
-const VirtualCardScreen = ({navigation}) => {
+const VirtualCardScreen = ({ navigation }) => {
   const route = useRoute();
   const theme = route?.params?.theme;
   const styles = styling(theme);
-
+  const dispatch = useDispatch()
+  const card = useSelector(state => state?.user?.getCard)
+  console.log('-----card', card)
+  useEffect(() => {
+    (async () => {
+      await dispatch(showLoader(true))
+      await dispatch(getCard())
+      await dispatch(showLoader(false))
+    })();
+  }, [])
   return (
     <View style={styles.screen}>
       <View style={styles.headerParent}>
@@ -37,14 +49,14 @@ const VirtualCardScreen = ({navigation}) => {
       </View>
       <View style={styles.container}>
         <LinearGradient
-          start={{x: 0.5, y: 0}}
-          end={{x: 1, y: 0}}
-          colors={['#282efe', '#763dfb']}
+          start={{ x: 0.5, y: 0 }}
+          end={{ x: 1, y: 0 }}
+          colors={['#FFBF00', '#FBCEB1']}
           style={styles.virtualCard}>
           <View style={styles.leftSide}>
             <Image source={Icons.appLogo} style={styles.appLogo} />
-            <Text style={styles.cardNumber}>{'**** **** **** 5227'}</Text>
-            <Text style={styles.cardName}>{'User Name'}</Text>
+            <Text style={styles.cardNumber}>{`**** **** **** ${card?.[0]?.last_four}`}</Text>
+            <Text style={styles.cardName}>{`User Name : ${card?.[0]?.emboss_name?.line_1}`}</Text>
           </View>
           <View style={styles.rightSide}>
             <View style={styles.cardStateParent}>
@@ -57,7 +69,7 @@ const VirtualCardScreen = ({navigation}) => {
           </View>
         </LinearGradient>
         <View style={styles.buttonRow}>
-          <TouchableOpacity style={[styles.card, {flex: 0.48}]}>
+          <TouchableOpacity style={[styles.card, { flex: 0.48 }]}>
             <Fontisto
               name="mastercard"
               color={Colors[theme]?.blue}
@@ -65,7 +77,7 @@ const VirtualCardScreen = ({navigation}) => {
             />
             <Text style={styles.freezCard}>{Strings.freezCard}</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={[styles.card, {flex: 0.48}]}>
+          <TouchableOpacity style={[styles.card, { flex: 0.48 }]}>
             <Fontisto
               name="mastercard"
               color={Colors[theme]?.blue}

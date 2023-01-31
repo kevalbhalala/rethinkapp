@@ -1,19 +1,20 @@
-import {useRoute} from '@react-navigation/native';
+import { useRoute } from '@react-navigation/native';
 import React from 'react';
-import {Image, Text, TouchableOpacity, View} from 'react-native';
+import { Image, Text, TouchableOpacity, View } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import Icon from 'react-native-vector-icons/Feather';
-import {Icons} from '../../assets';
-import {CustomHeader} from '../../components';
-import {Strings} from '../../constants';
-import {Colors, moderateScale, verticalScale} from '../../theme';
+import { useSelector } from 'react-redux';
+import { Icons } from '../../assets';
+import { CustomHeader } from '../../components';
+import { Strings } from '../../constants';
+import { Colors, moderateScale, verticalScale } from '../../theme';
 import styling from './VirtualCardDetailStyle';
 
-const VirtualCardScreen = ({navigation}) => {
+const VirtualCardScreen = ({ navigation }) => {
   const route = useRoute();
   const theme = route?.params?.theme;
   const styles = styling(theme);
-
+  const card = useSelector(state => state?.user?.getCard)
   return (
     <View style={styles.screen}>
       <CustomHeader
@@ -23,20 +24,20 @@ const VirtualCardScreen = ({navigation}) => {
       />
       <View>
         <LinearGradient
-          start={{x: 0.5, y: 0}}
-          end={{x: 1, y: 0}}
-          colors={['#282efe', '#763dfb']}
+          start={{ x: 0.5, y: 0 }}
+          end={{ x: 1, y: 0 }}
+          colors={['#FFBF00', '#FBCEB1']}
           style={styles.virtualCard}>
           <View style={styles.leftSide}>
             <Image source={Icons.appLogo} style={styles.appLogo} />
-            <Text style={styles.cardNumber}>{'5313 6790 1804 5227'}</Text>
+            <Text style={styles.cardNumber}>{`5313 6790 1804 ${card?.[0]?.last_four}`}</Text>
             <Text
-              style={[styles.cardDetailTitle, {marginTop: verticalScale(40)}]}>
+              style={[styles.cardDetailTitle, { marginTop: verticalScale(40) }]}>
               {Strings.validThru?.toUpperCase()}
             </Text>
-            <Text style={styles.cardDetailValue}>02 / 24</Text>
+            <Text style={styles.cardDetailValue}>{card?.[0]?.expiration_month}/ {card?.[0]?.expiration_year}</Text>
             <Text
-              style={[styles.cardDetailTitle, {marginTop: verticalScale(10)}]}>
+              style={[styles.cardDetailTitle, { marginTop: verticalScale(10) }]}>
               {Strings.cvv?.toUpperCase()}
             </Text>
             <Text style={styles.cardDetailValue}>914</Text>
@@ -46,7 +47,7 @@ const VirtualCardScreen = ({navigation}) => {
             <Image source={Icons.masterCard} style={styles.masterCard} />
           </View>
         </LinearGradient>
-        <View style={[styles.card, {paddingBottom: verticalScale(10)}]}>
+        <View style={[styles.card, { paddingBottom: verticalScale(10) }]}>
           <View style={styles.cardItem}>
             <Text style={styles.cardItemTitle}>
               {Strings.cardholderName?.toUpperCase()}

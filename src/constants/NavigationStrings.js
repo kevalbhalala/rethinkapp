@@ -1,4 +1,5 @@
 export const navigationStrings = {
+  SPLASHSCREEN: 'SplashScreen',
   AUTHSTACK: 'AuthStack',
   BOTTOMTABSNAV: 'BottomTabsNav',
   DASHBOARD: 'Dashboard',

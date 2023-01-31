@@ -1,14 +1,14 @@
-import {useRoute} from '@react-navigation/native';
+import { useRoute } from '@react-navigation/native';
 import React from 'react';
-import {ScrollView, Text, View} from 'react-native';
-import {Icons} from '../../assets';
-import {MoveMoneyCard} from '../../components';
-import {navigationStrings} from '../../constants';
-import {Strings} from '../../constants/Strings';
-import {Colors} from '../../theme';
+import { ScrollView, Text, View } from 'react-native';
+import { Icons } from '../../assets';
+import { MoveMoneyCard } from '../../components';
+import { navigationStrings } from '../../constants';
+import { Strings } from '../../constants/Strings';
+import { Colors } from '../../theme';
 import styling from './MoveMoneyStyle';
 
-const MoveMoneyScreen = ({navigation}) => {
+const MoveMoneyScreen = ({ navigation }) => {
   const route = useRoute();
   const theme = route?.params?.theme;
   const styles = styling(theme);
@@ -83,7 +83,7 @@ const MoveMoneyScreen = ({navigation}) => {
           tagTwoBackground={Colors[theme]?.blue10050}
           onPressCard={() => navigation.navigate(navigationStrings.PUSHFUND)}
         />
-        <MoveMoneyCard
+        {/* <MoveMoneyCard
           theme={theme}
           title={Strings.depositeCheckFromPhone}
           subTitle={Strings.depositBusinessDayOneFour}
@@ -97,7 +97,7 @@ const MoveMoneyScreen = ({navigation}) => {
           onPressCard={() =>
             navigation.navigate(navigationStrings.DEPOSITCHECK)
           }
-        />
+        /> */}
         <MoveMoneyCard
           theme={theme}
           title={Strings.depositCheck}

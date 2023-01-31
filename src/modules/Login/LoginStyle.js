@@ -1,5 +1,5 @@
-import {StyleSheet} from 'react-native';
-import {Fonts} from '../../assets';
+import { StyleSheet } from 'react-native';
+import { Fonts } from '../../assets';
 import {
   Colors,
   horizontalScale,
@@ -48,6 +48,12 @@ const styling = theme =>
       alignSelf: 'center',
       marginTop: verticalScale(18),
       fontFamily: Fonts.bold,
+    },
+    errorText: {
+      color: Colors[theme].red,
+      fontSize: moderateScale(14),
+      marginTop: verticalScale(2),
+      fontFamily: Fonts.regular,
     },
     applyNowParent: {
       flex: 0.45,
